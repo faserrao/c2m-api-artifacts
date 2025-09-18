@@ -102,23 +102,6 @@ export type Currency = typeof Currency[keyof typeof Currency];
 
 
 
-export const Digit = {
-    _0: '0',
-    _1: '1',
-    _2: '2',
-    _3: '3',
-    _4: '4',
-    _5: '5',
-    _6: '6',
-    _7: '7',
-    _8: '8',
-    _9: '9'
-} as const;
-
-export type Digit = typeof Digit[keyof typeof Digit];
-
-
-
 export const DocumentClass = {
     BusinessLetter: 'businessLetter',
     PersonalLetter: 'personalLetter'

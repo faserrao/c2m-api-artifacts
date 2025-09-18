@@ -48,7 +48,7 @@ import com.c2m.JSON;
 /**
  * GooglePayPayment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T21:25:02.791468275Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T23:30:59.692465979Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class GooglePayPayment {
   public static final String SERIALIZED_NAME_GOOGLE_PAYMENT_DETAILS = "googlePaymentDetails";
   @SerializedName(SERIALIZED_NAME_GOOGLE_PAYMENT_DETAILS)

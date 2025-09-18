@@ -24,7 +24,6 @@ OpenAPIClient/Classes/OpenAPIs/Models/CreditAmount.swift
 OpenAPIClient/Classes/OpenAPIs/Models/CreditCardDetails.swift
 OpenAPIClient/Classes/OpenAPIs/Models/CreditCardPayment.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Currency.swift
-OpenAPIClient/Classes/OpenAPIs/Models/Digit.swift
 OpenAPIClient/Classes/OpenAPIs/Models/DocumentClass.swift
 OpenAPIClient/Classes/OpenAPIs/Models/DocumentFormat.swift
 OpenAPIClient/Classes/OpenAPIs/Models/DocumentSourceIdentifier.swift
@@ -94,7 +93,6 @@ docs/CreditCardDetails.md
 docs/CreditCardPayment.md
 docs/Currency.md
 docs/DefaultAPI.md
-docs/Digit.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
 docs/DocumentSourceIdentifier.md

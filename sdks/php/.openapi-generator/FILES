@@ -17,7 +17,6 @@ docs/Model/CreditAmount.md
 docs/Model/CreditCardDetails.md
 docs/Model/CreditCardPayment.md
 docs/Model/Currency.md
-docs/Model/Digit.md
 docs/Model/DocumentClass.md
 docs/Model/DocumentFormat.md
 docs/Model/DocumentSourceIdentifier.md
@@ -86,7 +85,6 @@ lib/Model/CreditAmount.php
 lib/Model/CreditCardDetails.php
 lib/Model/CreditCardPayment.php
 lib/Model/Currency.php
-lib/Model/Digit.php
 lib/Model/DocumentClass.php
 lib/Model/DocumentFormat.php
 lib/Model/DocumentSourceIdentifier.php
@@ -153,7 +151,6 @@ test/Model/CreditAmountTest.php
 test/Model/CreditCardDetailsTest.php
 test/Model/CreditCardPaymentTest.php
 test/Model/CurrencyTest.php
-test/Model/DigitTest.php
 test/Model/DocumentClassTest.php
 test/Model/DocumentFormatTest.php
 test/Model/DocumentSourceIdentifierOneOf1Test.php

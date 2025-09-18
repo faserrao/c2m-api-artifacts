@@ -127,7 +127,6 @@ Class | Method | HTTP request | Description
  - [CreditCardDetails](docs/CreditCardDetails.md)
  - [CreditCardPayment](docs/CreditCardPayment.md)
  - [Currency](docs/Currency.md)
- - [Digit](docs/Digit.md)
  - [DocumentClass](docs/DocumentClass.md)
  - [DocumentFormat](docs/DocumentFormat.md)
  - [DocumentSourceIdentifier](docs/DocumentSourceIdentifier.md)

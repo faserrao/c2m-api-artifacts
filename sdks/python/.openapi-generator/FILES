@@ -24,7 +24,6 @@ c2m_api/models/credit_amount.py
 c2m_api/models/credit_card_details.py
 c2m_api/models/credit_card_payment.py
 c2m_api/models/currency.py
-c2m_api/models/digit.py
 c2m_api/models/document_class.py
 c2m_api/models/document_format.py
 c2m_api/models/document_source_identifier.py
@@ -90,7 +89,6 @@ docs/CreditCardDetails.md
 docs/CreditCardPayment.md
 docs/Currency.md
 docs/DefaultApi.md
-docs/Digit.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
 docs/DocumentSourceIdentifier.md
@@ -161,7 +159,6 @@ test/test_credit_card_details.py
 test/test_credit_card_payment.py
 test/test_currency.py
 test/test_default_api.py
-test/test_digit.py
 test/test_document_class.py
 test/test_document_format.py
 test/test_document_source_identifier.py

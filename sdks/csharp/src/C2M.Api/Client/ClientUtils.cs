@@ -141,8 +141,6 @@ namespace C2M.Api.Client
                 return CardTypeValueConverter.ToJsonValue(cardType);
             if (obj is Currency currency)
                 return CurrencyValueConverter.ToJsonValue(currency);
-            if (obj is Digit digit)
-                return DigitValueConverter.ToJsonValue(digit);
             if (obj is DocumentClass documentClass)
                 return DocumentClassValueConverter.ToJsonValue(documentClass);
             if (obj is DocumentFormat documentFormat)

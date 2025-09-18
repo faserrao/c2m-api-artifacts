@@ -14,7 +14,6 @@ docs/CreditCardDetails.md
 docs/CreditCardPayment.md
 docs/Currency.md
 docs/DefaultApi.md
-docs/Digit.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
 docs/DocumentSourceIdentifier.md
@@ -100,7 +99,6 @@ src/main/kotlin/com/c2m/api/models/CreditAmount.kt
 src/main/kotlin/com/c2m/api/models/CreditCardDetails.kt
 src/main/kotlin/com/c2m/api/models/CreditCardPayment.kt
 src/main/kotlin/com/c2m/api/models/Currency.kt
-src/main/kotlin/com/c2m/api/models/Digit.kt
 src/main/kotlin/com/c2m/api/models/DocumentClass.kt
 src/main/kotlin/com/c2m/api/models/DocumentFormat.kt
 src/main/kotlin/com/c2m/api/models/DocumentSourceIdentifier.kt
@@ -164,7 +162,6 @@ src/test/kotlin/com/c2m/api/models/CreditAmountTest.kt
 src/test/kotlin/com/c2m/api/models/CreditCardDetailsTest.kt
 src/test/kotlin/com/c2m/api/models/CreditCardPaymentTest.kt
 src/test/kotlin/com/c2m/api/models/CurrencyTest.kt
-src/test/kotlin/com/c2m/api/models/DigitTest.kt
 src/test/kotlin/com/c2m/api/models/DocumentClassTest.kt
 src/test/kotlin/com/c2m/api/models/DocumentFormatTest.kt
 src/test/kotlin/com/c2m/api/models/DocumentSourceIdentifierOneOf1Test.kt

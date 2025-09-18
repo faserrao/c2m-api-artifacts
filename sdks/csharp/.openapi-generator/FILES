@@ -17,7 +17,6 @@ docs/models/CreditAmount.md
 docs/models/CreditCardDetails.md
 docs/models/CreditCardPayment.md
 docs/models/Currency.md
-docs/models/Digit.md
 docs/models/DocumentClass.md
 docs/models/DocumentFormat.md
 docs/models/DocumentSourceIdentifier.md
@@ -86,7 +85,6 @@ src/C2M.Api.Test/Model/CreditAmountTests.cs
 src/C2M.Api.Test/Model/CreditCardDetailsTests.cs
 src/C2M.Api.Test/Model/CreditCardPaymentTests.cs
 src/C2M.Api.Test/Model/CurrencyTests.cs
-src/C2M.Api.Test/Model/DigitTests.cs
 src/C2M.Api.Test/Model/DocumentClassTests.cs
 src/C2M.Api.Test/Model/DocumentFormatTests.cs
 src/C2M.Api.Test/Model/DocumentSourceIdentifierOneOf1Tests.cs
@@ -176,7 +174,6 @@ src/C2M.Api/Model/CreditAmount.cs
 src/C2M.Api/Model/CreditCardDetails.cs
 src/C2M.Api/Model/CreditCardPayment.cs
 src/C2M.Api/Model/Currency.cs
-src/C2M.Api/Model/Digit.cs
 src/C2M.Api/Model/DocumentClass.cs
 src/C2M.Api/Model/DocumentFormat.cs
 src/C2M.Api/Model/DocumentSourceIdentifier.cs

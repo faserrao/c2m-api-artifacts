@@ -20,8 +20,6 @@ pub mod credit_card_payment;
 pub use self::credit_card_payment::CreditCardPayment;
 pub mod currency;
 pub use self::currency::Currency;
-pub mod digit;
-pub use self::digit::Digit;
 pub mod document_class;
 pub use self::document_class::DocumentClass;
 pub mod document_format;

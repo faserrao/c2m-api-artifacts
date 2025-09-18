@@ -2,7 +2,7 @@
 
 C2M API v2 - Auth Overlay
 - API version: 2.0.0
-  - Build date: 2025-09-18T21:25:02.791468275Z[Etc/UTC]
+  - Build date: 2025-09-18T23:30:59.692465979Z[Etc/UTC]
   - Generator version: 7.15.0
 
 API for submitting documents with various routing options
@@ -153,7 +153,6 @@ Class | Method | HTTP request | Description
  - [CreditCardDetails](docs/CreditCardDetails.md)
  - [CreditCardPayment](docs/CreditCardPayment.md)
  - [Currency](docs/Currency.md)
- - [Digit](docs/Digit.md)
  - [DocumentClass](docs/DocumentClass.md)
  - [DocumentFormat](docs/DocumentFormat.md)
  - [DocumentSourceIdentifier](docs/DocumentSourceIdentifier.md)

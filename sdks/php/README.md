@@ -106,7 +106,6 @@ Class | Method | HTTP request | Description
 - [CreditCardDetails](docs/Model/CreditCardDetails.md)
 - [CreditCardPayment](docs/Model/CreditCardPayment.md)
 - [Currency](docs/Model/Currency.md)
-- [Digit](docs/Model/Digit.md)
 - [DocumentClass](docs/Model/DocumentClass.md)
 - [DocumentFormat](docs/Model/DocumentFormat.md)
 - [DocumentSourceIdentifier](docs/Model/DocumentSourceIdentifier.md)

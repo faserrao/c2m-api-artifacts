@@ -157,7 +157,6 @@ Class | Method | HTTP request | Description
  - [C2MApiV2AuthOverlay.CreditCardDetails](docs/CreditCardDetails.md)
  - [C2MApiV2AuthOverlay.CreditCardPayment](docs/CreditCardPayment.md)
  - [C2MApiV2AuthOverlay.Currency](docs/Currency.md)
- - [C2MApiV2AuthOverlay.Digit](docs/Digit.md)
  - [C2MApiV2AuthOverlay.DocumentClass](docs/DocumentClass.md)
  - [C2MApiV2AuthOverlay.DocumentFormat](docs/DocumentFormat.md)
  - [C2MApiV2AuthOverlay.DocumentSourceIdentifier](docs/DocumentSourceIdentifier.md)

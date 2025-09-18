@@ -20,7 +20,6 @@ docs/CreditCardDetails.md
 docs/CreditCardPayment.md
 docs/Currency.md
 docs/DefaultAPI.md
-docs/Digit.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
 docs/DocumentSourceIdentifier.md
@@ -85,7 +84,6 @@ model_credit_amount.go
 model_credit_card_details.go
 model_credit_card_payment.go
 model_currency.go
-model_digit.go
 model_document_class.go
 model_document_format.go
 model_document_source_identifier.go

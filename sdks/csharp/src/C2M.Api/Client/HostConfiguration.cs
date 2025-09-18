@@ -56,8 +56,6 @@ namespace C2M.Api.Client
             _jsonOptions.Converters.Add(new CreditCardPaymentJsonConverter());
             _jsonOptions.Converters.Add(new CurrencyJsonConverter());
             _jsonOptions.Converters.Add(new CurrencyNullableJsonConverter());
-            _jsonOptions.Converters.Add(new DigitJsonConverter());
-            _jsonOptions.Converters.Add(new DigitNullableJsonConverter());
             _jsonOptions.Converters.Add(new DocumentClassJsonConverter());
             _jsonOptions.Converters.Add(new DocumentClassNullableJsonConverter());
             _jsonOptions.Converters.Add(new DocumentFormatJsonConverter());

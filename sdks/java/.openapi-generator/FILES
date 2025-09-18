@@ -19,7 +19,6 @@ docs/CreditCardDetails.md
 docs/CreditCardPayment.md
 docs/Currency.md
 docs/DefaultApi.md
-docs/Digit.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
 docs/DocumentSourceIdentifier.md
@@ -110,7 +109,6 @@ src/main/java/com/c2m/model/CreditAmount.java
 src/main/java/com/c2m/model/CreditCardDetails.java
 src/main/java/com/c2m/model/CreditCardPayment.java
 src/main/java/com/c2m/model/Currency.java
-src/main/java/com/c2m/model/Digit.java
 src/main/java/com/c2m/model/DocumentClass.java
 src/main/java/com/c2m/model/DocumentFormat.java
 src/main/java/com/c2m/model/DocumentSourceIdentifier.java
@@ -174,7 +172,6 @@ src/test/java/com/c2m/model/CreditAmountTest.java
 src/test/java/com/c2m/model/CreditCardDetailsTest.java
 src/test/java/com/c2m/model/CreditCardPaymentTest.java
 src/test/java/com/c2m/model/CurrencyTest.java
-src/test/java/com/c2m/model/DigitTest.java
 src/test/java/com/c2m/model/DocumentClassTest.java
 src/test/java/com/c2m/model/DocumentFormatTest.java
 src/test/java/com/c2m/model/DocumentSourceIdentifierOneOf1Test.java

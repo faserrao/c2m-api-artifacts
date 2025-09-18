@@ -26,7 +26,6 @@ if __import__("typing").TYPE_CHECKING:
     from c2m_api.models.credit_card_details import CreditCardDetails
     from c2m_api.models.credit_card_payment import CreditCardPayment
     from c2m_api.models.currency import Currency
-    from c2m_api.models.digit import Digit
     from c2m_api.models.document_class import DocumentClass
     from c2m_api.models.document_format import DocumentFormat
     from c2m_api.models.document_source_identifier import DocumentSourceIdentifier
@@ -96,7 +95,6 @@ from c2m_api.models.credit_amount import CreditAmount
 from c2m_api.models.credit_card_details import CreditCardDetails
 from c2m_api.models.credit_card_payment import CreditCardPayment
 from c2m_api.models.currency import Currency
-from c2m_api.models.digit import Digit
 from c2m_api.models.document_class import DocumentClass
 from c2m_api.models.document_format import DocumentFormat
 from c2m_api.models.document_source_identifier import DocumentSourceIdentifier

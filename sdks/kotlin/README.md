@@ -73,7 +73,6 @@ All URIs are relative to *https://api.example.com/v1*
  - [com.c2m.api.models.CreditCardDetails](docs/CreditCardDetails.md)
  - [com.c2m.api.models.CreditCardPayment](docs/CreditCardPayment.md)
  - [com.c2m.api.models.Currency](docs/Currency.md)
- - [com.c2m.api.models.Digit](docs/Digit.md)
  - [com.c2m.api.models.DocumentClass](docs/DocumentClass.md)
  - [com.c2m.api.models.DocumentFormat](docs/DocumentFormat.md)
  - [com.c2m.api.models.DocumentSourceIdentifier](docs/DocumentSourceIdentifier.md)

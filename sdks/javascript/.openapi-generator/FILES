@@ -16,7 +16,6 @@ docs/CreditCardDetails.md
 docs/CreditCardPayment.md
 docs/Currency.md
 docs/DefaultApi.md
-docs/Digit.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
 docs/DocumentSourceIdentifier.md
@@ -85,7 +84,6 @@ src/c2m_api/model/CreditAmount.js
 src/c2m_api/model/CreditCardDetails.js
 src/c2m_api/model/CreditCardPayment.js
 src/c2m_api/model/Currency.js
-src/c2m_api/model/Digit.js
 src/c2m_api/model/DocumentClass.js
 src/c2m_api/model/DocumentFormat.js
 src/c2m_api/model/DocumentSourceIdentifier.js
@@ -149,7 +147,6 @@ test/c2m_api/model/CreditAmount.spec.js
 test/c2m_api/model/CreditCardDetails.spec.js
 test/c2m_api/model/CreditCardPayment.spec.js
 test/c2m_api/model/Currency.spec.js
-test/c2m_api/model/Digit.spec.js
 test/c2m_api/model/DocumentClass.spec.js
 test/c2m_api/model/DocumentFormat.spec.js
 test/c2m_api/model/DocumentSourceIdentifier.spec.js

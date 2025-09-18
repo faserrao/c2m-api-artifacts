@@ -116,7 +116,6 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::CreditCardDetails](docs/CreditCardDetails.md)
  - [OpenapiClient::CreditCardPayment](docs/CreditCardPayment.md)
  - [OpenapiClient::Currency](docs/Currency.md)
- - [OpenapiClient::Digit](docs/Digit.md)
  - [OpenapiClient::DocumentClass](docs/DocumentClass.md)
  - [OpenapiClient::DocumentFormat](docs/DocumentFormat.md)
  - [OpenapiClient::DocumentSourceIdentifier](docs/DocumentSourceIdentifier.md)

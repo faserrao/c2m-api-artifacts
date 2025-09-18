@@ -24,7 +24,6 @@ import CreditAmount from './model/CreditAmount';
 import CreditCardDetails from './model/CreditCardDetails';
 import CreditCardPayment from './model/CreditCardPayment';
 import Currency from './model/Currency';
-import Digit from './model/Digit';
 import DocumentClass from './model/DocumentClass';
 import DocumentFormat from './model/DocumentFormat';
 import DocumentSourceIdentifier from './model/DocumentSourceIdentifier';
@@ -182,12 +181,6 @@ export {
      * @property {module:c2m_api/model/Currency}
      */
     Currency,
-
-    /**
-     * The Digit model constructor.
-     * @property {module:c2m_api/model/Digit}
-     */
-    Digit,
 
     /**
      * The DocumentClass model constructor.
