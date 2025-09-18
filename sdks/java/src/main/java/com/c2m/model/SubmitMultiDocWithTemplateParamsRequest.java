@@ -52,7 +52,7 @@ import com.c2m.JSON;
 /**
  * SubmitMultiDocWithTemplateParamsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T21:03:06.428694607Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T21:25:02.791468275Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class SubmitMultiDocWithTemplateParamsRequest {
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)

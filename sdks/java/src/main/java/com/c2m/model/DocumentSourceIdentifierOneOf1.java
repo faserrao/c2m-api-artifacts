@@ -48,7 +48,7 @@ import com.c2m.JSON;
 /**
  * DocumentSourceIdentifierOneOf1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T21:03:06.428694607Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T21:25:02.791468275Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class DocumentSourceIdentifierOneOf1 {
   public static final String SERIALIZED_NAME_UPLOAD_REQUEST_ID = "uploadRequestId";
   @SerializedName(SERIALIZED_NAME_UPLOAD_REQUEST_ID)
