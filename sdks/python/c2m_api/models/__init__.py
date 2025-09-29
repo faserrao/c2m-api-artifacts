@@ -28,10 +28,12 @@ if __import__("typing").TYPE_CHECKING:
     from c2m_api.models.currency import Currency
     from c2m_api.models.document_class import DocumentClass
     from c2m_api.models.document_format import DocumentFormat
+    from c2m_api.models.document_source_from_zip import DocumentSourceFromZip
     from c2m_api.models.document_source_identifier import DocumentSourceIdentifier
-    from c2m_api.models.document_source_identifier_one_of import DocumentSourceIdentifierOneOf
-    from c2m_api.models.document_source_identifier_one_of1 import DocumentSourceIdentifierOneOf1
-    from c2m_api.models.document_source_identifier_one_of2 import DocumentSourceIdentifierOneOf2
+    from c2m_api.models.document_source_variant1 import DocumentSourceVariant1
+    from c2m_api.models.document_source_variant2 import DocumentSourceVariant2
+    from c2m_api.models.document_source_with_upload import DocumentSourceWithUpload
+    from c2m_api.models.document_source_with_upload_and_zip import DocumentSourceWithUploadAndZip
     from c2m_api.models.envelope import Envelope
     from c2m_api.models.expiration_date import ExpirationDate
     from c2m_api.models.extraction_spec import ExtractionSpec
@@ -55,6 +57,8 @@ if __import__("typing").TYPE_CHECKING:
     from c2m_api.models.print_option import PrintOption
     from c2m_api.models.recipient_address import RecipientAddress
     from c2m_api.models.recipient_address_source import RecipientAddressSource
+    from c2m_api.models.recipient_address_source_one_of import RecipientAddressSourceOneOf
+    from c2m_api.models.recipient_address_source_one_of1 import RecipientAddressSourceOneOf1
     from c2m_api.models.short_token_request import ShortTokenRequest
     from c2m_api.models.short_token_response import ShortTokenResponse
     from c2m_api.models.single_doc_job_params import SingleDocJobParams
@@ -97,10 +101,12 @@ from c2m_api.models.credit_card_payment import CreditCardPayment
 from c2m_api.models.currency import Currency
 from c2m_api.models.document_class import DocumentClass
 from c2m_api.models.document_format import DocumentFormat
+from c2m_api.models.document_source_from_zip import DocumentSourceFromZip
 from c2m_api.models.document_source_identifier import DocumentSourceIdentifier
-from c2m_api.models.document_source_identifier_one_of import DocumentSourceIdentifierOneOf
-from c2m_api.models.document_source_identifier_one_of1 import DocumentSourceIdentifierOneOf1
-from c2m_api.models.document_source_identifier_one_of2 import DocumentSourceIdentifierOneOf2
+from c2m_api.models.document_source_variant1 import DocumentSourceVariant1
+from c2m_api.models.document_source_variant2 import DocumentSourceVariant2
+from c2m_api.models.document_source_with_upload import DocumentSourceWithUpload
+from c2m_api.models.document_source_with_upload_and_zip import DocumentSourceWithUploadAndZip
 from c2m_api.models.envelope import Envelope
 from c2m_api.models.expiration_date import ExpirationDate
 from c2m_api.models.extraction_spec import ExtractionSpec
@@ -124,6 +130,8 @@ from c2m_api.models.payment_details import PaymentDetails
 from c2m_api.models.print_option import PrintOption
 from c2m_api.models.recipient_address import RecipientAddress
 from c2m_api.models.recipient_address_source import RecipientAddressSource
+from c2m_api.models.recipient_address_source_one_of import RecipientAddressSourceOneOf
+from c2m_api.models.recipient_address_source_one_of1 import RecipientAddressSourceOneOf1
 from c2m_api.models.short_token_request import ShortTokenRequest
 from c2m_api.models.short_token_response import ShortTokenResponse
 from c2m_api.models.single_doc_job_params import SingleDocJobParams

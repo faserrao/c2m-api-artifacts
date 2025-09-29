@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **jobTemplate** | **String** |  | 
-**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
+**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
 **tags** | **[String]** |  | [optional] 
-**recipientAddressSources** | [**[RecipientAddressSource]**](RecipientAddressSource.md) |  | 
 **documentSourceIdentifier** | [**DocumentSourceIdentifier**](DocumentSourceIdentifier.md) |  | 
+**recipientAddressSources** | [**[RecipientAddressSource]**](RecipientAddressSource.md) |  | 
 
 

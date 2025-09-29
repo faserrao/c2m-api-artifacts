@@ -33,79 +33,79 @@ namespace C2M.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSourceIdentifier" /> class.
         /// </summary>
-        /// <param name="int"></param>
-        public DocumentSourceIdentifier(int @int)
+        /// <param name="documentSourceVariant1"></param>
+        public DocumentSourceIdentifier(DocumentSourceVariant1 documentSourceVariant1)
         {
-            Int = @int;
+            DocumentSourceVariant1 = documentSourceVariant1;
             OnCreated();
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSourceIdentifier" /> class.
         /// </summary>
-        /// <param name="string"></param>
-        public DocumentSourceIdentifier(string @string)
+        /// <param name="documentSourceVariant2"></param>
+        public DocumentSourceIdentifier(DocumentSourceVariant2 documentSourceVariant2)
         {
-            String = @string;
+            DocumentSourceVariant2 = documentSourceVariant2;
             OnCreated();
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSourceIdentifier" /> class.
         /// </summary>
-        /// <param name="documentSourceIdentifierOneOf"></param>
-        public DocumentSourceIdentifier(DocumentSourceIdentifierOneOf documentSourceIdentifierOneOf)
+        /// <param name="documentSourceWithUpload"></param>
+        public DocumentSourceIdentifier(DocumentSourceWithUpload documentSourceWithUpload)
         {
-            DocumentSourceIdentifierOneOf = documentSourceIdentifierOneOf;
+            DocumentSourceWithUpload = documentSourceWithUpload;
             OnCreated();
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSourceIdentifier" /> class.
         /// </summary>
-        /// <param name="documentSourceIdentifierOneOf1"></param>
-        public DocumentSourceIdentifier(DocumentSourceIdentifierOneOf1 documentSourceIdentifierOneOf1)
+        /// <param name="documentSourceWithUploadAndZip"></param>
+        public DocumentSourceIdentifier(DocumentSourceWithUploadAndZip documentSourceWithUploadAndZip)
         {
-            DocumentSourceIdentifierOneOf1 = documentSourceIdentifierOneOf1;
+            DocumentSourceWithUploadAndZip = documentSourceWithUploadAndZip;
             OnCreated();
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSourceIdentifier" /> class.
         /// </summary>
-        /// <param name="documentSourceIdentifierOneOf2"></param>
-        public DocumentSourceIdentifier(DocumentSourceIdentifierOneOf2 documentSourceIdentifierOneOf2)
+        /// <param name="documentSourceFromZip"></param>
+        public DocumentSourceIdentifier(DocumentSourceFromZip documentSourceFromZip)
         {
-            DocumentSourceIdentifierOneOf2 = documentSourceIdentifierOneOf2;
+            DocumentSourceFromZip = documentSourceFromZip;
             OnCreated();
         }
 
         partial void OnCreated();
 
         /// <summary>
-        /// Gets or Sets Int
+        /// Gets or Sets DocumentSourceVariant1
         /// </summary>
-        public int? Int { get; set; }
+        public DocumentSourceVariant1? DocumentSourceVariant1 { get; set; }
 
         /// <summary>
-        /// Gets or Sets String
+        /// Gets or Sets DocumentSourceVariant2
         /// </summary>
-        public string? String { get; set; }
+        public DocumentSourceVariant2? DocumentSourceVariant2 { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentSourceIdentifierOneOf
+        /// Gets or Sets DocumentSourceWithUpload
         /// </summary>
-        public DocumentSourceIdentifierOneOf? DocumentSourceIdentifierOneOf { get; set; }
+        public DocumentSourceWithUpload? DocumentSourceWithUpload { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentSourceIdentifierOneOf1
+        /// Gets or Sets DocumentSourceWithUploadAndZip
         /// </summary>
-        public DocumentSourceIdentifierOneOf1? DocumentSourceIdentifierOneOf1 { get; set; }
+        public DocumentSourceWithUploadAndZip? DocumentSourceWithUploadAndZip { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentSourceIdentifierOneOf2
+        /// Gets or Sets DocumentSourceFromZip
         /// </summary>
-        public DocumentSourceIdentifierOneOf2? DocumentSourceIdentifierOneOf2 { get; set; }
+        public DocumentSourceFromZip? DocumentSourceFromZip { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -152,11 +152,11 @@ namespace C2M.Api.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            int? varInt = default;
-            string? varString = default;
-            DocumentSourceIdentifierOneOf? documentSourceIdentifierOneOf = default;
-            DocumentSourceIdentifierOneOf1? documentSourceIdentifierOneOf1 = default;
-            DocumentSourceIdentifierOneOf2? documentSourceIdentifierOneOf2 = default;
+            DocumentSourceVariant1? documentSourceVariant1 = default;
+            DocumentSourceVariant2? documentSourceVariant2 = default;
+            DocumentSourceWithUpload? documentSourceWithUpload = default;
+            DocumentSourceWithUploadAndZip? documentSourceWithUploadAndZip = default;
+            DocumentSourceFromZip? documentSourceFromZip = default;
 
             Utf8JsonReader utf8JsonReaderOneOf = utf8JsonReader;
             while (utf8JsonReaderOneOf.Read())
@@ -169,20 +169,20 @@ namespace C2M.Api.Model
 
                 if (utf8JsonReaderOneOf.TokenType == JsonTokenType.PropertyName && currentDepth == utf8JsonReaderOneOf.CurrentDepth - 1)
                 {
-                    Utf8JsonReader utf8JsonReaderInt = utf8JsonReader;
-                    ClientUtils.TryDeserialize<int?>(ref utf8JsonReaderInt, jsonSerializerOptions, out varInt);
+                    Utf8JsonReader utf8JsonReaderDocumentSourceVariant1 = utf8JsonReader;
+                    ClientUtils.TryDeserialize<DocumentSourceVariant1?>(ref utf8JsonReaderDocumentSourceVariant1, jsonSerializerOptions, out documentSourceVariant1);
 
-                    Utf8JsonReader utf8JsonReaderString = utf8JsonReader;
-                    ClientUtils.TryDeserialize<string?>(ref utf8JsonReaderString, jsonSerializerOptions, out varString);
+                    Utf8JsonReader utf8JsonReaderDocumentSourceVariant2 = utf8JsonReader;
+                    ClientUtils.TryDeserialize<DocumentSourceVariant2?>(ref utf8JsonReaderDocumentSourceVariant2, jsonSerializerOptions, out documentSourceVariant2);
 
-                    Utf8JsonReader utf8JsonReaderDocumentSourceIdentifierOneOf = utf8JsonReader;
-                    ClientUtils.TryDeserialize<DocumentSourceIdentifierOneOf?>(ref utf8JsonReaderDocumentSourceIdentifierOneOf, jsonSerializerOptions, out documentSourceIdentifierOneOf);
+                    Utf8JsonReader utf8JsonReaderDocumentSourceWithUpload = utf8JsonReader;
+                    ClientUtils.TryDeserialize<DocumentSourceWithUpload?>(ref utf8JsonReaderDocumentSourceWithUpload, jsonSerializerOptions, out documentSourceWithUpload);
 
-                    Utf8JsonReader utf8JsonReaderDocumentSourceIdentifierOneOf1 = utf8JsonReader;
-                    ClientUtils.TryDeserialize<DocumentSourceIdentifierOneOf1?>(ref utf8JsonReaderDocumentSourceIdentifierOneOf1, jsonSerializerOptions, out documentSourceIdentifierOneOf1);
+                    Utf8JsonReader utf8JsonReaderDocumentSourceWithUploadAndZip = utf8JsonReader;
+                    ClientUtils.TryDeserialize<DocumentSourceWithUploadAndZip?>(ref utf8JsonReaderDocumentSourceWithUploadAndZip, jsonSerializerOptions, out documentSourceWithUploadAndZip);
 
-                    Utf8JsonReader utf8JsonReaderDocumentSourceIdentifierOneOf2 = utf8JsonReader;
-                    ClientUtils.TryDeserialize<DocumentSourceIdentifierOneOf2?>(ref utf8JsonReaderDocumentSourceIdentifierOneOf2, jsonSerializerOptions, out documentSourceIdentifierOneOf2);
+                    Utf8JsonReader utf8JsonReaderDocumentSourceFromZip = utf8JsonReader;
+                    ClientUtils.TryDeserialize<DocumentSourceFromZip?>(ref utf8JsonReaderDocumentSourceFromZip, jsonSerializerOptions, out documentSourceFromZip);
                 }
             }
 
@@ -207,20 +207,20 @@ namespace C2M.Api.Model
                 }
             }
 
-            if (varInt != null)
-                return new DocumentSourceIdentifier(varInt.Value);
+            if (documentSourceVariant1 != null)
+                return new DocumentSourceIdentifier(documentSourceVariant1);
 
-            if (varString != null)
-                return new DocumentSourceIdentifier(varString);
+            if (documentSourceVariant2 != null)
+                return new DocumentSourceIdentifier(documentSourceVariant2);
 
-            if (documentSourceIdentifierOneOf != null)
-                return new DocumentSourceIdentifier(documentSourceIdentifierOneOf);
+            if (documentSourceWithUpload != null)
+                return new DocumentSourceIdentifier(documentSourceWithUpload);
 
-            if (documentSourceIdentifierOneOf1 != null)
-                return new DocumentSourceIdentifier(documentSourceIdentifierOneOf1);
+            if (documentSourceWithUploadAndZip != null)
+                return new DocumentSourceIdentifier(documentSourceWithUploadAndZip);
 
-            if (documentSourceIdentifierOneOf2 != null)
-                return new DocumentSourceIdentifier(documentSourceIdentifierOneOf2);
+            if (documentSourceFromZip != null)
+                return new DocumentSourceIdentifier(documentSourceFromZip);
 
             throw new JsonException();
         }

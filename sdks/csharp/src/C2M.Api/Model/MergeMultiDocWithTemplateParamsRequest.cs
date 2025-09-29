@@ -34,15 +34,17 @@ namespace C2M.Api.Model
         /// Initializes a new instance of the <see cref="MergeMultiDocWithTemplateParamsRequest" /> class.
         /// </summary>
         /// <param name="documentsToMerge">documentsToMerge</param>
+        /// <param name="recipientAddressSource">recipientAddressSource</param>
         /// <param name="jobTemplate">jobTemplate</param>
         /// <param name="paymentDetails">paymentDetails</param>
         /// <param name="tags">tags</param>
         [JsonConstructor]
-        public MergeMultiDocWithTemplateParamsRequest(List<DocumentSourceIdentifier> documentsToMerge, string jobTemplate, PaymentDetails paymentDetails, Option<List<string>?> tags = default)
+        public MergeMultiDocWithTemplateParamsRequest(List<DocumentSourceIdentifier> documentsToMerge, RecipientAddressSource recipientAddressSource, string jobTemplate, Option<PaymentDetails?> paymentDetails = default, Option<List<string>?> tags = default)
         {
             DocumentsToMerge = documentsToMerge;
+            RecipientAddressSource = recipientAddressSource;
             JobTemplate = jobTemplate;
-            PaymentDetails = paymentDetails;
+            PaymentDetailsOption = paymentDetails;
             TagsOption = tags;
             OnCreated();
         }
@@ -56,16 +58,29 @@ namespace C2M.Api.Model
         public List<DocumentSourceIdentifier> DocumentsToMerge { get; set; }
 
         /// <summary>
+        /// Gets or Sets RecipientAddressSource
+        /// </summary>
+        [JsonPropertyName("recipientAddressSource")]
+        public RecipientAddressSource RecipientAddressSource { get; set; }
+
+        /// <summary>
         /// Gets or Sets JobTemplate
         /// </summary>
         [JsonPropertyName("jobTemplate")]
         public string JobTemplate { get; set; }
 
         /// <summary>
+        /// Used to track the state of PaymentDetails
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<PaymentDetails?> PaymentDetailsOption { get; private set; }
+
+        /// <summary>
         /// Gets or Sets PaymentDetails
         /// </summary>
         [JsonPropertyName("paymentDetails")]
-        public PaymentDetails PaymentDetails { get; set; }
+        public PaymentDetails? PaymentDetails { get { return this.PaymentDetailsOption; } set { this.PaymentDetailsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Tags
@@ -89,6 +104,7 @@ namespace C2M.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class MergeMultiDocWithTemplateParamsRequest {\n");
             sb.Append("  DocumentsToMerge: ").Append(DocumentsToMerge).Append("\n");
+            sb.Append("  RecipientAddressSource: ").Append(RecipientAddressSource).Append("\n");
             sb.Append("  JobTemplate: ").Append(JobTemplate).Append("\n");
             sb.Append("  PaymentDetails: ").Append(PaymentDetails).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
@@ -130,6 +146,7 @@ namespace C2M.Api.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<List<DocumentSourceIdentifier>?> documentsToMerge = default;
+            Option<RecipientAddressSource?> recipientAddressSource = default;
             Option<string?> jobTemplate = default;
             Option<PaymentDetails?> paymentDetails = default;
             Option<List<string>?> tags = default;
@@ -152,6 +169,9 @@ namespace C2M.Api.Model
                         case "documentsToMerge":
                             documentsToMerge = new Option<List<DocumentSourceIdentifier>?>(JsonSerializer.Deserialize<List<DocumentSourceIdentifier>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
+                        case "recipientAddressSource":
+                            recipientAddressSource = new Option<RecipientAddressSource?>(JsonSerializer.Deserialize<RecipientAddressSource>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
                         case "jobTemplate":
                             jobTemplate = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
@@ -170,14 +190,17 @@ namespace C2M.Api.Model
             if (!documentsToMerge.IsSet)
                 throw new ArgumentException("Property is required for class MergeMultiDocWithTemplateParamsRequest.", nameof(documentsToMerge));
 
+            if (!recipientAddressSource.IsSet)
+                throw new ArgumentException("Property is required for class MergeMultiDocWithTemplateParamsRequest.", nameof(recipientAddressSource));
+
             if (!jobTemplate.IsSet)
                 throw new ArgumentException("Property is required for class MergeMultiDocWithTemplateParamsRequest.", nameof(jobTemplate));
 
-            if (!paymentDetails.IsSet)
-                throw new ArgumentException("Property is required for class MergeMultiDocWithTemplateParamsRequest.", nameof(paymentDetails));
-
             if (documentsToMerge.IsSet && documentsToMerge.Value == null)
                 throw new ArgumentNullException(nameof(documentsToMerge), "Property is not nullable for class MergeMultiDocWithTemplateParamsRequest.");
+
+            if (recipientAddressSource.IsSet && recipientAddressSource.Value == null)
+                throw new ArgumentNullException(nameof(recipientAddressSource), "Property is not nullable for class MergeMultiDocWithTemplateParamsRequest.");
 
             if (jobTemplate.IsSet && jobTemplate.Value == null)
                 throw new ArgumentNullException(nameof(jobTemplate), "Property is not nullable for class MergeMultiDocWithTemplateParamsRequest.");
@@ -188,7 +211,7 @@ namespace C2M.Api.Model
             if (tags.IsSet && tags.Value == null)
                 throw new ArgumentNullException(nameof(tags), "Property is not nullable for class MergeMultiDocWithTemplateParamsRequest.");
 
-            return new MergeMultiDocWithTemplateParamsRequest(documentsToMerge.Value!, jobTemplate.Value!, paymentDetails.Value!, tags);
+            return new MergeMultiDocWithTemplateParamsRequest(documentsToMerge.Value!, recipientAddressSource.Value!, jobTemplate.Value!, paymentDetails, tags);
         }
 
         /// <summary>
@@ -218,10 +241,13 @@ namespace C2M.Api.Model
             if (mergeMultiDocWithTemplateParamsRequest.DocumentsToMerge == null)
                 throw new ArgumentNullException(nameof(mergeMultiDocWithTemplateParamsRequest.DocumentsToMerge), "Property is required for class MergeMultiDocWithTemplateParamsRequest.");
 
+            if (mergeMultiDocWithTemplateParamsRequest.RecipientAddressSource == null)
+                throw new ArgumentNullException(nameof(mergeMultiDocWithTemplateParamsRequest.RecipientAddressSource), "Property is required for class MergeMultiDocWithTemplateParamsRequest.");
+
             if (mergeMultiDocWithTemplateParamsRequest.JobTemplate == null)
                 throw new ArgumentNullException(nameof(mergeMultiDocWithTemplateParamsRequest.JobTemplate), "Property is required for class MergeMultiDocWithTemplateParamsRequest.");
 
-            if (mergeMultiDocWithTemplateParamsRequest.PaymentDetails == null)
+            if (mergeMultiDocWithTemplateParamsRequest.PaymentDetailsOption.IsSet && mergeMultiDocWithTemplateParamsRequest.PaymentDetails == null)
                 throw new ArgumentNullException(nameof(mergeMultiDocWithTemplateParamsRequest.PaymentDetails), "Property is required for class MergeMultiDocWithTemplateParamsRequest.");
 
             if (mergeMultiDocWithTemplateParamsRequest.TagsOption.IsSet && mergeMultiDocWithTemplateParamsRequest.Tags == null)
@@ -229,10 +255,15 @@ namespace C2M.Api.Model
 
             writer.WritePropertyName("documentsToMerge");
             JsonSerializer.Serialize(writer, mergeMultiDocWithTemplateParamsRequest.DocumentsToMerge, jsonSerializerOptions);
+            writer.WritePropertyName("recipientAddressSource");
+            JsonSerializer.Serialize(writer, mergeMultiDocWithTemplateParamsRequest.RecipientAddressSource, jsonSerializerOptions);
             writer.WriteString("jobTemplate", mergeMultiDocWithTemplateParamsRequest.JobTemplate);
 
-            writer.WritePropertyName("paymentDetails");
-            JsonSerializer.Serialize(writer, mergeMultiDocWithTemplateParamsRequest.PaymentDetails, jsonSerializerOptions);
+            if (mergeMultiDocWithTemplateParamsRequest.PaymentDetailsOption.IsSet)
+            {
+                writer.WritePropertyName("paymentDetails");
+                JsonSerializer.Serialize(writer, mergeMultiDocWithTemplateParamsRequest.PaymentDetails, jsonSerializerOptions);
+            }
             if (mergeMultiDocWithTemplateParamsRequest.TagsOption.IsSet)
             {
                 writer.WritePropertyName("tags");

@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import DocumentSourceIdentifier from './DocumentSourceIdentifier';
 import PaymentDetails from './PaymentDetails';
+import RecipientAddressSource from './RecipientAddressSource';
 
 /**
  * The MergeMultiDocWithTemplateParamsRequest model module.
@@ -25,12 +26,12 @@ class MergeMultiDocWithTemplateParamsRequest {
      * Constructs a new <code>MergeMultiDocWithTemplateParamsRequest</code>.
      * @alias module:c2m_api/model/MergeMultiDocWithTemplateParamsRequest
      * @param documentsToMerge {Array.<module:c2m_api/model/DocumentSourceIdentifier>} 
+     * @param recipientAddressSource {module:c2m_api/model/RecipientAddressSource} 
      * @param jobTemplate {String} 
-     * @param paymentDetails {module:c2m_api/model/PaymentDetails} 
      */
-    constructor(documentsToMerge, jobTemplate, paymentDetails) { 
+    constructor(documentsToMerge, recipientAddressSource, jobTemplate) { 
         
-        MergeMultiDocWithTemplateParamsRequest.initialize(this, documentsToMerge, jobTemplate, paymentDetails);
+        MergeMultiDocWithTemplateParamsRequest.initialize(this, documentsToMerge, recipientAddressSource, jobTemplate);
     }
 
     /**
@@ -38,10 +39,10 @@ class MergeMultiDocWithTemplateParamsRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, documentsToMerge, jobTemplate, paymentDetails) { 
+    static initialize(obj, documentsToMerge, recipientAddressSource, jobTemplate) { 
         obj['documentsToMerge'] = documentsToMerge;
+        obj['recipientAddressSource'] = recipientAddressSource;
         obj['jobTemplate'] = jobTemplate;
-        obj['paymentDetails'] = paymentDetails;
     }
 
     /**
@@ -57,6 +58,9 @@ class MergeMultiDocWithTemplateParamsRequest {
 
             if (data.hasOwnProperty('documentsToMerge')) {
                 obj['documentsToMerge'] = ApiClient.convertToType(data['documentsToMerge'], [DocumentSourceIdentifier]);
+            }
+            if (data.hasOwnProperty('recipientAddressSource')) {
+                obj['recipientAddressSource'] = RecipientAddressSource.constructFromObject(data['recipientAddressSource']);
             }
             if (data.hasOwnProperty('jobTemplate')) {
                 obj['jobTemplate'] = ApiClient.convertToType(data['jobTemplate'], 'String');
@@ -93,6 +97,10 @@ class MergeMultiDocWithTemplateParamsRequest {
                 DocumentSourceIdentifier.validateJSON(item);
             };
         }
+        // validate the optional field `recipientAddressSource`
+        if (data['recipientAddressSource']) { // data not null
+          RecipientAddressSource.validateJSON(data['recipientAddressSource']);
+        }
         // ensure the json data is a string
         if (data['jobTemplate'] && !(typeof data['jobTemplate'] === 'string' || data['jobTemplate'] instanceof String)) {
             throw new Error("Expected the field `jobTemplate` to be a primitive type in the JSON string but got " + data['jobTemplate']);
@@ -112,12 +120,17 @@ class MergeMultiDocWithTemplateParamsRequest {
 
 }
 
-MergeMultiDocWithTemplateParamsRequest.RequiredProperties = ["documentsToMerge", "jobTemplate", "paymentDetails"];
+MergeMultiDocWithTemplateParamsRequest.RequiredProperties = ["documentsToMerge", "recipientAddressSource", "jobTemplate"];
 
 /**
  * @member {Array.<module:c2m_api/model/DocumentSourceIdentifier>} documentsToMerge
  */
 MergeMultiDocWithTemplateParamsRequest.prototype['documentsToMerge'] = undefined;
+
+/**
+ * @member {module:c2m_api/model/RecipientAddressSource} recipientAddressSource
+ */
+MergeMultiDocWithTemplateParamsRequest.prototype['recipientAddressSource'] = undefined;
 
 /**
  * @member {String} jobTemplate

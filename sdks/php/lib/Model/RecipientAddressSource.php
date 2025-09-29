@@ -67,7 +67,9 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         'nick_name' => 'string',
         'address2' => 'string',
         'address3' => 'string',
-        'phone_number' => 'string'
+        'phone_number' => 'string',
+        'address_list_id' => 'int',
+        'address_id' => 'int'
     ];
 
     /**
@@ -88,7 +90,9 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         'nick_name' => null,
         'address2' => null,
         'address3' => null,
-        'phone_number' => null
+        'phone_number' => null,
+        'address_list_id' => null,
+        'address_id' => null
     ];
 
     /**
@@ -107,7 +111,9 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         'nick_name' => false,
         'address2' => false,
         'address3' => false,
-        'phone_number' => false
+        'phone_number' => false,
+        'address_list_id' => false,
+        'address_id' => false
     ];
 
     /**
@@ -206,7 +212,9 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         'nick_name' => 'nickName',
         'address2' => 'address2',
         'address3' => 'address3',
-        'phone_number' => 'phoneNumber'
+        'phone_number' => 'phoneNumber',
+        'address_list_id' => 'addressListId',
+        'address_id' => 'addressId'
     ];
 
     /**
@@ -225,7 +233,9 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         'nick_name' => 'setNickName',
         'address2' => 'setAddress2',
         'address3' => 'setAddress3',
-        'phone_number' => 'setPhoneNumber'
+        'phone_number' => 'setPhoneNumber',
+        'address_list_id' => 'setAddressListId',
+        'address_id' => 'setAddressId'
     ];
 
     /**
@@ -244,7 +254,9 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         'nick_name' => 'getNickName',
         'address2' => 'getAddress2',
         'address3' => 'getAddress3',
-        'phone_number' => 'getPhoneNumber'
+        'phone_number' => 'getPhoneNumber',
+        'address_list_id' => 'getAddressListId',
+        'address_id' => 'getAddressId'
     ];
 
     /**
@@ -315,6 +327,8 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('address2', $data ?? [], null);
         $this->setIfExists('address3', $data ?? [], null);
         $this->setIfExists('phone_number', $data ?? [], null);
+        $this->setIfExists('address_list_id', $data ?? [], null);
+        $this->setIfExists('address_id', $data ?? [], null);
     }
 
     /**
@@ -364,6 +378,12 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
+        }
+        if ($this->container['address_list_id'] === null) {
+            $invalidProperties[] = "'address_list_id' can't be null";
+        }
+        if ($this->container['address_id'] === null) {
+            $invalidProperties[] = "'address_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -673,6 +693,60 @@ class RecipientAddressSource implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_list_id
+     *
+     * @return int
+     */
+    public function getAddressListId()
+    {
+        return $this->container['address_list_id'];
+    }
+
+    /**
+     * Sets address_list_id
+     *
+     * @param int $address_list_id address_list_id
+     *
+     * @return self
+     */
+    public function setAddressListId($address_list_id)
+    {
+        if (is_null($address_list_id)) {
+            throw new \InvalidArgumentException('non-nullable address_list_id cannot be null');
+        }
+        $this->container['address_list_id'] = $address_list_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_id
+     *
+     * @return int
+     */
+    public function getAddressId()
+    {
+        return $this->container['address_id'];
+    }
+
+    /**
+     * Sets address_id
+     *
+     * @param int $address_id address_id
+     *
+     * @return self
+     */
+    public function setAddressId($address_id)
+    {
+        if (is_null($address_id)) {
+            throw new \InvalidArgumentException('non-nullable address_id cannot be null');
+        }
+        $this->container['address_id'] = $address_id;
 
         return $this;
     }

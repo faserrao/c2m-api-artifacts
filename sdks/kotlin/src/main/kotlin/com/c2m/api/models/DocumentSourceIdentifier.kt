@@ -15,9 +15,11 @@
 
 package com.c2m.api.models
 
-import com.c2m.api.models.DocumentSourceIdentifierOneOf
-import com.c2m.api.models.DocumentSourceIdentifierOneOf1
-import com.c2m.api.models.DocumentSourceIdentifierOneOf2
+import com.c2m.api.models.DocumentSourceFromZip
+import com.c2m.api.models.DocumentSourceVariant1
+import com.c2m.api.models.DocumentSourceVariant2
+import com.c2m.api.models.DocumentSourceWithUpload
+import com.c2m.api.models.DocumentSourceWithUploadAndZip
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -25,6 +27,8 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param documentId 
+ * @param externalUrl 
  * @param uploadRequestId 
  * @param documentName 
  * @param zipId 
@@ -32,6 +36,12 @@ import com.squareup.moshi.JsonClass
 
 
 data class DocumentSourceIdentifier (
+
+    @Json(name = "documentId")
+    val documentId: kotlin.Int,
+
+    @Json(name = "externalUrl")
+    val externalUrl: java.net.URI,
 
     @Json(name = "uploadRequestId")
     val uploadRequestId: kotlin.Int,

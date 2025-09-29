@@ -4,11 +4,11 @@
 
 | Name | Description |
 |---- | -----|
-| DocumentSourceIdentifierOneOf |  |
-| DocumentSourceIdentifierOneOf1 |  |
-| DocumentSourceIdentifierOneOf2 |  |
-| String |  |
-| i32 |  |
+| DocumentSourceFromZip |  |
+| DocumentSourceVariant1 |  |
+| DocumentSourceVariant2 |  |
+| DocumentSourceWithUpload |  |
+| DocumentSourceWithUploadAndZip |  |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

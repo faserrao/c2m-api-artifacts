@@ -12,9 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import DocumentSourceIdentifierOneOf from './DocumentSourceIdentifierOneOf';
-import DocumentSourceIdentifierOneOf1 from './DocumentSourceIdentifierOneOf1';
-import DocumentSourceIdentifierOneOf2 from './DocumentSourceIdentifierOneOf2';
+import DocumentSourceFromZip from './DocumentSourceFromZip';
+import DocumentSourceVariant1 from './DocumentSourceVariant1';
+import DocumentSourceVariant2 from './DocumentSourceVariant2';
+import DocumentSourceWithUpload from './DocumentSourceWithUpload';
+import DocumentSourceWithUploadAndZip from './DocumentSourceWithUploadAndZip';
 
 /**
  * The DocumentSourceIdentifier model module.
@@ -25,7 +27,7 @@ class DocumentSourceIdentifier {
     /**
      * Constructs a new <code>DocumentSourceIdentifier</code>.
      * @alias module:c2m_api/model/DocumentSourceIdentifier
-     * @param {(module:c2m_api/model/DocumentSourceIdentifierOneOf|module:c2m_api/model/DocumentSourceIdentifierOneOf1|module:c2m_api/model/DocumentSourceIdentifierOneOf2|module:c2m_api/model/Number|module:c2m_api/model/String)} instance The actual instance to initialize DocumentSourceIdentifier.
+     * @param {(module:c2m_api/model/DocumentSourceFromZip|module:c2m_api/model/DocumentSourceVariant1|module:c2m_api/model/DocumentSourceVariant2|module:c2m_api/model/DocumentSourceWithUpload|module:c2m_api/model/DocumentSourceWithUploadAndZip)} instance The actual instance to initialize DocumentSourceIdentifier.
      */
     constructor(instance = null) {
         if (instance === null) {
@@ -35,82 +37,90 @@ class DocumentSourceIdentifier {
         var match = 0;
         var errorMessages = [];
         try {
-            // validate integer
-            if (!(typeof instance === 'number' && instance % 1 === 0)) {
-                throw new Error("Invalid value. Must be integer. Input: " + JSON.stringify(instance));
-            }
-            this.actualInstance = instance;
-            match++;
-        } catch(err) {
-            // json data failed to deserialize into Number
-            errorMessages.push("Failed to construct Number: " + err)
-        }
-
-        try {
-            // validate string
-            if (!(typeof instance === 'string')) {
-                throw new Error("Invalid value. Must be string. Input: " + JSON.stringify(instance));
-            }
-            this.actualInstance = instance;
-            match++;
-        } catch(err) {
-            // json data failed to deserialize into String
-            errorMessages.push("Failed to construct String: " + err)
-        }
-
-        try {
-            if (typeof instance === "DocumentSourceIdentifierOneOf") {
+            if (typeof instance === "DocumentSourceVariant1") {
                 this.actualInstance = instance;
             } else {
                 // plain JS object
                 // validate the object
-                DocumentSourceIdentifierOneOf.validateJSON(instance); // throw an exception if no match
-                // create DocumentSourceIdentifierOneOf from JS object
-                this.actualInstance = DocumentSourceIdentifierOneOf.constructFromObject(instance);
+                DocumentSourceVariant1.validateJSON(instance); // throw an exception if no match
+                // create DocumentSourceVariant1 from JS object
+                this.actualInstance = DocumentSourceVariant1.constructFromObject(instance);
             }
             match++;
         } catch(err) {
-            // json data failed to deserialize into DocumentSourceIdentifierOneOf
-            errorMessages.push("Failed to construct DocumentSourceIdentifierOneOf: " + err)
+            // json data failed to deserialize into DocumentSourceVariant1
+            errorMessages.push("Failed to construct DocumentSourceVariant1: " + err)
         }
 
         try {
-            if (typeof instance === "DocumentSourceIdentifierOneOf1") {
+            if (typeof instance === "DocumentSourceVariant2") {
                 this.actualInstance = instance;
             } else {
                 // plain JS object
                 // validate the object
-                DocumentSourceIdentifierOneOf1.validateJSON(instance); // throw an exception if no match
-                // create DocumentSourceIdentifierOneOf1 from JS object
-                this.actualInstance = DocumentSourceIdentifierOneOf1.constructFromObject(instance);
+                DocumentSourceVariant2.validateJSON(instance); // throw an exception if no match
+                // create DocumentSourceVariant2 from JS object
+                this.actualInstance = DocumentSourceVariant2.constructFromObject(instance);
             }
             match++;
         } catch(err) {
-            // json data failed to deserialize into DocumentSourceIdentifierOneOf1
-            errorMessages.push("Failed to construct DocumentSourceIdentifierOneOf1: " + err)
+            // json data failed to deserialize into DocumentSourceVariant2
+            errorMessages.push("Failed to construct DocumentSourceVariant2: " + err)
         }
 
         try {
-            if (typeof instance === "DocumentSourceIdentifierOneOf2") {
+            if (typeof instance === "DocumentSourceWithUpload") {
                 this.actualInstance = instance;
             } else {
                 // plain JS object
                 // validate the object
-                DocumentSourceIdentifierOneOf2.validateJSON(instance); // throw an exception if no match
-                // create DocumentSourceIdentifierOneOf2 from JS object
-                this.actualInstance = DocumentSourceIdentifierOneOf2.constructFromObject(instance);
+                DocumentSourceWithUpload.validateJSON(instance); // throw an exception if no match
+                // create DocumentSourceWithUpload from JS object
+                this.actualInstance = DocumentSourceWithUpload.constructFromObject(instance);
             }
             match++;
         } catch(err) {
-            // json data failed to deserialize into DocumentSourceIdentifierOneOf2
-            errorMessages.push("Failed to construct DocumentSourceIdentifierOneOf2: " + err)
+            // json data failed to deserialize into DocumentSourceWithUpload
+            errorMessages.push("Failed to construct DocumentSourceWithUpload: " + err)
+        }
+
+        try {
+            if (typeof instance === "DocumentSourceWithUploadAndZip") {
+                this.actualInstance = instance;
+            } else {
+                // plain JS object
+                // validate the object
+                DocumentSourceWithUploadAndZip.validateJSON(instance); // throw an exception if no match
+                // create DocumentSourceWithUploadAndZip from JS object
+                this.actualInstance = DocumentSourceWithUploadAndZip.constructFromObject(instance);
+            }
+            match++;
+        } catch(err) {
+            // json data failed to deserialize into DocumentSourceWithUploadAndZip
+            errorMessages.push("Failed to construct DocumentSourceWithUploadAndZip: " + err)
+        }
+
+        try {
+            if (typeof instance === "DocumentSourceFromZip") {
+                this.actualInstance = instance;
+            } else {
+                // plain JS object
+                // validate the object
+                DocumentSourceFromZip.validateJSON(instance); // throw an exception if no match
+                // create DocumentSourceFromZip from JS object
+                this.actualInstance = DocumentSourceFromZip.constructFromObject(instance);
+            }
+            match++;
+        } catch(err) {
+            // json data failed to deserialize into DocumentSourceFromZip
+            errorMessages.push("Failed to construct DocumentSourceFromZip: " + err)
         }
 
         if (match > 1) {
-            throw new Error("Multiple matches found constructing `DocumentSourceIdentifier` with oneOf schemas DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Number, String. Input: " + JSON.stringify(instance));
+            throw new Error("Multiple matches found constructing `DocumentSourceIdentifier` with oneOf schemas DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. Input: " + JSON.stringify(instance));
         } else if (match === 0) {
             this.actualInstance = null; // clear the actual instance in case there are multiple matches
-            throw new Error("No match found constructing `DocumentSourceIdentifier` with oneOf schemas DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Number, String. Details: " +
+            throw new Error("No match found constructing `DocumentSourceIdentifier` with oneOf schemas DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. Details: " +
                             errorMessages.join(", "));
         } else { // only 1 match
             // the input is valid
@@ -129,16 +139,16 @@ class DocumentSourceIdentifier {
     }
 
     /**
-     * Gets the actual instance, which can be <code>DocumentSourceIdentifierOneOf</code>, <code>DocumentSourceIdentifierOneOf1</code>, <code>DocumentSourceIdentifierOneOf2</code>, <code>Number</code>, <code>String</code>.
-     * @return {(module:c2m_api/model/DocumentSourceIdentifierOneOf|module:c2m_api/model/DocumentSourceIdentifierOneOf1|module:c2m_api/model/DocumentSourceIdentifierOneOf2|module:c2m_api/model/Number|module:c2m_api/model/String)} The actual instance.
+     * Gets the actual instance, which can be <code>DocumentSourceFromZip</code>, <code>DocumentSourceVariant1</code>, <code>DocumentSourceVariant2</code>, <code>DocumentSourceWithUpload</code>, <code>DocumentSourceWithUploadAndZip</code>.
+     * @return {(module:c2m_api/model/DocumentSourceFromZip|module:c2m_api/model/DocumentSourceVariant1|module:c2m_api/model/DocumentSourceVariant2|module:c2m_api/model/DocumentSourceWithUpload|module:c2m_api/model/DocumentSourceWithUploadAndZip)} The actual instance.
      */
     getActualInstance() {
         return this.actualInstance;
     }
 
     /**
-     * Sets the actual instance, which can be <code>DocumentSourceIdentifierOneOf</code>, <code>DocumentSourceIdentifierOneOf1</code>, <code>DocumentSourceIdentifierOneOf2</code>, <code>Number</code>, <code>String</code>.
-     * @param {(module:c2m_api/model/DocumentSourceIdentifierOneOf|module:c2m_api/model/DocumentSourceIdentifierOneOf1|module:c2m_api/model/DocumentSourceIdentifierOneOf2|module:c2m_api/model/Number|module:c2m_api/model/String)} obj The actual instance.
+     * Sets the actual instance, which can be <code>DocumentSourceFromZip</code>, <code>DocumentSourceVariant1</code>, <code>DocumentSourceVariant2</code>, <code>DocumentSourceWithUpload</code>, <code>DocumentSourceWithUploadAndZip</code>.
+     * @param {(module:c2m_api/model/DocumentSourceFromZip|module:c2m_api/model/DocumentSourceVariant1|module:c2m_api/model/DocumentSourceVariant2|module:c2m_api/model/DocumentSourceWithUpload|module:c2m_api/model/DocumentSourceWithUploadAndZip)} obj The actual instance.
      */
     setActualInstance(obj) {
        this.actualInstance = DocumentSourceIdentifier.constructFromObject(obj).getActualInstance();
@@ -163,6 +173,16 @@ class DocumentSourceIdentifier {
 }
 
 /**
+ * @member {Number} documentId
+ */
+DocumentSourceIdentifier.prototype['documentId'] = undefined;
+
+/**
+ * @member {String} externalUrl
+ */
+DocumentSourceIdentifier.prototype['externalUrl'] = undefined;
+
+/**
  * @member {Number} uploadRequestId
  */
 DocumentSourceIdentifier.prototype['uploadRequestId'] = undefined;
@@ -178,7 +198,7 @@ DocumentSourceIdentifier.prototype['documentName'] = undefined;
 DocumentSourceIdentifier.prototype['zipId'] = undefined;
 
 
-DocumentSourceIdentifier.OneOf = ["DocumentSourceIdentifierOneOf", "DocumentSourceIdentifierOneOf1", "DocumentSourceIdentifierOneOf2", "Number", "String"];
+DocumentSourceIdentifier.OneOf = ["DocumentSourceFromZip", "DocumentSourceVariant1", "DocumentSourceVariant2", "DocumentSourceWithUpload", "DocumentSourceWithUploadAndZip"];
 
 export default DocumentSourceIdentifier;
 

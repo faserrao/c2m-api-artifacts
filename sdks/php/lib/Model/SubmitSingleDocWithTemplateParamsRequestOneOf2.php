@@ -305,9 +305,6 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf2 implements ModelInterface, 
         if ($this->container['job_template'] === null) {
             $invalidProperties[] = "'job_template' can't be null";
         }
-        if ($this->container['payment_details'] === null) {
-            $invalidProperties[] = "'payment_details' can't be null";
-        }
         if ($this->container['document_source_identifier'] === null) {
             $invalidProperties[] = "'document_source_identifier' can't be null";
         }
@@ -359,7 +356,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf2 implements ModelInterface, 
     /**
      * Gets payment_details
      *
-     * @return \C2MApi\Model\PaymentDetails
+     * @return \C2MApi\Model\PaymentDetails|null
      */
     public function getPaymentDetails()
     {
@@ -369,7 +366,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf2 implements ModelInterface, 
     /**
      * Sets payment_details
      *
-     * @param \C2MApi\Model\PaymentDetails $payment_details payment_details
+     * @param \C2MApi\Model\PaymentDetails|null $payment_details payment_details
      *
      * @return self
      */

@@ -177,4 +177,22 @@ class RecipientAddressSourceTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "address_list_id"
+     */
+    public function testPropertyAddressListId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "address_id"
+     */
+    public function testPropertyAddressId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

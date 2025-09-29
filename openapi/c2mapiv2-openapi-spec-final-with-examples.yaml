@@ -105,13 +105,25 @@ components:
             $ref: '#/components/schemas/paymentDetails'
           tags:
             $ref: '#/components/schemas/tags'
+          documentSourceIdentifier:
+            $ref: '#/components/schemas/documentSourceIdentifier'
+        required:
+        - jobTemplate
+        - documentSourceIdentifier
+      - type: object
+        properties:
+          jobTemplate:
+            $ref: '#/components/schemas/jobTemplate'
+          paymentDetails:
+            $ref: '#/components/schemas/paymentDetails'
+          tags:
+            $ref: '#/components/schemas/tags'
           recipientAddressSources:
             type: array
             items:
               $ref: '#/components/schemas/recipientAddressSource'
         required:
         - jobTemplate
-        - paymentDetails
         - recipientAddressSources
       - type: object
         properties:
@@ -123,27 +135,12 @@ components:
             $ref: '#/components/schemas/tags'
           documentSourceIdentifier:
             $ref: '#/components/schemas/documentSourceIdentifier'
-        required:
-        - jobTemplate
-        - paymentDetails
-        - documentSourceIdentifier
-      - type: object
-        properties:
-          jobTemplate:
-            $ref: '#/components/schemas/jobTemplate'
-          paymentDetails:
-            $ref: '#/components/schemas/paymentDetails'
-          tags:
-            $ref: '#/components/schemas/tags'
-          documentSourceIdentifier:
-            $ref: '#/components/schemas/documentSourceIdentifier'
           recipientAddressSources:
             type: array
             items:
               $ref: '#/components/schemas/recipientAddressSource'
         required:
         - jobTemplate
-        - paymentDetails
         - documentSourceIdentifier
         - recipientAddressSources
     submitMultiDocWithTemplateParams:
@@ -176,6 +173,8 @@ components:
       properties:
         documentsToMerge:
           $ref: '#/components/schemas/documentsToMerge'
+        recipientAddressSource:
+          $ref: '#/components/schemas/recipientAddressSource'
         jobTemplate:
           $ref: '#/components/schemas/jobTemplate'
         paymentDetails:
@@ -184,8 +183,8 @@ components:
           $ref: '#/components/schemas/tags'
       required:
       - documentsToMerge
+      - recipientAddressSource
       - jobTemplate
-      - paymentDetails
     singleDocJobParams:
       type: object
       properties:
@@ -372,49 +371,26 @@ components:
       $ref: '#/components/schemas/tbd'
     documentSourceIdentifier:
       oneOf:
-      - $ref: '#/components/schemas/documentId'
-      - $ref: '#/components/schemas/externalUrl'
-      - type: object
-        properties:
-          uploadRequestId:
-            $ref: '#/components/schemas/uploadRequestId'
-          documentName:
-            $ref: '#/components/schemas/documentName'
-        required:
-        - uploadRequestId
-        - documentName
-      - type: object
-        properties:
-          uploadRequestId:
-            $ref: '#/components/schemas/uploadRequestId'
-          zipId:
-            $ref: '#/components/schemas/zipId'
-          documentName:
-            $ref: '#/components/schemas/documentName'
-        required:
-        - uploadRequestId
-        - zipId
-        - documentName
-      - type: object
-        properties:
-          zipId:
-            $ref: '#/components/schemas/zipId'
-          documentName:
-            $ref: '#/components/schemas/documentName'
-        required:
-        - zipId
-        - documentName
+      - $ref: '#/components/schemas/DocumentSourceVariant1'
+      - $ref: '#/components/schemas/DocumentSourceVariant2'
+      - $ref: '#/components/schemas/DocumentSourceWithUpload'
+      - $ref: '#/components/schemas/DocumentSourceWithUploadAndZip'
+      - $ref: '#/components/schemas/DocumentSourceFromZip'
     recipientAddressSource:
       oneOf:
-      - $ref: '#/components/schemas/exactlyOneNewAddress'
-      - $ref: '#/components/schemas/exactlyOneListId'
-      - $ref: '#/components/schemas/exactlyOneId'
-    exactlyOneNewAddress:
-      $ref: '#/components/schemas/recipientAddress'
-    exactlyOneListId:
-      $ref: '#/components/schemas/addressListId'
-    exactlyOneId:
-      $ref: '#/components/schemas/addressId'
+      - $ref: '#/components/schemas/recipientAddress'
+      - type: object
+        properties:
+          addressListId:
+            $ref: '#/components/schemas/addressListId'
+        required:
+        - addressListId
+      - type: object
+        properties:
+          addressId:
+            $ref: '#/components/schemas/addressId'
+        required:
+        - addressId
     recipientAddress:
       type: object
       properties:
@@ -646,6 +622,12 @@ components:
       enum:
       - businessLetter
       - personalLetter
+    exactlyOneNewAddress:
+      $ref: '#/components/schemas/recipientAddress'
+    exactlyOneListId:
+      type: integer
+    exactlyOneId:
+      type: integer
     StandardResponse:
       type: object
       properties:
@@ -655,6 +637,59 @@ components:
           type: string
         jobId:
           type: string
+      example:
+        status: success
+        message: Job created successfully
+        jobId: job_20241227_123456
+    DocumentSourceWithUpload:
+      type: object
+      properties:
+        uploadRequestId:
+          $ref: '#/components/schemas/uploadRequestId'
+        documentName:
+          $ref: '#/components/schemas/documentName'
+      required:
+      - uploadRequestId
+      - documentName
+    DocumentSourceWithUploadAndZip:
+      type: object
+      properties:
+        uploadRequestId:
+          $ref: '#/components/schemas/uploadRequestId'
+        zipId:
+          $ref: '#/components/schemas/zipId'
+        documentName:
+          $ref: '#/components/schemas/documentName'
+      required:
+      - uploadRequestId
+      - zipId
+      - documentName
+    DocumentSourceFromZip:
+      type: object
+      properties:
+        zipId:
+          $ref: '#/components/schemas/zipId'
+        documentName:
+          $ref: '#/components/schemas/documentName'
+      required:
+      - zipId
+      - documentName
+    DocumentSourceVariant1:
+      type: object
+      properties:
+        documentId:
+          $ref: '#/components/schemas/documentId'
+      required:
+      - documentId
+      description: OneOf variant for documentSourceIdentifier
+    DocumentSourceVariant2:
+      type: object
+      properties:
+        externalUrl:
+          $ref: '#/components/schemas/externalUrl'
+      required:
+      - externalUrl
+      description: OneOf variant for documentSourceIdentifier
     ShortTokenRequest:
       type: object
       properties:
@@ -895,13 +930,25 @@ paths:
                     $ref: '#/components/schemas/paymentDetails'
                   tags:
                     $ref: '#/components/schemas/tags'
+                  documentSourceIdentifier:
+                    $ref: '#/components/schemas/documentSourceIdentifier'
+                required:
+                - jobTemplate
+                - documentSourceIdentifier
+              - type: object
+                properties:
+                  jobTemplate:
+                    $ref: '#/components/schemas/jobTemplate'
+                  paymentDetails:
+                    $ref: '#/components/schemas/paymentDetails'
+                  tags:
+                    $ref: '#/components/schemas/tags'
                   recipientAddressSources:
                     type: array
                     items:
                       $ref: '#/components/schemas/recipientAddressSource'
                 required:
                 - jobTemplate
-                - paymentDetails
                 - recipientAddressSources
               - type: object
                 properties:
@@ -913,27 +960,12 @@ paths:
                     $ref: '#/components/schemas/tags'
                   documentSourceIdentifier:
                     $ref: '#/components/schemas/documentSourceIdentifier'
-                required:
-                - jobTemplate
-                - paymentDetails
-                - documentSourceIdentifier
-              - type: object
-                properties:
-                  jobTemplate:
-                    $ref: '#/components/schemas/jobTemplate'
-                  paymentDetails:
-                    $ref: '#/components/schemas/paymentDetails'
-                  tags:
-                    $ref: '#/components/schemas/tags'
-                  documentSourceIdentifier:
-                    $ref: '#/components/schemas/documentSourceIdentifier'
                   recipientAddressSources:
                     type: array
                     items:
                       $ref: '#/components/schemas/recipientAddressSource'
                 required:
                 - jobTemplate
-                - paymentDetails
                 - documentSourceIdentifier
                 - recipientAddressSources
       responses:
@@ -943,6 +975,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_doc_job_template job created successfully
+                    jobId: single_doc_job_template_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_doc_job_template job queued for processing
+                    jobId: single_doc_job_template_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1029,6 +1074,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_docs_job_template job created successfully
+                    jobId: multi_docs_job_template_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_docs_job_template job queued for processing
+                    jobId: multi_docs_job_template_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1088,6 +1146,8 @@ paths:
               properties:
                 documentsToMerge:
                   $ref: '#/components/schemas/documentsToMerge'
+                recipientAddressSource:
+                  $ref: '#/components/schemas/recipientAddressSource'
                 jobTemplate:
                   $ref: '#/components/schemas/jobTemplate'
                 paymentDetails:
@@ -1096,8 +1156,8 @@ paths:
                   $ref: '#/components/schemas/tags'
               required:
               - documentsToMerge
+              - recipientAddressSource
               - jobTemplate
-              - paymentDetails
       responses:
         '200':
           description: Success
@@ -1105,6 +1165,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_doc_merge_job_template job created successfully
+                    jobId: multi_doc_merge_job_template_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_doc_merge_job_template job queued for processing
+                    jobId: multi_doc_merge_job_template_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1186,6 +1259,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_doc job created successfully
+                    jobId: single_doc_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_doc job queued for processing
+                    jobId: single_doc_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1272,6 +1358,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_doc job created successfully
+                    jobId: multi_doc_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_doc job queued for processing
+                    jobId: multi_doc_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1348,6 +1447,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_doc_merge job created successfully
+                    jobId: multi_doc_merge_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_doc_merge job queued for processing
+                    jobId: multi_doc_merge_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1436,6 +1548,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_pdf_split job created successfully
+                    jobId: single_pdf_split_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_pdf_split job queued for processing
+                    jobId: single_pdf_split_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1512,6 +1637,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_pdf_split_addressCapture job created successfully
+                    jobId: single_pdf_split_addressCapture_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_pdf_split_addressCapture job queued for processing
+                    jobId: single_pdf_split_addressCapture_job_789012
         '400':
           description: Invalid request
         '401':
@@ -1585,6 +1723,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardResponse'
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_pdf_address_capture job created successfully
+                    jobId: multi_pdf_address_capture_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_pdf_address_capture job queued for processing
+                    jobId: multi_pdf_address_capture_job_789012
         '400':
           description: Invalid request
         '401':

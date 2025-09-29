@@ -54,6 +54,18 @@
       //expect(instance).to.be.a(C2MApiV2AuthOverlay.DocumentSourceIdentifier);
     });
 
+    it('should have the property documentId (base name: "documentId")', function() {
+      // uncomment below and update the code to test the property documentId
+      //var instance = new C2MApiV2AuthOverlay.DocumentSourceIdentifier();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property externalUrl (base name: "externalUrl")', function() {
+      // uncomment below and update the code to test the property externalUrl
+      //var instance = new C2MApiV2AuthOverlay.DocumentSourceIdentifier();
+      //expect(instance).to.be();
+    });
+
     it('should have the property uploadRequestId (base name: "uploadRequestId")', function() {
       // uncomment below and update the code to test the property uploadRequestId
       //var instance = new C2MApiV2AuthOverlay.DocumentSourceIdentifier();

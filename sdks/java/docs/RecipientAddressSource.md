@@ -18,6 +18,8 @@
 |**address2** | **String** |  |  [optional] |
 |**address3** | **String** |  |  [optional] |
 |**phoneNumber** | **String** |  |  [optional] |
+|**addressListId** | **Integer** |  |  |
+|**addressId** | **Integer** |  |  |
 
 
 

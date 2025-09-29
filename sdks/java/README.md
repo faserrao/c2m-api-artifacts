@@ -2,7 +2,7 @@
 
 C2M API v2 - Auth Overlay
 - API version: 2.0.0
-  - Build date: 2025-09-18T23:30:59.692465979Z[Etc/UTC]
+  - Build date: 2025-09-29T19:40:45.964644121Z[Etc/UTC]
   - Generator version: 7.15.0
 
 API for submitting documents with various routing options
@@ -155,10 +155,12 @@ Class | Method | HTTP request | Description
  - [Currency](docs/Currency.md)
  - [DocumentClass](docs/DocumentClass.md)
  - [DocumentFormat](docs/DocumentFormat.md)
+ - [DocumentSourceFromZip](docs/DocumentSourceFromZip.md)
  - [DocumentSourceIdentifier](docs/DocumentSourceIdentifier.md)
- - [DocumentSourceIdentifierOneOf](docs/DocumentSourceIdentifierOneOf.md)
- - [DocumentSourceIdentifierOneOf1](docs/DocumentSourceIdentifierOneOf1.md)
- - [DocumentSourceIdentifierOneOf2](docs/DocumentSourceIdentifierOneOf2.md)
+ - [DocumentSourceVariant1](docs/DocumentSourceVariant1.md)
+ - [DocumentSourceVariant2](docs/DocumentSourceVariant2.md)
+ - [DocumentSourceWithUpload](docs/DocumentSourceWithUpload.md)
+ - [DocumentSourceWithUploadAndZip](docs/DocumentSourceWithUploadAndZip.md)
  - [Envelope](docs/Envelope.md)
  - [ExpirationDate](docs/ExpirationDate.md)
  - [ExtractionSpec](docs/ExtractionSpec.md)
@@ -182,6 +184,8 @@ Class | Method | HTTP request | Description
  - [PrintOption](docs/PrintOption.md)
  - [RecipientAddress](docs/RecipientAddress.md)
  - [RecipientAddressSource](docs/RecipientAddressSource.md)
+ - [RecipientAddressSourceOneOf](docs/RecipientAddressSourceOneOf.md)
+ - [RecipientAddressSourceOneOf1](docs/RecipientAddressSourceOneOf1.md)
  - [ShortTokenRequest](docs/ShortTokenRequest.md)
  - [ShortTokenResponse](docs/ShortTokenResponse.md)
  - [SingleDocJobParams](docs/SingleDocJobParams.md)

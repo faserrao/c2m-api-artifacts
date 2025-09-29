@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **JobTemplate** | **string** |  | 
-**PaymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
+**PaymentDetails** | Pointer to [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
-**RecipientAddressSources** | [**[]RecipientAddressSource**](RecipientAddressSource.md) |  | 
+**DocumentSourceIdentifier** | [**DocumentSourceIdentifier**](DocumentSourceIdentifier.md) |  | 
 
 ## Methods
 
 ### NewSubmitSingleDocWithTemplateParamsRequestOneOf
 
-`func NewSubmitSingleDocWithTemplateParamsRequestOneOf(jobTemplate string, paymentDetails PaymentDetails, recipientAddressSources []RecipientAddressSource, ) *SubmitSingleDocWithTemplateParamsRequestOneOf`
+`func NewSubmitSingleDocWithTemplateParamsRequestOneOf(jobTemplate string, documentSourceIdentifier DocumentSourceIdentifier, ) *SubmitSingleDocWithTemplateParamsRequestOneOf`
 
 NewSubmitSingleDocWithTemplateParamsRequestOneOf instantiates a new SubmitSingleDocWithTemplateParamsRequestOneOf object
 This constructor will assign default values to properties that have it defined,
@@ -67,6 +67,11 @@ and a boolean to check if the value has been set.
 
 SetPaymentDetails sets PaymentDetails field to given value.
 
+### HasPaymentDetails
+
+`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) HasPaymentDetails() bool`
+
+HasPaymentDetails returns a boolean if a field has been set.
 
 ### GetTags
 
@@ -93,24 +98,24 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
-### GetRecipientAddressSources
+### GetDocumentSourceIdentifier
 
-`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) GetRecipientAddressSources() []RecipientAddressSource`
+`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) GetDocumentSourceIdentifier() DocumentSourceIdentifier`
 
-GetRecipientAddressSources returns the RecipientAddressSources field if non-nil, zero value otherwise.
+GetDocumentSourceIdentifier returns the DocumentSourceIdentifier field if non-nil, zero value otherwise.
 
-### GetRecipientAddressSourcesOk
+### GetDocumentSourceIdentifierOk
 
-`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) GetRecipientAddressSourcesOk() (*[]RecipientAddressSource, bool)`
+`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) GetDocumentSourceIdentifierOk() (*DocumentSourceIdentifier, bool)`
 
-GetRecipientAddressSourcesOk returns a tuple with the RecipientAddressSources field if it's non-nil, zero value otherwise
+GetDocumentSourceIdentifierOk returns a tuple with the DocumentSourceIdentifier field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRecipientAddressSources
+### SetDocumentSourceIdentifier
 
-`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) SetRecipientAddressSources(v []RecipientAddressSource)`
+`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) SetDocumentSourceIdentifier(v DocumentSourceIdentifier)`
 
-SetRecipientAddressSources sets RecipientAddressSources field to given value.
+SetDocumentSourceIdentifier sets DocumentSourceIdentifier field to given value.
 
 
 

@@ -15,33 +15,35 @@
 from __future__ import annotations
 import json
 import pprint
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from c2m_api.models.document_source_identifier_one_of import DocumentSourceIdentifierOneOf
-from c2m_api.models.document_source_identifier_one_of1 import DocumentSourceIdentifierOneOf1
-from c2m_api.models.document_source_identifier_one_of2 import DocumentSourceIdentifierOneOf2
+from c2m_api.models.document_source_from_zip import DocumentSourceFromZip
+from c2m_api.models.document_source_variant1 import DocumentSourceVariant1
+from c2m_api.models.document_source_variant2 import DocumentSourceVariant2
+from c2m_api.models.document_source_with_upload import DocumentSourceWithUpload
+from c2m_api.models.document_source_with_upload_and_zip import DocumentSourceWithUploadAndZip
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-DOCUMENTSOURCEIDENTIFIER_ONE_OF_SCHEMAS = ["DocumentSourceIdentifierOneOf", "DocumentSourceIdentifierOneOf1", "DocumentSourceIdentifierOneOf2", "int", "str"]
+DOCUMENTSOURCEIDENTIFIER_ONE_OF_SCHEMAS = ["DocumentSourceFromZip", "DocumentSourceVariant1", "DocumentSourceVariant2", "DocumentSourceWithUpload", "DocumentSourceWithUploadAndZip"]
 
 class DocumentSourceIdentifier(BaseModel):
     """
     DocumentSourceIdentifier
     """
-    # data type: int
-    oneof_schema_1_validator: Optional[StrictInt] = None
-    # data type: str
-    oneof_schema_2_validator: Optional[StrictStr] = None
-    # data type: DocumentSourceIdentifierOneOf
-    oneof_schema_3_validator: Optional[DocumentSourceIdentifierOneOf] = None
-    # data type: DocumentSourceIdentifierOneOf1
-    oneof_schema_4_validator: Optional[DocumentSourceIdentifierOneOf1] = None
-    # data type: DocumentSourceIdentifierOneOf2
-    oneof_schema_5_validator: Optional[DocumentSourceIdentifierOneOf2] = None
-    actual_instance: Optional[Union[DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, int, str]] = None
-    one_of_schemas: Set[str] = { "DocumentSourceIdentifierOneOf", "DocumentSourceIdentifierOneOf1", "DocumentSourceIdentifierOneOf2", "int", "str" }
+    # data type: DocumentSourceVariant1
+    oneof_schema_1_validator: Optional[DocumentSourceVariant1] = None
+    # data type: DocumentSourceVariant2
+    oneof_schema_2_validator: Optional[DocumentSourceVariant2] = None
+    # data type: DocumentSourceWithUpload
+    oneof_schema_3_validator: Optional[DocumentSourceWithUpload] = None
+    # data type: DocumentSourceWithUploadAndZip
+    oneof_schema_4_validator: Optional[DocumentSourceWithUploadAndZip] = None
+    # data type: DocumentSourceFromZip
+    oneof_schema_5_validator: Optional[DocumentSourceFromZip] = None
+    actual_instance: Optional[Union[DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip]] = None
+    one_of_schemas: Set[str] = { "DocumentSourceFromZip", "DocumentSourceVariant1", "DocumentSourceVariant2", "DocumentSourceWithUpload", "DocumentSourceWithUploadAndZip" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -64,39 +66,37 @@ class DocumentSourceIdentifier(BaseModel):
         instance = DocumentSourceIdentifier.model_construct()
         error_messages = []
         match = 0
-        # validate data type: int
-        try:
-            instance.oneof_schema_1_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: str
-        try:
-            instance.oneof_schema_2_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: DocumentSourceIdentifierOneOf
-        if not isinstance(v, DocumentSourceIdentifierOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceIdentifierOneOf`")
+        # validate data type: DocumentSourceVariant1
+        if not isinstance(v, DocumentSourceVariant1):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceVariant1`")
         else:
             match += 1
-        # validate data type: DocumentSourceIdentifierOneOf1
-        if not isinstance(v, DocumentSourceIdentifierOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceIdentifierOneOf1`")
+        # validate data type: DocumentSourceVariant2
+        if not isinstance(v, DocumentSourceVariant2):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceVariant2`")
         else:
             match += 1
-        # validate data type: DocumentSourceIdentifierOneOf2
-        if not isinstance(v, DocumentSourceIdentifierOneOf2):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceIdentifierOneOf2`")
+        # validate data type: DocumentSourceWithUpload
+        if not isinstance(v, DocumentSourceWithUpload):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceWithUpload`")
+        else:
+            match += 1
+        # validate data type: DocumentSourceWithUploadAndZip
+        if not isinstance(v, DocumentSourceWithUploadAndZip):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceWithUploadAndZip`")
+        else:
+            match += 1
+        # validate data type: DocumentSourceFromZip
+        if not isinstance(v, DocumentSourceFromZip):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DocumentSourceFromZip`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in DocumentSourceIdentifier with oneOf schemas: DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in DocumentSourceIdentifier with oneOf schemas: DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in DocumentSourceIdentifier with oneOf schemas: DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in DocumentSourceIdentifier with oneOf schemas: DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -111,49 +111,43 @@ class DocumentSourceIdentifier(BaseModel):
         error_messages = []
         match = 0
 
-        # deserialize data into int
+        # deserialize data into DocumentSourceVariant1
         try:
-            # validation
-            instance.oneof_schema_1_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_1_validator
+            instance.actual_instance = DocumentSourceVariant1.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into str
+        # deserialize data into DocumentSourceVariant2
         try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
+            instance.actual_instance = DocumentSourceVariant2.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into DocumentSourceIdentifierOneOf
+        # deserialize data into DocumentSourceWithUpload
         try:
-            instance.actual_instance = DocumentSourceIdentifierOneOf.from_json(json_str)
+            instance.actual_instance = DocumentSourceWithUpload.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into DocumentSourceIdentifierOneOf1
+        # deserialize data into DocumentSourceWithUploadAndZip
         try:
-            instance.actual_instance = DocumentSourceIdentifierOneOf1.from_json(json_str)
+            instance.actual_instance = DocumentSourceWithUploadAndZip.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into DocumentSourceIdentifierOneOf2
+        # deserialize data into DocumentSourceFromZip
         try:
-            instance.actual_instance = DocumentSourceIdentifierOneOf2.from_json(json_str)
+            instance.actual_instance = DocumentSourceFromZip.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into DocumentSourceIdentifier with oneOf schemas: DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into DocumentSourceIdentifier with oneOf schemas: DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into DocumentSourceIdentifier with oneOf schemas: DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, int, str. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into DocumentSourceIdentifier with oneOf schemas: DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -167,7 +161,7 @@ class DocumentSourceIdentifier(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, int, str]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

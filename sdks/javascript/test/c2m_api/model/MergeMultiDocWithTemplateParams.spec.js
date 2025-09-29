@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property recipientAddressSource (base name: "recipientAddressSource")', function() {
+      // uncomment below and update the code to test the property recipientAddressSource
+      //var instance = new C2MApiV2AuthOverlay.MergeMultiDocWithTemplateParams();
+      //expect(instance).to.be();
+    });
+
     it('should have the property jobTemplate (base name: "jobTemplate")', function() {
       // uncomment below and update the code to test the property jobTemplate
       //var instance = new C2MApiV2AuthOverlay.MergeMultiDocWithTemplateParams();

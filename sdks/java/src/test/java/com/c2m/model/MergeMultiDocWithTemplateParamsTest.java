@@ -15,6 +15,7 @@ package com.c2m.model;
 
 import com.c2m.model.DocumentSourceIdentifier;
 import com.c2m.model.PaymentDetails;
+import com.c2m.model.RecipientAddressSource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +48,14 @@ public class MergeMultiDocWithTemplateParamsTest {
     @Test
     public void documentsToMergeTest() {
         // TODO: test documentsToMerge
+    }
+
+    /**
+     * Test the property 'recipientAddressSource'
+     */
+    @Test
+    public void recipientAddressSourceTest() {
+        // TODO: test recipientAddressSource
     }
 
     /**

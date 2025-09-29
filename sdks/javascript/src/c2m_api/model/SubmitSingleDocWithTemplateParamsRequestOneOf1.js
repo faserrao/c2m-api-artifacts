@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import DocumentSourceIdentifier from './DocumentSourceIdentifier';
 import PaymentDetails from './PaymentDetails';
+import RecipientAddressSource from './RecipientAddressSource';
 
 /**
  * The SubmitSingleDocWithTemplateParamsRequestOneOf1 model module.
@@ -25,12 +25,11 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 {
      * Constructs a new <code>SubmitSingleDocWithTemplateParamsRequestOneOf1</code>.
      * @alias module:c2m_api/model/SubmitSingleDocWithTemplateParamsRequestOneOf1
      * @param jobTemplate {String} 
-     * @param paymentDetails {module:c2m_api/model/PaymentDetails} 
-     * @param documentSourceIdentifier {module:c2m_api/model/DocumentSourceIdentifier} 
+     * @param recipientAddressSources {Array.<module:c2m_api/model/RecipientAddressSource>} 
      */
-    constructor(jobTemplate, paymentDetails, documentSourceIdentifier) { 
+    constructor(jobTemplate, recipientAddressSources) { 
         
-        SubmitSingleDocWithTemplateParamsRequestOneOf1.initialize(this, jobTemplate, paymentDetails, documentSourceIdentifier);
+        SubmitSingleDocWithTemplateParamsRequestOneOf1.initialize(this, jobTemplate, recipientAddressSources);
     }
 
     /**
@@ -38,10 +37,9 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, jobTemplate, paymentDetails, documentSourceIdentifier) { 
+    static initialize(obj, jobTemplate, recipientAddressSources) { 
         obj['jobTemplate'] = jobTemplate;
-        obj['paymentDetails'] = paymentDetails;
-        obj['documentSourceIdentifier'] = documentSourceIdentifier;
+        obj['recipientAddressSources'] = recipientAddressSources;
     }
 
     /**
@@ -64,8 +62,8 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 {
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
             }
-            if (data.hasOwnProperty('documentSourceIdentifier')) {
-                obj['documentSourceIdentifier'] = DocumentSourceIdentifier.constructFromObject(data['documentSourceIdentifier']);
+            if (data.hasOwnProperty('recipientAddressSources')) {
+                obj['recipientAddressSources'] = ApiClient.convertToType(data['recipientAddressSources'], [RecipientAddressSource]);
             }
         }
         return obj;
@@ -95,9 +93,15 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 {
         if (!Array.isArray(data['tags'])) {
             throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
         }
-        // validate the optional field `documentSourceIdentifier`
-        if (data['documentSourceIdentifier']) { // data not null
-          DocumentSourceIdentifier.validateJSON(data['documentSourceIdentifier']);
+        if (data['recipientAddressSources']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['recipientAddressSources'])) {
+                throw new Error("Expected the field `recipientAddressSources` to be an array in the JSON data but got " + data['recipientAddressSources']);
+            }
+            // validate the optional field `recipientAddressSources` (array)
+            for (const item of data['recipientAddressSources']) {
+                RecipientAddressSource.validateJSON(item);
+            };
         }
 
         return true;
@@ -106,7 +110,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 {
 
 }
 
-SubmitSingleDocWithTemplateParamsRequestOneOf1.RequiredProperties = ["jobTemplate", "paymentDetails", "documentSourceIdentifier"];
+SubmitSingleDocWithTemplateParamsRequestOneOf1.RequiredProperties = ["jobTemplate", "recipientAddressSources"];
 
 /**
  * @member {String} jobTemplate
@@ -124,9 +128,9 @@ SubmitSingleDocWithTemplateParamsRequestOneOf1.prototype['paymentDetails'] = und
 SubmitSingleDocWithTemplateParamsRequestOneOf1.prototype['tags'] = undefined;
 
 /**
- * @member {module:c2m_api/model/DocumentSourceIdentifier} documentSourceIdentifier
+ * @member {Array.<module:c2m_api/model/RecipientAddressSource>} recipientAddressSources
  */
-SubmitSingleDocWithTemplateParamsRequestOneOf1.prototype['documentSourceIdentifier'] = undefined;
+SubmitSingleDocWithTemplateParamsRequestOneOf1.prototype['recipientAddressSources'] = undefined;
 
 
 

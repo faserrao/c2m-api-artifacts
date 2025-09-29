@@ -5,15 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentsToMerge** | [**[]DocumentSourceIdentifier**](DocumentSourceIdentifier.md) |  | 
+**RecipientAddressSource** | [**RecipientAddressSource**](RecipientAddressSource.md) |  | 
 **JobTemplate** | **string** |  | 
-**PaymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
+**PaymentDetails** | Pointer to [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewMergeMultiDocWithTemplateParams
 
-`func NewMergeMultiDocWithTemplateParams(documentsToMerge []DocumentSourceIdentifier, jobTemplate string, paymentDetails PaymentDetails, ) *MergeMultiDocWithTemplateParams`
+`func NewMergeMultiDocWithTemplateParams(documentsToMerge []DocumentSourceIdentifier, recipientAddressSource RecipientAddressSource, jobTemplate string, ) *MergeMultiDocWithTemplateParams`
 
 NewMergeMultiDocWithTemplateParams instantiates a new MergeMultiDocWithTemplateParams object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +47,26 @@ and a boolean to check if the value has been set.
 `func (o *MergeMultiDocWithTemplateParams) SetDocumentsToMerge(v []DocumentSourceIdentifier)`
 
 SetDocumentsToMerge sets DocumentsToMerge field to given value.
+
+
+### GetRecipientAddressSource
+
+`func (o *MergeMultiDocWithTemplateParams) GetRecipientAddressSource() RecipientAddressSource`
+
+GetRecipientAddressSource returns the RecipientAddressSource field if non-nil, zero value otherwise.
+
+### GetRecipientAddressSourceOk
+
+`func (o *MergeMultiDocWithTemplateParams) GetRecipientAddressSourceOk() (*RecipientAddressSource, bool)`
+
+GetRecipientAddressSourceOk returns a tuple with the RecipientAddressSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecipientAddressSource
+
+`func (o *MergeMultiDocWithTemplateParams) SetRecipientAddressSource(v RecipientAddressSource)`
+
+SetRecipientAddressSource sets RecipientAddressSource field to given value.
 
 
 ### GetJobTemplate
@@ -87,6 +108,11 @@ and a boolean to check if the value has been set.
 
 SetPaymentDetails sets PaymentDetails field to given value.
 
+### HasPaymentDetails
+
+`func (o *MergeMultiDocWithTemplateParams) HasPaymentDetails() bool`
+
+HasPaymentDetails returns a boolean if a field has been set.
 
 ### GetTags
 

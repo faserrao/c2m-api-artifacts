@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from c2m_api.models.document_source_identifier import DocumentSourceIdentifier
 from c2m_api.models.payment_details import PaymentDetails
+from c2m_api.models.recipient_address_source import RecipientAddressSource
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,10 +30,11 @@ class MergeMultiDocWithTemplateParamsRequest(BaseModel):
     MergeMultiDocWithTemplateParamsRequest
     """ # noqa: E501
     documents_to_merge: List[DocumentSourceIdentifier] = Field(alias="documentsToMerge")
+    recipient_address_source: RecipientAddressSource = Field(alias="recipientAddressSource")
     job_template: StrictStr = Field(alias="jobTemplate")
-    payment_details: PaymentDetails = Field(alias="paymentDetails")
+    payment_details: Optional[PaymentDetails] = Field(default=None, alias="paymentDetails")
     tags: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["documentsToMerge", "jobTemplate", "paymentDetails", "tags"]
+    __properties: ClassVar[List[str]] = ["documentsToMerge", "recipientAddressSource", "jobTemplate", "paymentDetails", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,6 +82,9 @@ class MergeMultiDocWithTemplateParamsRequest(BaseModel):
                 if _item_documents_to_merge:
                     _items.append(_item_documents_to_merge.to_dict())
             _dict['documentsToMerge'] = _items
+        # override the default output from pydantic by calling `to_dict()` of recipient_address_source
+        if self.recipient_address_source:
+            _dict['recipientAddressSource'] = self.recipient_address_source.to_dict()
         # override the default output from pydantic by calling `to_dict()` of payment_details
         if self.payment_details:
             _dict['paymentDetails'] = self.payment_details.to_dict()
@@ -96,6 +101,7 @@ class MergeMultiDocWithTemplateParamsRequest(BaseModel):
 
         _obj = cls.model_validate({
             "documentsToMerge": [DocumentSourceIdentifier.from_dict(_item) for _item in obj["documentsToMerge"]] if obj.get("documentsToMerge") is not None else None,
+            "recipientAddressSource": RecipientAddressSource.from_dict(obj["recipientAddressSource"]) if obj.get("recipientAddressSource") is not None else None,
             "jobTemplate": obj.get("jobTemplate"),
             "paymentDetails": PaymentDetails.from_dict(obj["paymentDetails"]) if obj.get("paymentDetails") is not None else None,
             "tags": obj.get("tags")

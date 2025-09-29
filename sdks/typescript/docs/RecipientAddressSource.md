@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **address2** | **string** |  | [optional] [default to undefined]
 **address3** | **string** |  | [optional] [default to undefined]
 **phoneNumber** | **string** |  | [optional] [default to undefined]
+**addressListId** | **number** |  | [default to undefined]
+**addressId** | **number** |  | [default to undefined]
 
 ## Example
 
@@ -34,6 +36,8 @@ const instance: RecipientAddressSource = {
     address2,
     address3,
     phoneNumber,
+    addressListId,
+    addressId,
 };
 ```
 

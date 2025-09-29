@@ -105,13 +105,25 @@ components:
             $ref: '#/components/schemas/paymentDetails'
           tags:
             $ref: '#/components/schemas/tags'
+          documentSourceIdentifier:
+            $ref: '#/components/schemas/documentSourceIdentifier'
+        required:
+        - jobTemplate
+        - documentSourceIdentifier
+      - type: object
+        properties:
+          jobTemplate:
+            $ref: '#/components/schemas/jobTemplate'
+          paymentDetails:
+            $ref: '#/components/schemas/paymentDetails'
+          tags:
+            $ref: '#/components/schemas/tags'
           recipientAddressSources:
             type: array
             items:
               $ref: '#/components/schemas/recipientAddressSource'
         required:
         - jobTemplate
-        - paymentDetails
         - recipientAddressSources
       - type: object
         properties:
@@ -123,27 +135,12 @@ components:
             $ref: '#/components/schemas/tags'
           documentSourceIdentifier:
             $ref: '#/components/schemas/documentSourceIdentifier'
-        required:
-        - jobTemplate
-        - paymentDetails
-        - documentSourceIdentifier
-      - type: object
-        properties:
-          jobTemplate:
-            $ref: '#/components/schemas/jobTemplate'
-          paymentDetails:
-            $ref: '#/components/schemas/paymentDetails'
-          tags:
-            $ref: '#/components/schemas/tags'
-          documentSourceIdentifier:
-            $ref: '#/components/schemas/documentSourceIdentifier'
           recipientAddressSources:
             type: array
             items:
               $ref: '#/components/schemas/recipientAddressSource'
         required:
         - jobTemplate
-        - paymentDetails
         - documentSourceIdentifier
         - recipientAddressSources
     submitMultiDocWithTemplateParams:
@@ -176,6 +173,8 @@ components:
       properties:
         documentsToMerge:
           $ref: '#/components/schemas/documentsToMerge'
+        recipientAddressSource:
+          $ref: '#/components/schemas/recipientAddressSource'
         jobTemplate:
           $ref: '#/components/schemas/jobTemplate'
         paymentDetails:
@@ -184,8 +183,8 @@ components:
           $ref: '#/components/schemas/tags'
       required:
       - documentsToMerge
+      - recipientAddressSource
       - jobTemplate
-      - paymentDetails
     singleDocJobParams:
       type: object
       properties:
@@ -372,49 +371,26 @@ components:
       $ref: '#/components/schemas/tbd'
     documentSourceIdentifier:
       oneOf:
-      - $ref: '#/components/schemas/documentId'
-      - $ref: '#/components/schemas/externalUrl'
-      - type: object
-        properties:
-          uploadRequestId:
-            $ref: '#/components/schemas/uploadRequestId'
-          documentName:
-            $ref: '#/components/schemas/documentName'
-        required:
-        - uploadRequestId
-        - documentName
-      - type: object
-        properties:
-          uploadRequestId:
-            $ref: '#/components/schemas/uploadRequestId'
-          zipId:
-            $ref: '#/components/schemas/zipId'
-          documentName:
-            $ref: '#/components/schemas/documentName'
-        required:
-        - uploadRequestId
-        - zipId
-        - documentName
-      - type: object
-        properties:
-          zipId:
-            $ref: '#/components/schemas/zipId'
-          documentName:
-            $ref: '#/components/schemas/documentName'
-        required:
-        - zipId
-        - documentName
+      - $ref: '#/components/schemas/DocumentSourceVariant1'
+      - $ref: '#/components/schemas/DocumentSourceVariant2'
+      - $ref: '#/components/schemas/DocumentSourceWithUpload'
+      - $ref: '#/components/schemas/DocumentSourceWithUploadAndZip'
+      - $ref: '#/components/schemas/DocumentSourceFromZip'
     recipientAddressSource:
       oneOf:
-      - $ref: '#/components/schemas/exactlyOneNewAddress'
-      - $ref: '#/components/schemas/exactlyOneListId'
-      - $ref: '#/components/schemas/exactlyOneId'
-    exactlyOneNewAddress:
-      $ref: '#/components/schemas/recipientAddress'
-    exactlyOneListId:
-      $ref: '#/components/schemas/addressListId'
-    exactlyOneId:
-      $ref: '#/components/schemas/addressId'
+      - $ref: '#/components/schemas/recipientAddress'
+      - type: object
+        properties:
+          addressListId:
+            $ref: '#/components/schemas/addressListId'
+        required:
+        - addressListId
+      - type: object
+        properties:
+          addressId:
+            $ref: '#/components/schemas/addressId'
+        required:
+        - addressId
     recipientAddress:
       type: object
       properties:
@@ -646,6 +622,12 @@ components:
       enum:
       - businessLetter
       - personalLetter
+    exactlyOneNewAddress:
+      $ref: '#/components/schemas/recipientAddress'
+    exactlyOneListId:
+      type: integer
+    exactlyOneId:
+      type: integer
     StandardResponse:
       type: object
       properties:
@@ -655,6 +637,55 @@ components:
           type: string
         jobId:
           type: string
+    DocumentSourceWithUpload:
+      type: object
+      properties:
+        uploadRequestId:
+          $ref: '#/components/schemas/uploadRequestId'
+        documentName:
+          $ref: '#/components/schemas/documentName'
+      required:
+      - uploadRequestId
+      - documentName
+    DocumentSourceWithUploadAndZip:
+      type: object
+      properties:
+        uploadRequestId:
+          $ref: '#/components/schemas/uploadRequestId'
+        zipId:
+          $ref: '#/components/schemas/zipId'
+        documentName:
+          $ref: '#/components/schemas/documentName'
+      required:
+      - uploadRequestId
+      - zipId
+      - documentName
+    DocumentSourceFromZip:
+      type: object
+      properties:
+        zipId:
+          $ref: '#/components/schemas/zipId'
+        documentName:
+          $ref: '#/components/schemas/documentName'
+      required:
+      - zipId
+      - documentName
+    DocumentSourceVariant1:
+      type: object
+      properties:
+        documentId:
+          $ref: '#/components/schemas/documentId'
+      required:
+      - documentId
+      description: OneOf variant for documentSourceIdentifier
+    DocumentSourceVariant2:
+      type: object
+      properties:
+        externalUrl:
+          $ref: '#/components/schemas/externalUrl'
+      required:
+      - externalUrl
+      description: OneOf variant for documentSourceIdentifier
   parameters:
     Authorization:
       name: Authorization
@@ -696,13 +727,25 @@ paths:
                     $ref: '#/components/schemas/paymentDetails'
                   tags:
                     $ref: '#/components/schemas/tags'
+                  documentSourceIdentifier:
+                    $ref: '#/components/schemas/documentSourceIdentifier'
+                required:
+                - jobTemplate
+                - documentSourceIdentifier
+              - type: object
+                properties:
+                  jobTemplate:
+                    $ref: '#/components/schemas/jobTemplate'
+                  paymentDetails:
+                    $ref: '#/components/schemas/paymentDetails'
+                  tags:
+                    $ref: '#/components/schemas/tags'
                   recipientAddressSources:
                     type: array
                     items:
                       $ref: '#/components/schemas/recipientAddressSource'
                 required:
                 - jobTemplate
-                - paymentDetails
                 - recipientAddressSources
               - type: object
                 properties:
@@ -714,27 +757,12 @@ paths:
                     $ref: '#/components/schemas/tags'
                   documentSourceIdentifier:
                     $ref: '#/components/schemas/documentSourceIdentifier'
-                required:
-                - jobTemplate
-                - paymentDetails
-                - documentSourceIdentifier
-              - type: object
-                properties:
-                  jobTemplate:
-                    $ref: '#/components/schemas/jobTemplate'
-                  paymentDetails:
-                    $ref: '#/components/schemas/paymentDetails'
-                  tags:
-                    $ref: '#/components/schemas/tags'
-                  documentSourceIdentifier:
-                    $ref: '#/components/schemas/documentSourceIdentifier'
                   recipientAddressSources:
                     type: array
                     items:
                       $ref: '#/components/schemas/recipientAddressSource'
                 required:
                 - jobTemplate
-                - paymentDetails
                 - documentSourceIdentifier
                 - recipientAddressSources
       responses:
@@ -805,6 +833,8 @@ paths:
               properties:
                 documentsToMerge:
                   $ref: '#/components/schemas/documentsToMerge'
+                recipientAddressSource:
+                  $ref: '#/components/schemas/recipientAddressSource'
                 jobTemplate:
                   $ref: '#/components/schemas/jobTemplate'
                 paymentDetails:
@@ -813,8 +843,8 @@ paths:
                   $ref: '#/components/schemas/tags'
               required:
               - documentsToMerge
+              - recipientAddressSource
               - jobTemplate
-              - paymentDetails
       responses:
         '200':
           description: Success

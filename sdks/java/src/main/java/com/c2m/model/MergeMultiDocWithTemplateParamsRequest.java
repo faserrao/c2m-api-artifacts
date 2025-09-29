@@ -16,6 +16,7 @@ package com.c2m.model;
 import java.util.Objects;
 import com.c2m.model.DocumentSourceIdentifier;
 import com.c2m.model.PaymentDetails;
+import com.c2m.model.RecipientAddressSource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,12 +53,17 @@ import com.c2m.JSON;
 /**
  * MergeMultiDocWithTemplateParamsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T23:30:59.692465979Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-29T19:40:45.964644121Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class MergeMultiDocWithTemplateParamsRequest {
   public static final String SERIALIZED_NAME_DOCUMENTS_TO_MERGE = "documentsToMerge";
   @SerializedName(SERIALIZED_NAME_DOCUMENTS_TO_MERGE)
   @javax.annotation.Nonnull
   private List<DocumentSourceIdentifier> documentsToMerge = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_RECIPIENT_ADDRESS_SOURCE = "recipientAddressSource";
+  @SerializedName(SERIALIZED_NAME_RECIPIENT_ADDRESS_SOURCE)
+  @javax.annotation.Nonnull
+  private RecipientAddressSource recipientAddressSource;
 
   public static final String SERIALIZED_NAME_JOB_TEMPLATE = "jobTemplate";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE)
@@ -66,7 +72,7 @@ public class MergeMultiDocWithTemplateParamsRequest {
 
   public static final String SERIALIZED_NAME_PAYMENT_DETAILS = "paymentDetails";
   @SerializedName(SERIALIZED_NAME_PAYMENT_DETAILS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private PaymentDetails paymentDetails;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
@@ -104,6 +110,25 @@ public class MergeMultiDocWithTemplateParamsRequest {
   }
 
 
+  public MergeMultiDocWithTemplateParamsRequest recipientAddressSource(@javax.annotation.Nonnull RecipientAddressSource recipientAddressSource) {
+    this.recipientAddressSource = recipientAddressSource;
+    return this;
+  }
+
+  /**
+   * Get recipientAddressSource
+   * @return recipientAddressSource
+   */
+  @javax.annotation.Nonnull
+  public RecipientAddressSource getRecipientAddressSource() {
+    return recipientAddressSource;
+  }
+
+  public void setRecipientAddressSource(@javax.annotation.Nonnull RecipientAddressSource recipientAddressSource) {
+    this.recipientAddressSource = recipientAddressSource;
+  }
+
+
   public MergeMultiDocWithTemplateParamsRequest jobTemplate(@javax.annotation.Nonnull String jobTemplate) {
     this.jobTemplate = jobTemplate;
     return this;
@@ -123,7 +148,7 @@ public class MergeMultiDocWithTemplateParamsRequest {
   }
 
 
-  public MergeMultiDocWithTemplateParamsRequest paymentDetails(@javax.annotation.Nonnull PaymentDetails paymentDetails) {
+  public MergeMultiDocWithTemplateParamsRequest paymentDetails(@javax.annotation.Nullable PaymentDetails paymentDetails) {
     this.paymentDetails = paymentDetails;
     return this;
   }
@@ -132,12 +157,12 @@ public class MergeMultiDocWithTemplateParamsRequest {
    * Get paymentDetails
    * @return paymentDetails
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public PaymentDetails getPaymentDetails() {
     return paymentDetails;
   }
 
-  public void setPaymentDetails(@javax.annotation.Nonnull PaymentDetails paymentDetails) {
+  public void setPaymentDetails(@javax.annotation.Nullable PaymentDetails paymentDetails) {
     this.paymentDetails = paymentDetails;
   }
 
@@ -180,6 +205,7 @@ public class MergeMultiDocWithTemplateParamsRequest {
     }
     MergeMultiDocWithTemplateParamsRequest mergeMultiDocWithTemplateParamsRequest = (MergeMultiDocWithTemplateParamsRequest) o;
     return Objects.equals(this.documentsToMerge, mergeMultiDocWithTemplateParamsRequest.documentsToMerge) &&
+        Objects.equals(this.recipientAddressSource, mergeMultiDocWithTemplateParamsRequest.recipientAddressSource) &&
         Objects.equals(this.jobTemplate, mergeMultiDocWithTemplateParamsRequest.jobTemplate) &&
         Objects.equals(this.paymentDetails, mergeMultiDocWithTemplateParamsRequest.paymentDetails) &&
         Objects.equals(this.tags, mergeMultiDocWithTemplateParamsRequest.tags);
@@ -187,7 +213,7 @@ public class MergeMultiDocWithTemplateParamsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentsToMerge, jobTemplate, paymentDetails, tags);
+    return Objects.hash(documentsToMerge, recipientAddressSource, jobTemplate, paymentDetails, tags);
   }
 
   @Override
@@ -195,6 +221,7 @@ public class MergeMultiDocWithTemplateParamsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class MergeMultiDocWithTemplateParamsRequest {\n");
     sb.append("    documentsToMerge: ").append(toIndentedString(documentsToMerge)).append("\n");
+    sb.append("    recipientAddressSource: ").append(toIndentedString(recipientAddressSource)).append("\n");
     sb.append("    jobTemplate: ").append(toIndentedString(jobTemplate)).append("\n");
     sb.append("    paymentDetails: ").append(toIndentedString(paymentDetails)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
@@ -219,10 +246,10 @@ public class MergeMultiDocWithTemplateParamsRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("documentsToMerge", "jobTemplate", "paymentDetails", "tags"));
+    openapiFields = new HashSet<String>(Arrays.asList("documentsToMerge", "recipientAddressSource", "jobTemplate", "paymentDetails", "tags"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("documentsToMerge", "jobTemplate", "paymentDetails"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("documentsToMerge", "recipientAddressSource", "jobTemplate"));
   }
 
   /**
@@ -263,11 +290,15 @@ public class MergeMultiDocWithTemplateParamsRequest {
       for (int i = 0; i < jsonArraydocumentsToMerge.size(); i++) {
         DocumentSourceIdentifier.validateJsonElement(jsonArraydocumentsToMerge.get(i));
       };
+      // validate the required field `recipientAddressSource`
+      RecipientAddressSource.validateJsonElement(jsonObj.get("recipientAddressSource"));
       if (!jsonObj.get("jobTemplate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jobTemplate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jobTemplate").toString()));
       }
-      // validate the required field `paymentDetails`
-      PaymentDetails.validateJsonElement(jsonObj.get("paymentDetails"));
+      // validate the optional field `paymentDetails`
+      if (jsonObj.get("paymentDetails") != null && !jsonObj.get("paymentDetails").isJsonNull()) {
+        PaymentDetails.validateJsonElement(jsonObj.get("paymentDetails"));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));

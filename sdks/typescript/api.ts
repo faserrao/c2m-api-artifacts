@@ -126,21 +126,33 @@ export const DocumentFormat = {
 export type DocumentFormat = typeof DocumentFormat[keyof typeof DocumentFormat];
 
 
-/**
- * @type DocumentSourceIdentifier
- */
-export type DocumentSourceIdentifier = DocumentSourceIdentifierOneOf | DocumentSourceIdentifierOneOf1 | DocumentSourceIdentifierOneOf2 | number | string;
-
-export interface DocumentSourceIdentifierOneOf {
-    'uploadRequestId': number;
-    'documentName': string;
-}
-export interface DocumentSourceIdentifierOneOf1 {
-    'uploadRequestId': number;
+export interface DocumentSourceFromZip {
     'zipId': number;
     'documentName': string;
 }
-export interface DocumentSourceIdentifierOneOf2 {
+/**
+ * @type DocumentSourceIdentifier
+ */
+export type DocumentSourceIdentifier = DocumentSourceFromZip | DocumentSourceVariant1 | DocumentSourceVariant2 | DocumentSourceWithUpload | DocumentSourceWithUploadAndZip;
+
+/**
+ * OneOf variant for documentSourceIdentifier
+ */
+export interface DocumentSourceVariant1 {
+    'documentId': number;
+}
+/**
+ * OneOf variant for documentSourceIdentifier
+ */
+export interface DocumentSourceVariant2 {
+    'externalUrl': string;
+}
+export interface DocumentSourceWithUpload {
+    'uploadRequestId': number;
+    'documentName': string;
+}
+export interface DocumentSourceWithUploadAndZip {
+    'uploadRequestId': number;
     'zipId': number;
     'documentName': string;
 }
@@ -293,14 +305,16 @@ export interface MergeMultiDocParamsRequest {
 }
 export interface MergeMultiDocWithTemplateParams {
     'documentsToMerge': Array<DocumentSourceIdentifier>;
+    'recipientAddressSource': RecipientAddressSource;
     'jobTemplate': string;
-    'paymentDetails': PaymentDetails;
+    'paymentDetails'?: PaymentDetails;
     'tags'?: Array<string>;
 }
 export interface MergeMultiDocWithTemplateParamsRequest {
     'documentsToMerge': Array<DocumentSourceIdentifier>;
+    'recipientAddressSource': RecipientAddressSource;
     'jobTemplate': string;
-    'paymentDetails': PaymentDetails;
+    'paymentDetails'?: PaymentDetails;
     'tags'?: Array<string>;
 }
 export interface MultiPdfWithCaptureParams {
@@ -358,8 +372,14 @@ export interface RecipientAddress {
 /**
  * @type RecipientAddressSource
  */
-export type RecipientAddressSource = RecipientAddress | number;
+export type RecipientAddressSource = RecipientAddress | RecipientAddressSourceOneOf | RecipientAddressSourceOneOf1;
 
+export interface RecipientAddressSourceOneOf {
+    'addressListId': number;
+}
+export interface RecipientAddressSourceOneOf1 {
+    'addressId': number;
+}
 export interface ShortTokenRequest {
     /**
      * Optional if the long-term token is provided in Authorization header
@@ -487,19 +507,19 @@ export type SubmitSingleDocWithTemplateParamsRequest = SubmitSingleDocWithTempla
 
 export interface SubmitSingleDocWithTemplateParamsRequestOneOf {
     'jobTemplate': string;
-    'paymentDetails': PaymentDetails;
-    'tags'?: Array<string>;
-    'recipientAddressSources': Array<RecipientAddressSource>;
-}
-export interface SubmitSingleDocWithTemplateParamsRequestOneOf1 {
-    'jobTemplate': string;
-    'paymentDetails': PaymentDetails;
+    'paymentDetails'?: PaymentDetails;
     'tags'?: Array<string>;
     'documentSourceIdentifier': DocumentSourceIdentifier;
 }
+export interface SubmitSingleDocWithTemplateParamsRequestOneOf1 {
+    'jobTemplate': string;
+    'paymentDetails'?: PaymentDetails;
+    'tags'?: Array<string>;
+    'recipientAddressSources': Array<RecipientAddressSource>;
+}
 export interface SubmitSingleDocWithTemplateParamsRequestOneOf2 {
     'jobTemplate': string;
-    'paymentDetails': PaymentDetails;
+    'paymentDetails'?: PaymentDetails;
     'tags'?: Array<string>;
     'documentSourceIdentifier': DocumentSourceIdentifier;
     'recipientAddressSources': Array<RecipientAddressSource>;

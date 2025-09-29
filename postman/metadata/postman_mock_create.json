@@ -1,22 +1,22 @@
 {
   "mock": {
-    "createdAt": "2025-09-18T23:32:07.000Z",
-    "config": {
-      "headers": [],
-      "delay": null,
-      "matchBody": false,
-      "matchHeader": false,
-      "matchQueryParams": true,
-      "matchWildcards": true,
-      "serverResponseId": null
-    },
-    "owner": "13141248",
-    "id": "cd140b74-ed23-4980-834b-a966ac3393c1",
-    "collection": "13141248-adad82d8-8d91-4180-be68-ae9f8a8eadd9",
-    "uid": "13141248-cd140b74-ed23-4980-834b-a966ac3393c1",
-    "mockUrl": "https://cd140b74-ed23-4980-834b-a966ac3393c1.mock.pstmn.io",
+    "mockUrl": "https://cd9e8540-7ed4-446d-9769-15d62a266c89.mock.pstmn.io",
+    "collection": "46321051-48770e3f-239a-49f2-8abf-4f649c5813c6",
+    "uid": "46321051-cd9e8540-7ed4-446d-9769-15d62a266c89",
+    "id": "cd9e8540-7ed4-446d-9769-15d62a266c89",
     "environment": null,
+    "createdAt": "2025-09-29T19:41:42.000Z",
+    "updatedAt": "2025-09-29T19:41:42.000Z",
     "name": "C2mApiV2MockServer",
-    "updatedAt": "2025-09-18T23:32:07.000Z"
+    "owner": "46321051",
+    "config": {
+      "serverResponseId": null,
+      "delay": null,
+      "matchHeader": false,
+      "matchBody": false,
+      "headers": [],
+      "matchQueryParams": true,
+      "matchWildcards": true
+    }
   }
 }

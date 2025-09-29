@@ -13,12 +13,12 @@ import AnyCodable
 public struct SubmitSingleDocWithTemplateParamsRequestOneOf2: Codable, JSONEncodable, Hashable {
 
     public var jobTemplate: String
-    public var paymentDetails: PaymentDetails
+    public var paymentDetails: PaymentDetails?
     public var tags: [String]?
     public var documentSourceIdentifier: DocumentSourceIdentifier
     public var recipientAddressSources: [RecipientAddressSource]
 
-    public init(jobTemplate: String, paymentDetails: PaymentDetails, tags: [String]? = nil, documentSourceIdentifier: DocumentSourceIdentifier, recipientAddressSources: [RecipientAddressSource]) {
+    public init(jobTemplate: String, paymentDetails: PaymentDetails? = nil, tags: [String]? = nil, documentSourceIdentifier: DocumentSourceIdentifier, recipientAddressSources: [RecipientAddressSource]) {
         self.jobTemplate = jobTemplate
         self.paymentDetails = paymentDetails
         self.tags = tags
@@ -39,7 +39,7 @@ public struct SubmitSingleDocWithTemplateParamsRequestOneOf2: Codable, JSONEncod
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(jobTemplate, forKey: .jobTemplate)
-        try container.encode(paymentDetails, forKey: .paymentDetails)
+        try container.encodeIfPresent(paymentDetails, forKey: .paymentDetails)
         try container.encodeIfPresent(tags, forKey: .tags)
         try container.encode(documentSourceIdentifier, forKey: .documentSourceIdentifier)
         try container.encode(recipientAddressSources, forKey: .recipientAddressSources)

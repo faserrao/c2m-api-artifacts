@@ -15,5 +15,7 @@ Name | Type | Description | Notes
 **address2** | **String** |  | [optional] 
 **address3** | **String** |  | [optional] 
 **phoneNumber** | **String** |  | [optional] 
+**addressListId** | **Number** |  | 
+**addressId** | **Number** |  | 
 
 

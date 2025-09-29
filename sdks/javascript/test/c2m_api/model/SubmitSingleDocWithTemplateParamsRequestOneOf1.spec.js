@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property documentSourceIdentifier (base name: "documentSourceIdentifier")', function() {
-      // uncomment below and update the code to test the property documentSourceIdentifier
+    it('should have the property recipientAddressSources (base name: "recipientAddressSources")', function() {
+      // uncomment below and update the code to test the property recipientAddressSources
       //var instance = new C2MApiV2AuthOverlay.SubmitSingleDocWithTemplateParamsRequestOneOf1();
       //expect(instance).to.be();
     });

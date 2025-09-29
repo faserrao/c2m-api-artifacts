@@ -38,6 +38,7 @@ class TestMergeMultiDocWithTemplateParamsRequest(unittest.TestCase):
                 documents_to_merge = [
                     null
                     ],
+                recipient_address_source = None,
                 job_template = '',
                 payment_details = None,
                 tags = [
@@ -49,8 +50,8 @@ class TestMergeMultiDocWithTemplateParamsRequest(unittest.TestCase):
                 documents_to_merge = [
                     null
                     ],
+                recipient_address_source = None,
                 job_template = '',
-                payment_details = None,
         )
         """
 

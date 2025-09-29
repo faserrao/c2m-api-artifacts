@@ -11,40 +11,40 @@ import AnyCodable
 #endif
 
 public enum DocumentSourceIdentifier: Codable, JSONEncodable, Hashable {
-    case typeDocumentSourceIdentifierOneOf(DocumentSourceIdentifierOneOf)
-    case typeDocumentSourceIdentifierOneOf1(DocumentSourceIdentifierOneOf1)
-    case typeDocumentSourceIdentifierOneOf2(DocumentSourceIdentifierOneOf2)
-    case typeInt(Int)
-    case typeString(String)
+    case typeDocumentSourceFromZip(DocumentSourceFromZip)
+    case typeDocumentSourceVariant1(DocumentSourceVariant1)
+    case typeDocumentSourceVariant2(DocumentSourceVariant2)
+    case typeDocumentSourceWithUpload(DocumentSourceWithUpload)
+    case typeDocumentSourceWithUploadAndZip(DocumentSourceWithUploadAndZip)
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-        case .typeDocumentSourceIdentifierOneOf(let value):
+        case .typeDocumentSourceFromZip(let value):
             try container.encode(value)
-        case .typeDocumentSourceIdentifierOneOf1(let value):
+        case .typeDocumentSourceVariant1(let value):
             try container.encode(value)
-        case .typeDocumentSourceIdentifierOneOf2(let value):
+        case .typeDocumentSourceVariant2(let value):
             try container.encode(value)
-        case .typeInt(let value):
+        case .typeDocumentSourceWithUpload(let value):
             try container.encode(value)
-        case .typeString(let value):
+        case .typeDocumentSourceWithUploadAndZip(let value):
             try container.encode(value)
         }
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let value = try? container.decode(DocumentSourceIdentifierOneOf.self) {
-            self = .typeDocumentSourceIdentifierOneOf(value)
-        } else if let value = try? container.decode(DocumentSourceIdentifierOneOf1.self) {
-            self = .typeDocumentSourceIdentifierOneOf1(value)
-        } else if let value = try? container.decode(DocumentSourceIdentifierOneOf2.self) {
-            self = .typeDocumentSourceIdentifierOneOf2(value)
-        } else if let value = try? container.decode(Int.self) {
-            self = .typeInt(value)
-        } else if let value = try? container.decode(String.self) {
-            self = .typeString(value)
+        if let value = try? container.decode(DocumentSourceFromZip.self) {
+            self = .typeDocumentSourceFromZip(value)
+        } else if let value = try? container.decode(DocumentSourceVariant1.self) {
+            self = .typeDocumentSourceVariant1(value)
+        } else if let value = try? container.decode(DocumentSourceVariant2.self) {
+            self = .typeDocumentSourceVariant2(value)
+        } else if let value = try? container.decode(DocumentSourceWithUpload.self) {
+            self = .typeDocumentSourceWithUpload(value)
+        } else if let value = try? container.decode(DocumentSourceWithUploadAndZip.self) {
+            self = .typeDocumentSourceWithUploadAndZip(value)
         } else {
             throw DecodingError.typeMismatch(Self.Type.self, .init(codingPath: decoder.codingPath, debugDescription: "Unable to decode instance of DocumentSourceIdentifier"))
         }

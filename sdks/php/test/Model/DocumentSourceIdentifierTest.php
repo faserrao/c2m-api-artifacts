@@ -80,6 +80,24 @@ class DocumentSourceIdentifierTest extends TestCase
     }
 
     /**
+     * Test attribute "document_id"
+     */
+    public function testPropertyDocumentId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_url"
+     */
+    public function testPropertyExternalUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "upload_request_id"
      */
     public function testPropertyUploadRequestId()

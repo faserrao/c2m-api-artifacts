@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **jobTemplate** | **string** |  | [default to undefined]
-**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | [default to undefined]
+**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] [default to undefined]
 **tags** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
-**recipientAddressSources** | [**Array&lt;RecipientAddressSource&gt;**](RecipientAddressSource.md) |  | [default to undefined]
 **documentSourceIdentifier** | [**DocumentSourceIdentifier**](DocumentSourceIdentifier.md) |  | [default to undefined]
+**recipientAddressSources** | [**Array&lt;RecipientAddressSource&gt;**](RecipientAddressSource.md) |  | [default to undefined]
 
 ## Example
 
@@ -20,8 +20,8 @@ const instance: SubmitSingleDocWithTemplateParamsRequest = {
     jobTemplate,
     paymentDetails,
     tags,
-    recipientAddressSources,
     documentSourceIdentifier,
+    recipientAddressSources,
 };
 ```
 

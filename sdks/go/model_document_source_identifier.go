@@ -18,45 +18,45 @@ import (
 
 // DocumentSourceIdentifier - struct for DocumentSourceIdentifier
 type DocumentSourceIdentifier struct {
-	DocumentSourceIdentifierOneOf *DocumentSourceIdentifierOneOf
-	DocumentSourceIdentifierOneOf1 *DocumentSourceIdentifierOneOf1
-	DocumentSourceIdentifierOneOf2 *DocumentSourceIdentifierOneOf2
-	Int32 *int32
-	String *string
+	DocumentSourceFromZip *DocumentSourceFromZip
+	DocumentSourceVariant1 *DocumentSourceVariant1
+	DocumentSourceVariant2 *DocumentSourceVariant2
+	DocumentSourceWithUpload *DocumentSourceWithUpload
+	DocumentSourceWithUploadAndZip *DocumentSourceWithUploadAndZip
 }
 
-// DocumentSourceIdentifierOneOfAsDocumentSourceIdentifier is a convenience function that returns DocumentSourceIdentifierOneOf wrapped in DocumentSourceIdentifier
-func DocumentSourceIdentifierOneOfAsDocumentSourceIdentifier(v *DocumentSourceIdentifierOneOf) DocumentSourceIdentifier {
+// DocumentSourceFromZipAsDocumentSourceIdentifier is a convenience function that returns DocumentSourceFromZip wrapped in DocumentSourceIdentifier
+func DocumentSourceFromZipAsDocumentSourceIdentifier(v *DocumentSourceFromZip) DocumentSourceIdentifier {
 	return DocumentSourceIdentifier{
-		DocumentSourceIdentifierOneOf: v,
+		DocumentSourceFromZip: v,
 	}
 }
 
-// DocumentSourceIdentifierOneOf1AsDocumentSourceIdentifier is a convenience function that returns DocumentSourceIdentifierOneOf1 wrapped in DocumentSourceIdentifier
-func DocumentSourceIdentifierOneOf1AsDocumentSourceIdentifier(v *DocumentSourceIdentifierOneOf1) DocumentSourceIdentifier {
+// DocumentSourceVariant1AsDocumentSourceIdentifier is a convenience function that returns DocumentSourceVariant1 wrapped in DocumentSourceIdentifier
+func DocumentSourceVariant1AsDocumentSourceIdentifier(v *DocumentSourceVariant1) DocumentSourceIdentifier {
 	return DocumentSourceIdentifier{
-		DocumentSourceIdentifierOneOf1: v,
+		DocumentSourceVariant1: v,
 	}
 }
 
-// DocumentSourceIdentifierOneOf2AsDocumentSourceIdentifier is a convenience function that returns DocumentSourceIdentifierOneOf2 wrapped in DocumentSourceIdentifier
-func DocumentSourceIdentifierOneOf2AsDocumentSourceIdentifier(v *DocumentSourceIdentifierOneOf2) DocumentSourceIdentifier {
+// DocumentSourceVariant2AsDocumentSourceIdentifier is a convenience function that returns DocumentSourceVariant2 wrapped in DocumentSourceIdentifier
+func DocumentSourceVariant2AsDocumentSourceIdentifier(v *DocumentSourceVariant2) DocumentSourceIdentifier {
 	return DocumentSourceIdentifier{
-		DocumentSourceIdentifierOneOf2: v,
+		DocumentSourceVariant2: v,
 	}
 }
 
-// int32AsDocumentSourceIdentifier is a convenience function that returns int32 wrapped in DocumentSourceIdentifier
-func Int32AsDocumentSourceIdentifier(v *int32) DocumentSourceIdentifier {
+// DocumentSourceWithUploadAsDocumentSourceIdentifier is a convenience function that returns DocumentSourceWithUpload wrapped in DocumentSourceIdentifier
+func DocumentSourceWithUploadAsDocumentSourceIdentifier(v *DocumentSourceWithUpload) DocumentSourceIdentifier {
 	return DocumentSourceIdentifier{
-		Int32: v,
+		DocumentSourceWithUpload: v,
 	}
 }
 
-// stringAsDocumentSourceIdentifier is a convenience function that returns string wrapped in DocumentSourceIdentifier
-func StringAsDocumentSourceIdentifier(v *string) DocumentSourceIdentifier {
+// DocumentSourceWithUploadAndZipAsDocumentSourceIdentifier is a convenience function that returns DocumentSourceWithUploadAndZip wrapped in DocumentSourceIdentifier
+func DocumentSourceWithUploadAndZipAsDocumentSourceIdentifier(v *DocumentSourceWithUploadAndZip) DocumentSourceIdentifier {
 	return DocumentSourceIdentifier{
-		String: v,
+		DocumentSourceWithUploadAndZip: v,
 	}
 }
 
@@ -65,98 +65,98 @@ func StringAsDocumentSourceIdentifier(v *string) DocumentSourceIdentifier {
 func (dst *DocumentSourceIdentifier) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into DocumentSourceIdentifierOneOf
-	err = newStrictDecoder(data).Decode(&dst.DocumentSourceIdentifierOneOf)
+	// try to unmarshal data into DocumentSourceFromZip
+	err = newStrictDecoder(data).Decode(&dst.DocumentSourceFromZip)
 	if err == nil {
-		jsonDocumentSourceIdentifierOneOf, _ := json.Marshal(dst.DocumentSourceIdentifierOneOf)
-		if string(jsonDocumentSourceIdentifierOneOf) == "{}" { // empty struct
-			dst.DocumentSourceIdentifierOneOf = nil
+		jsonDocumentSourceFromZip, _ := json.Marshal(dst.DocumentSourceFromZip)
+		if string(jsonDocumentSourceFromZip) == "{}" { // empty struct
+			dst.DocumentSourceFromZip = nil
 		} else {
-			if err = validator.Validate(dst.DocumentSourceIdentifierOneOf); err != nil {
-				dst.DocumentSourceIdentifierOneOf = nil
+			if err = validator.Validate(dst.DocumentSourceFromZip); err != nil {
+				dst.DocumentSourceFromZip = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DocumentSourceIdentifierOneOf = nil
+		dst.DocumentSourceFromZip = nil
 	}
 
-	// try to unmarshal data into DocumentSourceIdentifierOneOf1
-	err = newStrictDecoder(data).Decode(&dst.DocumentSourceIdentifierOneOf1)
+	// try to unmarshal data into DocumentSourceVariant1
+	err = newStrictDecoder(data).Decode(&dst.DocumentSourceVariant1)
 	if err == nil {
-		jsonDocumentSourceIdentifierOneOf1, _ := json.Marshal(dst.DocumentSourceIdentifierOneOf1)
-		if string(jsonDocumentSourceIdentifierOneOf1) == "{}" { // empty struct
-			dst.DocumentSourceIdentifierOneOf1 = nil
+		jsonDocumentSourceVariant1, _ := json.Marshal(dst.DocumentSourceVariant1)
+		if string(jsonDocumentSourceVariant1) == "{}" { // empty struct
+			dst.DocumentSourceVariant1 = nil
 		} else {
-			if err = validator.Validate(dst.DocumentSourceIdentifierOneOf1); err != nil {
-				dst.DocumentSourceIdentifierOneOf1 = nil
+			if err = validator.Validate(dst.DocumentSourceVariant1); err != nil {
+				dst.DocumentSourceVariant1 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DocumentSourceIdentifierOneOf1 = nil
+		dst.DocumentSourceVariant1 = nil
 	}
 
-	// try to unmarshal data into DocumentSourceIdentifierOneOf2
-	err = newStrictDecoder(data).Decode(&dst.DocumentSourceIdentifierOneOf2)
+	// try to unmarshal data into DocumentSourceVariant2
+	err = newStrictDecoder(data).Decode(&dst.DocumentSourceVariant2)
 	if err == nil {
-		jsonDocumentSourceIdentifierOneOf2, _ := json.Marshal(dst.DocumentSourceIdentifierOneOf2)
-		if string(jsonDocumentSourceIdentifierOneOf2) == "{}" { // empty struct
-			dst.DocumentSourceIdentifierOneOf2 = nil
+		jsonDocumentSourceVariant2, _ := json.Marshal(dst.DocumentSourceVariant2)
+		if string(jsonDocumentSourceVariant2) == "{}" { // empty struct
+			dst.DocumentSourceVariant2 = nil
 		} else {
-			if err = validator.Validate(dst.DocumentSourceIdentifierOneOf2); err != nil {
-				dst.DocumentSourceIdentifierOneOf2 = nil
+			if err = validator.Validate(dst.DocumentSourceVariant2); err != nil {
+				dst.DocumentSourceVariant2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DocumentSourceIdentifierOneOf2 = nil
+		dst.DocumentSourceVariant2 = nil
 	}
 
-	// try to unmarshal data into Int32
-	err = newStrictDecoder(data).Decode(&dst.Int32)
+	// try to unmarshal data into DocumentSourceWithUpload
+	err = newStrictDecoder(data).Decode(&dst.DocumentSourceWithUpload)
 	if err == nil {
-		jsonInt32, _ := json.Marshal(dst.Int32)
-		if string(jsonInt32) == "{}" { // empty struct
-			dst.Int32 = nil
+		jsonDocumentSourceWithUpload, _ := json.Marshal(dst.DocumentSourceWithUpload)
+		if string(jsonDocumentSourceWithUpload) == "{}" { // empty struct
+			dst.DocumentSourceWithUpload = nil
 		} else {
-			if err = validator.Validate(dst.Int32); err != nil {
-				dst.Int32 = nil
+			if err = validator.Validate(dst.DocumentSourceWithUpload); err != nil {
+				dst.DocumentSourceWithUpload = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.Int32 = nil
+		dst.DocumentSourceWithUpload = nil
 	}
 
-	// try to unmarshal data into String
-	err = newStrictDecoder(data).Decode(&dst.String)
+	// try to unmarshal data into DocumentSourceWithUploadAndZip
+	err = newStrictDecoder(data).Decode(&dst.DocumentSourceWithUploadAndZip)
 	if err == nil {
-		jsonString, _ := json.Marshal(dst.String)
-		if string(jsonString) == "{}" { // empty struct
-			dst.String = nil
+		jsonDocumentSourceWithUploadAndZip, _ := json.Marshal(dst.DocumentSourceWithUploadAndZip)
+		if string(jsonDocumentSourceWithUploadAndZip) == "{}" { // empty struct
+			dst.DocumentSourceWithUploadAndZip = nil
 		} else {
-			if err = validator.Validate(dst.String); err != nil {
-				dst.String = nil
+			if err = validator.Validate(dst.DocumentSourceWithUploadAndZip); err != nil {
+				dst.DocumentSourceWithUploadAndZip = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.String = nil
+		dst.DocumentSourceWithUploadAndZip = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.DocumentSourceIdentifierOneOf = nil
-		dst.DocumentSourceIdentifierOneOf1 = nil
-		dst.DocumentSourceIdentifierOneOf2 = nil
-		dst.Int32 = nil
-		dst.String = nil
+		dst.DocumentSourceFromZip = nil
+		dst.DocumentSourceVariant1 = nil
+		dst.DocumentSourceVariant2 = nil
+		dst.DocumentSourceWithUpload = nil
+		dst.DocumentSourceWithUploadAndZip = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(DocumentSourceIdentifier)")
 	} else if match == 1 {
@@ -168,24 +168,24 @@ func (dst *DocumentSourceIdentifier) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src DocumentSourceIdentifier) MarshalJSON() ([]byte, error) {
-	if src.DocumentSourceIdentifierOneOf != nil {
-		return json.Marshal(&src.DocumentSourceIdentifierOneOf)
+	if src.DocumentSourceFromZip != nil {
+		return json.Marshal(&src.DocumentSourceFromZip)
 	}
 
-	if src.DocumentSourceIdentifierOneOf1 != nil {
-		return json.Marshal(&src.DocumentSourceIdentifierOneOf1)
+	if src.DocumentSourceVariant1 != nil {
+		return json.Marshal(&src.DocumentSourceVariant1)
 	}
 
-	if src.DocumentSourceIdentifierOneOf2 != nil {
-		return json.Marshal(&src.DocumentSourceIdentifierOneOf2)
+	if src.DocumentSourceVariant2 != nil {
+		return json.Marshal(&src.DocumentSourceVariant2)
 	}
 
-	if src.Int32 != nil {
-		return json.Marshal(&src.Int32)
+	if src.DocumentSourceWithUpload != nil {
+		return json.Marshal(&src.DocumentSourceWithUpload)
 	}
 
-	if src.String != nil {
-		return json.Marshal(&src.String)
+	if src.DocumentSourceWithUploadAndZip != nil {
+		return json.Marshal(&src.DocumentSourceWithUploadAndZip)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -196,24 +196,24 @@ func (obj *DocumentSourceIdentifier) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
-	if obj.DocumentSourceIdentifierOneOf != nil {
-		return obj.DocumentSourceIdentifierOneOf
+	if obj.DocumentSourceFromZip != nil {
+		return obj.DocumentSourceFromZip
 	}
 
-	if obj.DocumentSourceIdentifierOneOf1 != nil {
-		return obj.DocumentSourceIdentifierOneOf1
+	if obj.DocumentSourceVariant1 != nil {
+		return obj.DocumentSourceVariant1
 	}
 
-	if obj.DocumentSourceIdentifierOneOf2 != nil {
-		return obj.DocumentSourceIdentifierOneOf2
+	if obj.DocumentSourceVariant2 != nil {
+		return obj.DocumentSourceVariant2
 	}
 
-	if obj.Int32 != nil {
-		return obj.Int32
+	if obj.DocumentSourceWithUpload != nil {
+		return obj.DocumentSourceWithUpload
 	}
 
-	if obj.String != nil {
-		return obj.String
+	if obj.DocumentSourceWithUploadAndZip != nil {
+		return obj.DocumentSourceWithUploadAndZip
 	}
 
 	// all schemas are nil
@@ -222,24 +222,24 @@ func (obj *DocumentSourceIdentifier) GetActualInstance() (interface{}) {
 
 // Get the actual instance value
 func (obj DocumentSourceIdentifier) GetActualInstanceValue() (interface{}) {
-	if obj.DocumentSourceIdentifierOneOf != nil {
-		return *obj.DocumentSourceIdentifierOneOf
+	if obj.DocumentSourceFromZip != nil {
+		return *obj.DocumentSourceFromZip
 	}
 
-	if obj.DocumentSourceIdentifierOneOf1 != nil {
-		return *obj.DocumentSourceIdentifierOneOf1
+	if obj.DocumentSourceVariant1 != nil {
+		return *obj.DocumentSourceVariant1
 	}
 
-	if obj.DocumentSourceIdentifierOneOf2 != nil {
-		return *obj.DocumentSourceIdentifierOneOf2
+	if obj.DocumentSourceVariant2 != nil {
+		return *obj.DocumentSourceVariant2
 	}
 
-	if obj.Int32 != nil {
-		return *obj.Int32
+	if obj.DocumentSourceWithUpload != nil {
+		return *obj.DocumentSourceWithUpload
 	}
 
-	if obj.String != nil {
-		return *obj.String
+	if obj.DocumentSourceWithUploadAndZip != nil {
+		return *obj.DocumentSourceWithUploadAndZip
 	}
 
 	// all schemas are nil

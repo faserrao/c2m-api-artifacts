@@ -22,8 +22,9 @@ var _ MappedNullable = &MergeMultiDocWithTemplateParams{}
 // MergeMultiDocWithTemplateParams struct for MergeMultiDocWithTemplateParams
 type MergeMultiDocWithTemplateParams struct {
 	DocumentsToMerge []DocumentSourceIdentifier `json:"documentsToMerge"`
+	RecipientAddressSource RecipientAddressSource `json:"recipientAddressSource"`
 	JobTemplate string `json:"jobTemplate"`
-	PaymentDetails PaymentDetails `json:"paymentDetails"`
+	PaymentDetails *PaymentDetails `json:"paymentDetails,omitempty"`
 	Tags []string `json:"tags,omitempty"`
 }
 
@@ -33,11 +34,11 @@ type _MergeMultiDocWithTemplateParams MergeMultiDocWithTemplateParams
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMergeMultiDocWithTemplateParams(documentsToMerge []DocumentSourceIdentifier, jobTemplate string, paymentDetails PaymentDetails) *MergeMultiDocWithTemplateParams {
+func NewMergeMultiDocWithTemplateParams(documentsToMerge []DocumentSourceIdentifier, recipientAddressSource RecipientAddressSource, jobTemplate string) *MergeMultiDocWithTemplateParams {
 	this := MergeMultiDocWithTemplateParams{}
 	this.DocumentsToMerge = documentsToMerge
+	this.RecipientAddressSource = recipientAddressSource
 	this.JobTemplate = jobTemplate
-	this.PaymentDetails = paymentDetails
 	return &this
 }
 
@@ -73,6 +74,30 @@ func (o *MergeMultiDocWithTemplateParams) SetDocumentsToMerge(v []DocumentSource
 	o.DocumentsToMerge = v
 }
 
+// GetRecipientAddressSource returns the RecipientAddressSource field value
+func (o *MergeMultiDocWithTemplateParams) GetRecipientAddressSource() RecipientAddressSource {
+	if o == nil {
+		var ret RecipientAddressSource
+		return ret
+	}
+
+	return o.RecipientAddressSource
+}
+
+// GetRecipientAddressSourceOk returns a tuple with the RecipientAddressSource field value
+// and a boolean to check if the value has been set.
+func (o *MergeMultiDocWithTemplateParams) GetRecipientAddressSourceOk() (*RecipientAddressSource, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RecipientAddressSource, true
+}
+
+// SetRecipientAddressSource sets field value
+func (o *MergeMultiDocWithTemplateParams) SetRecipientAddressSource(v RecipientAddressSource) {
+	o.RecipientAddressSource = v
+}
+
 // GetJobTemplate returns the JobTemplate field value
 func (o *MergeMultiDocWithTemplateParams) GetJobTemplate() string {
 	if o == nil {
@@ -97,28 +122,36 @@ func (o *MergeMultiDocWithTemplateParams) SetJobTemplate(v string) {
 	o.JobTemplate = v
 }
 
-// GetPaymentDetails returns the PaymentDetails field value
+// GetPaymentDetails returns the PaymentDetails field value if set, zero value otherwise.
 func (o *MergeMultiDocWithTemplateParams) GetPaymentDetails() PaymentDetails {
-	if o == nil {
+	if o == nil || IsNil(o.PaymentDetails) {
 		var ret PaymentDetails
 		return ret
 	}
-
-	return o.PaymentDetails
+	return *o.PaymentDetails
 }
 
-// GetPaymentDetailsOk returns a tuple with the PaymentDetails field value
+// GetPaymentDetailsOk returns a tuple with the PaymentDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MergeMultiDocWithTemplateParams) GetPaymentDetailsOk() (*PaymentDetails, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PaymentDetails) {
 		return nil, false
 	}
-	return &o.PaymentDetails, true
+	return o.PaymentDetails, true
 }
 
-// SetPaymentDetails sets field value
+// HasPaymentDetails returns a boolean if a field has been set.
+func (o *MergeMultiDocWithTemplateParams) HasPaymentDetails() bool {
+	if o != nil && !IsNil(o.PaymentDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentDetails gets a reference to the given PaymentDetails and assigns it to the PaymentDetails field.
 func (o *MergeMultiDocWithTemplateParams) SetPaymentDetails(v PaymentDetails) {
-	o.PaymentDetails = v
+	o.PaymentDetails = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
@@ -164,8 +197,11 @@ func (o MergeMultiDocWithTemplateParams) MarshalJSON() ([]byte, error) {
 func (o MergeMultiDocWithTemplateParams) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["documentsToMerge"] = o.DocumentsToMerge
+	toSerialize["recipientAddressSource"] = o.RecipientAddressSource
 	toSerialize["jobTemplate"] = o.JobTemplate
-	toSerialize["paymentDetails"] = o.PaymentDetails
+	if !IsNil(o.PaymentDetails) {
+		toSerialize["paymentDetails"] = o.PaymentDetails
+	}
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
@@ -178,8 +214,8 @@ func (o *MergeMultiDocWithTemplateParams) UnmarshalJSON(data []byte) (err error)
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"documentsToMerge",
+		"recipientAddressSource",
 		"jobTemplate",
-		"paymentDetails",
 	}
 
 	allProperties := make(map[string]interface{})

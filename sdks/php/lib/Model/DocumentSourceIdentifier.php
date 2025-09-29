@@ -57,6 +57,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
+        'document_id' => 'int',
+        'external_url' => 'string',
         'upload_request_id' => 'int',
         'document_name' => 'string',
         'zip_id' => 'int'
@@ -70,6 +72,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'document_id' => null,
+        'external_url' => 'uri',
         'upload_request_id' => null,
         'document_name' => null,
         'zip_id' => null
@@ -81,6 +85,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'document_id' => false,
+        'external_url' => false,
         'upload_request_id' => false,
         'document_name' => false,
         'zip_id' => false
@@ -172,6 +178,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
+        'document_id' => 'documentId',
+        'external_url' => 'externalUrl',
         'upload_request_id' => 'uploadRequestId',
         'document_name' => 'documentName',
         'zip_id' => 'zipId'
@@ -183,6 +191,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
+        'document_id' => 'setDocumentId',
+        'external_url' => 'setExternalUrl',
         'upload_request_id' => 'setUploadRequestId',
         'document_name' => 'setDocumentName',
         'zip_id' => 'setZipId'
@@ -194,6 +204,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
+        'document_id' => 'getDocumentId',
+        'external_url' => 'getExternalUrl',
         'upload_request_id' => 'getUploadRequestId',
         'document_name' => 'getDocumentName',
         'zip_id' => 'getZipId'
@@ -256,6 +268,8 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('document_id', $data ?? [], null);
+        $this->setIfExists('external_url', $data ?? [], null);
         $this->setIfExists('upload_request_id', $data ?? [], null);
         $this->setIfExists('document_name', $data ?? [], null);
         $this->setIfExists('zip_id', $data ?? [], null);
@@ -288,6 +302,12 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
+        if ($this->container['document_id'] === null) {
+            $invalidProperties[] = "'document_id' can't be null";
+        }
+        if ($this->container['external_url'] === null) {
+            $invalidProperties[] = "'external_url' can't be null";
+        }
         if ($this->container['upload_request_id'] === null) {
             $invalidProperties[] = "'upload_request_id' can't be null";
         }
@@ -311,6 +331,60 @@ class DocumentSourceIdentifier implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets document_id
+     *
+     * @return int
+     */
+    public function getDocumentId()
+    {
+        return $this->container['document_id'];
+    }
+
+    /**
+     * Sets document_id
+     *
+     * @param int $document_id document_id
+     *
+     * @return self
+     */
+    public function setDocumentId($document_id)
+    {
+        if (is_null($document_id)) {
+            throw new \InvalidArgumentException('non-nullable document_id cannot be null');
+        }
+        $this->container['document_id'] = $document_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_url
+     *
+     * @return string
+     */
+    public function getExternalUrl()
+    {
+        return $this->container['external_url'];
+    }
+
+    /**
+     * Sets external_url
+     *
+     * @param string $external_url external_url
+     *
+     * @return self
+     */
+    public function setExternalUrl($external_url)
+    {
+        if (is_null($external_url)) {
+            throw new \InvalidArgumentException('non-nullable external_url cannot be null');
+        }
+        $this->container['external_url'] = $external_url;
+
+        return $this;
+    }
 
     /**
      * Gets upload_request_id

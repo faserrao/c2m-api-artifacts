@@ -40,19 +40,18 @@ class TestSubmitSingleDocWithTemplateParams(unittest.TestCase):
                 tags = [
                     ''
                     ],
+                document_source_identifier = None,
                 recipient_address_sources = [
                     null
-                    ],
-                document_source_identifier = None
+                    ]
             )
         else:
             return SubmitSingleDocWithTemplateParams(
                 job_template = '',
-                payment_details = None,
+                document_source_identifier = None,
                 recipient_address_sources = [
                     null
                     ],
-                document_source_identifier = None,
         )
         """
 

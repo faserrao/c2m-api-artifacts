@@ -24,6 +24,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_doc_job_template job created successfully
+                    jobId: single_doc_job_template_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_doc_job_template job queued for processing
+                    jobId: single_doc_job_template_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -45,6 +58,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_docs_job_template job created successfully
+                    jobId: multi_docs_job_template_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_docs_job_template job queued for processing
+                    jobId: multi_docs_job_template_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -66,6 +92,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_doc_merge_job_template job created successfully
+                    jobId: multi_doc_merge_job_template_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_doc_merge_job_template job queued for processing
+                    jobId: multi_doc_merge_job_template_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -87,6 +126,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_doc job created successfully
+                    jobId: single_doc_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_doc job queued for processing
+                    jobId: single_doc_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -108,6 +160,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_doc job created successfully
+                    jobId: multi_doc_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_doc job queued for processing
+                    jobId: multi_doc_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -129,6 +194,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_doc_merge job created successfully
+                    jobId: multi_doc_merge_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_doc_merge job queued for processing
+                    jobId: multi_doc_merge_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -150,6 +228,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_pdf_split job created successfully
+                    jobId: single_pdf_split_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_pdf_split job queued for processing
+                    jobId: single_pdf_split_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -171,6 +262,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: single_pdf_split_addressCapture job created successfully
+                    jobId: single_pdf_split_addressCapture_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: single_pdf_split_addressCapture job queued for processing
+                    jobId: single_pdf_split_addressCapture_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -192,6 +296,19 @@ paths:
         "200":
           content:
             application/json:
+              examples:
+                success:
+                  summary: Successful job creation
+                  value:
+                    status: success
+                    message: multi_pdf_address_capture job created successfully
+                    jobId: multi_pdf_address_capture_job_123456
+                queued:
+                  summary: Job queued for processing
+                  value:
+                    status: queued
+                    message: multi_pdf_address_capture job queued for processing
+                    jobId: multi_pdf_address_capture_job_789012
               schema:
                 $ref: "#/components/schemas/StandardResponse"
           description: Success
@@ -633,6 +750,8 @@ components:
           items:
             $ref: "#/components/schemas/documentSourceIdentifier"
           type: array
+        recipientAddressSource:
+          $ref: "#/components/schemas/recipientAddressSource"
         jobTemplate:
           type: string
         paymentDetails:
@@ -644,7 +763,7 @@ components:
       required:
       - documentsToMerge
       - jobTemplate
-      - paymentDetails
+      - recipientAddressSource
       type: object
     singleDocJobParams:
       properties:
@@ -834,22 +953,16 @@ components:
       $ref: "#/components/schemas/tbd"
     documentSourceIdentifier:
       oneOf:
-      - $ref: "#/components/schemas/documentId"
-      - $ref: "#/components/schemas/externalUrl"
-      - $ref: "#/components/schemas/documentSourceIdentifier_oneOf"
-      - $ref: "#/components/schemas/documentSourceIdentifier_oneOf_1"
-      - $ref: "#/components/schemas/documentSourceIdentifier_oneOf_2"
+      - $ref: "#/components/schemas/DocumentSourceVariant1"
+      - $ref: "#/components/schemas/DocumentSourceVariant2"
+      - $ref: "#/components/schemas/DocumentSourceWithUpload"
+      - $ref: "#/components/schemas/DocumentSourceWithUploadAndZip"
+      - $ref: "#/components/schemas/DocumentSourceFromZip"
     recipientAddressSource:
       oneOf:
-      - $ref: "#/components/schemas/exactlyOneNewAddress"
-      - $ref: "#/components/schemas/exactlyOneListId"
-      - $ref: "#/components/schemas/exactlyOneId"
-    exactlyOneNewAddress:
-      $ref: "#/components/schemas/recipientAddress"
-    exactlyOneListId:
-      $ref: "#/components/schemas/addressListId"
-    exactlyOneId:
-      $ref: "#/components/schemas/addressId"
+      - $ref: "#/components/schemas/recipientAddress"
+      - $ref: "#/components/schemas/recipientAddressSource_oneOf"
+      - $ref: "#/components/schemas/recipientAddressSource_oneOf_1"
     recipientAddress:
       properties:
         firstName:
@@ -1083,11 +1196,17 @@ components:
       - businessLetter
       - personalLetter
       type: string
+    exactlyOneNewAddress:
+      $ref: "#/components/schemas/recipientAddress"
+    exactlyOneListId:
+      type: integer
+    exactlyOneId:
+      type: integer
     StandardResponse:
       example:
-        jobId: jobId
-        message: message
-        status: status
+        status: success
+        message: Job created successfully
+        jobId: job_20241227_123456
       properties:
         status:
           type: string
@@ -1095,6 +1214,56 @@ components:
           type: string
         jobId:
           type: string
+      type: object
+    DocumentSourceWithUpload:
+      properties:
+        uploadRequestId:
+          type: integer
+        documentName:
+          type: string
+      required:
+      - documentName
+      - uploadRequestId
+      type: object
+    DocumentSourceWithUploadAndZip:
+      properties:
+        uploadRequestId:
+          type: integer
+        zipId:
+          type: integer
+        documentName:
+          type: string
+      required:
+      - documentName
+      - uploadRequestId
+      - zipId
+      type: object
+    DocumentSourceFromZip:
+      properties:
+        zipId:
+          type: integer
+        documentName:
+          type: string
+      required:
+      - documentName
+      - zipId
+      type: object
+    DocumentSourceVariant1:
+      description: OneOf variant for documentSourceIdentifier
+      properties:
+        documentId:
+          type: integer
+      required:
+      - documentId
+      type: object
+    DocumentSourceVariant2:
+      description: OneOf variant for documentSourceIdentifier
+      properties:
+        externalUrl:
+          format: uri
+          type: string
+      required:
+      - externalUrl
       type: object
     ShortTokenRequest:
       additionalProperties: false
@@ -1274,14 +1443,11 @@ components:
           items:
             type: string
           type: array
-        recipientAddressSources:
-          items:
-            $ref: "#/components/schemas/recipientAddressSource"
-          type: array
+        documentSourceIdentifier:
+          $ref: "#/components/schemas/documentSourceIdentifier"
       required:
+      - documentSourceIdentifier
       - jobTemplate
-      - paymentDetails
-      - recipientAddressSources
       type: object
     submitSingleDocWithTemplateParams_request_oneOf_1:
       properties:
@@ -1293,12 +1459,13 @@ components:
           items:
             type: string
           type: array
-        documentSourceIdentifier:
-          $ref: "#/components/schemas/documentSourceIdentifier"
+        recipientAddressSources:
+          items:
+            $ref: "#/components/schemas/recipientAddressSource"
+          type: array
       required:
-      - documentSourceIdentifier
       - jobTemplate
-      - paymentDetails
+      - recipientAddressSources
       type: object
     submitSingleDocWithTemplateParams_request_oneOf_2:
       properties:
@@ -1319,7 +1486,6 @@ components:
       required:
       - documentSourceIdentifier
       - jobTemplate
-      - paymentDetails
       - recipientAddressSources
       type: object
     submitSingleDocWithTemplateParams_request:
@@ -1362,6 +1528,8 @@ components:
           items:
             $ref: "#/components/schemas/documentSourceIdentifier"
           type: array
+        recipientAddressSource:
+          $ref: "#/components/schemas/recipientAddressSource"
         jobTemplate:
           type: string
         paymentDetails:
@@ -1373,7 +1541,7 @@ components:
       required:
       - documentsToMerge
       - jobTemplate
-      - paymentDetails
+      - recipientAddressSource
       type: object
     singleDocJobParams_request:
       properties:
@@ -1501,38 +1669,19 @@ components:
       - addressCapturePdfs
       - paymentDetails
       type: object
-    documentSourceIdentifier_oneOf:
+    recipientAddressSource_oneOf:
       properties:
-        uploadRequestId:
+        addressListId:
           type: integer
-        documentName:
-          type: string
       required:
-      - documentName
-      - uploadRequestId
+      - addressListId
       type: object
-    documentSourceIdentifier_oneOf_1:
+    recipientAddressSource_oneOf_1:
       properties:
-        uploadRequestId:
+        addressId:
           type: integer
-        zipId:
-          type: integer
-        documentName:
-          type: string
       required:
-      - documentName
-      - uploadRequestId
-      - zipId
-      type: object
-    documentSourceIdentifier_oneOf_2:
-      properties:
-        zipId:
-          type: integer
-        documentName:
-          type: string
-      required:
-      - documentName
-      - zipId
+      - addressId
       type: object
   securitySchemes:
     bearerAuth:

@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from c2m_api.models.document_source_identifier import DocumentSourceIdentifier
 from c2m_api.models.payment_details import PaymentDetails
-from c2m_api.models.recipient_address_source import RecipientAddressSource
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,10 +29,10 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf(BaseModel):
     SubmitSingleDocWithTemplateParamsRequestOneOf
     """ # noqa: E501
     job_template: StrictStr = Field(alias="jobTemplate")
-    payment_details: PaymentDetails = Field(alias="paymentDetails")
+    payment_details: Optional[PaymentDetails] = Field(default=None, alias="paymentDetails")
     tags: Optional[List[StrictStr]] = None
-    recipient_address_sources: List[RecipientAddressSource] = Field(alias="recipientAddressSources")
-    __properties: ClassVar[List[str]] = ["jobTemplate", "paymentDetails", "tags", "recipientAddressSources"]
+    document_source_identifier: DocumentSourceIdentifier = Field(alias="documentSourceIdentifier")
+    __properties: ClassVar[List[str]] = ["jobTemplate", "paymentDetails", "tags", "documentSourceIdentifier"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,13 +76,9 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of payment_details
         if self.payment_details:
             _dict['paymentDetails'] = self.payment_details.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in recipient_address_sources (list)
-        _items = []
-        if self.recipient_address_sources:
-            for _item_recipient_address_sources in self.recipient_address_sources:
-                if _item_recipient_address_sources:
-                    _items.append(_item_recipient_address_sources.to_dict())
-            _dict['recipientAddressSources'] = _items
+        # override the default output from pydantic by calling `to_dict()` of document_source_identifier
+        if self.document_source_identifier:
+            _dict['documentSourceIdentifier'] = self.document_source_identifier.to_dict()
         return _dict
 
     @classmethod
@@ -98,7 +94,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf(BaseModel):
             "jobTemplate": obj.get("jobTemplate"),
             "paymentDetails": PaymentDetails.from_dict(obj["paymentDetails"]) if obj.get("paymentDetails") is not None else None,
             "tags": obj.get("tags"),
-            "recipientAddressSources": [RecipientAddressSource.from_dict(_item) for _item in obj["recipientAddressSources"]] if obj.get("recipientAddressSources") is not None else None
+            "documentSourceIdentifier": DocumentSourceIdentifier.from_dict(obj["documentSourceIdentifier"]) if obj.get("documentSourceIdentifier") is not None else None
         })
         return _obj
 

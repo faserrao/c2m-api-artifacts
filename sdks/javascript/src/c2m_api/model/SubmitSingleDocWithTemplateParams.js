@@ -157,14 +157,14 @@ SubmitSingleDocWithTemplateParams.prototype['paymentDetails'] = undefined;
 SubmitSingleDocWithTemplateParams.prototype['tags'] = undefined;
 
 /**
- * @member {Array.<module:c2m_api/model/RecipientAddressSource>} recipientAddressSources
- */
-SubmitSingleDocWithTemplateParams.prototype['recipientAddressSources'] = undefined;
-
-/**
  * @member {module:c2m_api/model/DocumentSourceIdentifier} documentSourceIdentifier
  */
 SubmitSingleDocWithTemplateParams.prototype['documentSourceIdentifier'] = undefined;
+
+/**
+ * @member {Array.<module:c2m_api/model/RecipientAddressSource>} recipientAddressSources
+ */
+SubmitSingleDocWithTemplateParams.prototype['recipientAddressSources'] = undefined;
 
 
 SubmitSingleDocWithTemplateParams.OneOf = ["SubmitSingleDocWithTemplateParamsRequestOneOf", "SubmitSingleDocWithTemplateParamsRequestOneOf1", "SubmitSingleDocWithTemplateParamsRequestOneOf2"];

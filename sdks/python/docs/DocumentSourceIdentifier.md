@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**document_id** | **int** |  | 
+**external_url** | **str** |  | 
 **upload_request_id** | **int** |  | 
 **document_name** | **str** |  | 
 **zip_id** | **int** |  | 

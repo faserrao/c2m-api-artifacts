@@ -15,12 +15,14 @@ Name | Type | Description | Notes
 **Address2** | Pointer to **string** |  | [optional] 
 **Address3** | Pointer to **string** |  | [optional] 
 **PhoneNumber** | Pointer to **string** |  | [optional] 
+**AddressListId** | **int32** |  | 
+**AddressId** | **int32** |  | 
 
 ## Methods
 
 ### NewRecipientAddressSource
 
-`func NewRecipientAddressSource(firstName string, lastName string, address1 string, city string, state string, zip string, country string, ) *RecipientAddressSource`
+`func NewRecipientAddressSource(firstName string, lastName string, address1 string, city string, state string, zip string, country string, addressListId int32, addressId int32, ) *RecipientAddressSource`
 
 NewRecipientAddressSource instantiates a new RecipientAddressSource object
 This constructor will assign default values to properties that have it defined,
@@ -274,6 +276,46 @@ SetPhoneNumber sets PhoneNumber field to given value.
 `func (o *RecipientAddressSource) HasPhoneNumber() bool`
 
 HasPhoneNumber returns a boolean if a field has been set.
+
+### GetAddressListId
+
+`func (o *RecipientAddressSource) GetAddressListId() int32`
+
+GetAddressListId returns the AddressListId field if non-nil, zero value otherwise.
+
+### GetAddressListIdOk
+
+`func (o *RecipientAddressSource) GetAddressListIdOk() (*int32, bool)`
+
+GetAddressListIdOk returns a tuple with the AddressListId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddressListId
+
+`func (o *RecipientAddressSource) SetAddressListId(v int32)`
+
+SetAddressListId sets AddressListId field to given value.
+
+
+### GetAddressId
+
+`func (o *RecipientAddressSource) GetAddressId() int32`
+
+GetAddressId returns the AddressId field if non-nil, zero value otherwise.
+
+### GetAddressIdOk
+
+`func (o *RecipientAddressSource) GetAddressIdOk() (*int32, bool)`
+
+GetAddressIdOk returns a tuple with the AddressId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddressId
+
+`func (o *RecipientAddressSource) SetAddressId(v int32)`
+
+SetAddressId sets AddressId field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

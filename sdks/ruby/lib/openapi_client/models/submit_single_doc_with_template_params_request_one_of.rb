@@ -21,7 +21,7 @@ module OpenapiClient
 
     attr_accessor :tags
 
-    attr_accessor :recipient_address_sources
+    attr_accessor :document_source_identifier
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -29,7 +29,7 @@ module OpenapiClient
         :'job_template' => :'jobTemplate',
         :'payment_details' => :'paymentDetails',
         :'tags' => :'tags',
-        :'recipient_address_sources' => :'recipientAddressSources'
+        :'document_source_identifier' => :'documentSourceIdentifier'
       }
     end
 
@@ -49,7 +49,7 @@ module OpenapiClient
         :'job_template' => :'String',
         :'payment_details' => :'PaymentDetails',
         :'tags' => :'Array<String>',
-        :'recipient_address_sources' => :'Array<RecipientAddressSource>'
+        :'document_source_identifier' => :'DocumentSourceIdentifier'
       }
     end
 
@@ -83,8 +83,6 @@ module OpenapiClient
 
       if attributes.key?(:'payment_details')
         self.payment_details = attributes[:'payment_details']
-      else
-        self.payment_details = nil
       end
 
       if attributes.key?(:'tags')
@@ -93,12 +91,10 @@ module OpenapiClient
         end
       end
 
-      if attributes.key?(:'recipient_address_sources')
-        if (value = attributes[:'recipient_address_sources']).is_a?(Array)
-          self.recipient_address_sources = value
-        end
+      if attributes.key?(:'document_source_identifier')
+        self.document_source_identifier = attributes[:'document_source_identifier']
       else
-        self.recipient_address_sources = nil
+        self.document_source_identifier = nil
       end
     end
 
@@ -111,12 +107,8 @@ module OpenapiClient
         invalid_properties.push('invalid value for "job_template", job_template cannot be nil.')
       end
 
-      if @payment_details.nil?
-        invalid_properties.push('invalid value for "payment_details", payment_details cannot be nil.')
-      end
-
-      if @recipient_address_sources.nil?
-        invalid_properties.push('invalid value for "recipient_address_sources", recipient_address_sources cannot be nil.')
+      if @document_source_identifier.nil?
+        invalid_properties.push('invalid value for "document_source_identifier", document_source_identifier cannot be nil.')
       end
 
       invalid_properties
@@ -127,8 +119,7 @@ module OpenapiClient
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @job_template.nil?
-      return false if @payment_details.nil?
-      return false if @recipient_address_sources.nil?
+      return false if @document_source_identifier.nil?
       true
     end
 
@@ -143,23 +134,13 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] payment_details Value to be assigned
-    def payment_details=(payment_details)
-      if payment_details.nil?
-        fail ArgumentError, 'payment_details cannot be nil'
+    # @param [Object] document_source_identifier Value to be assigned
+    def document_source_identifier=(document_source_identifier)
+      if document_source_identifier.nil?
+        fail ArgumentError, 'document_source_identifier cannot be nil'
       end
 
-      @payment_details = payment_details
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] recipient_address_sources Value to be assigned
-    def recipient_address_sources=(recipient_address_sources)
-      if recipient_address_sources.nil?
-        fail ArgumentError, 'recipient_address_sources cannot be nil'
-      end
-
-      @recipient_address_sources = recipient_address_sources
+      @document_source_identifier = document_source_identifier
     end
 
     # Checks equality by comparing each attribute.
@@ -170,7 +151,7 @@ module OpenapiClient
           job_template == o.job_template &&
           payment_details == o.payment_details &&
           tags == o.tags &&
-          recipient_address_sources == o.recipient_address_sources
+          document_source_identifier == o.document_source_identifier
     end
 
     # @see the `==` method
@@ -182,7 +163,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [job_template, payment_details, tags, recipient_address_sources].hash
+      [job_template, payment_details, tags, document_source_identifier].hash
     end
 
     # Builds the object from hash

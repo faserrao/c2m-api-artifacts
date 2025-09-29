@@ -14,16 +14,16 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DocumentSourceIdentifier {
-    DocumentId(i32),
-    ExternalUrl(String),
-    DocumentSourceIdentifierOneOf(Box<models::DocumentSourceIdentifierOneOf>),
-    DocumentSourceIdentifierOneOf1(Box<models::DocumentSourceIdentifierOneOf1>),
-    DocumentSourceIdentifierOneOf2(Box<models::DocumentSourceIdentifierOneOf2>),
+    DocumentSourceVariant1(Box<models::DocumentSourceVariant1>),
+    DocumentSourceVariant2(Box<models::DocumentSourceVariant2>),
+    DocumentSourceWithUpload(Box<models::DocumentSourceWithUpload>),
+    DocumentSourceWithUploadAndZip(Box<models::DocumentSourceWithUploadAndZip>),
+    DocumentSourceFromZip(Box<models::DocumentSourceFromZip>),
 }
 
 impl Default for DocumentSourceIdentifier {
     fn default() -> Self {
-        Self::DocumentId(Default::default())
+        Self::DocumentSourceVariant1(Default::default())
     }
 }
 

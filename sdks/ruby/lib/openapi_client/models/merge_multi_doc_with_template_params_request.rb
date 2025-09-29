@@ -17,6 +17,8 @@ module OpenapiClient
   class MergeMultiDocWithTemplateParamsRequest
     attr_accessor :documents_to_merge
 
+    attr_accessor :recipient_address_source
+
     attr_accessor :job_template
 
     attr_accessor :payment_details
@@ -27,6 +29,7 @@ module OpenapiClient
     def self.attribute_map
       {
         :'documents_to_merge' => :'documentsToMerge',
+        :'recipient_address_source' => :'recipientAddressSource',
         :'job_template' => :'jobTemplate',
         :'payment_details' => :'paymentDetails',
         :'tags' => :'tags'
@@ -47,6 +50,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'documents_to_merge' => :'Array<DocumentSourceIdentifier>',
+        :'recipient_address_source' => :'RecipientAddressSource',
         :'job_template' => :'String',
         :'payment_details' => :'PaymentDetails',
         :'tags' => :'Array<String>'
@@ -83,6 +87,12 @@ module OpenapiClient
         self.documents_to_merge = nil
       end
 
+      if attributes.key?(:'recipient_address_source')
+        self.recipient_address_source = attributes[:'recipient_address_source']
+      else
+        self.recipient_address_source = nil
+      end
+
       if attributes.key?(:'job_template')
         self.job_template = attributes[:'job_template']
       else
@@ -91,8 +101,6 @@ module OpenapiClient
 
       if attributes.key?(:'payment_details')
         self.payment_details = attributes[:'payment_details']
-      else
-        self.payment_details = nil
       end
 
       if attributes.key?(:'tags')
@@ -111,12 +119,12 @@ module OpenapiClient
         invalid_properties.push('invalid value for "documents_to_merge", documents_to_merge cannot be nil.')
       end
 
-      if @job_template.nil?
-        invalid_properties.push('invalid value for "job_template", job_template cannot be nil.')
+      if @recipient_address_source.nil?
+        invalid_properties.push('invalid value for "recipient_address_source", recipient_address_source cannot be nil.')
       end
 
-      if @payment_details.nil?
-        invalid_properties.push('invalid value for "payment_details", payment_details cannot be nil.')
+      if @job_template.nil?
+        invalid_properties.push('invalid value for "job_template", job_template cannot be nil.')
       end
 
       invalid_properties
@@ -127,8 +135,8 @@ module OpenapiClient
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @documents_to_merge.nil?
+      return false if @recipient_address_source.nil?
       return false if @job_template.nil?
-      return false if @payment_details.nil?
       true
     end
 
@@ -143,6 +151,16 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] recipient_address_source Value to be assigned
+    def recipient_address_source=(recipient_address_source)
+      if recipient_address_source.nil?
+        fail ArgumentError, 'recipient_address_source cannot be nil'
+      end
+
+      @recipient_address_source = recipient_address_source
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] job_template Value to be assigned
     def job_template=(job_template)
       if job_template.nil?
@@ -152,22 +170,13 @@ module OpenapiClient
       @job_template = job_template
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] payment_details Value to be assigned
-    def payment_details=(payment_details)
-      if payment_details.nil?
-        fail ArgumentError, 'payment_details cannot be nil'
-      end
-
-      @payment_details = payment_details
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           documents_to_merge == o.documents_to_merge &&
+          recipient_address_source == o.recipient_address_source &&
           job_template == o.job_template &&
           payment_details == o.payment_details &&
           tags == o.tags
@@ -182,7 +191,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [documents_to_merge, job_template, payment_details, tags].hash
+      [documents_to_merge, recipient_address_source, job_template, payment_details, tags].hash
     end
 
     # Builds the object from hash

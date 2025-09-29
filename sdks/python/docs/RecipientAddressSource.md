@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **address2** | **str** |  | [optional] 
 **address3** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
+**address_list_id** | **int** |  | 
+**address_id** | **int** |  | 
 
 ## Example
 

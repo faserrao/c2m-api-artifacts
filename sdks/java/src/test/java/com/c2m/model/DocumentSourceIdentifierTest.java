@@ -13,9 +13,11 @@
 
 package com.c2m.model;
 
-import com.c2m.model.DocumentSourceIdentifierOneOf;
-import com.c2m.model.DocumentSourceIdentifierOneOf1;
-import com.c2m.model.DocumentSourceIdentifierOneOf2;
+import com.c2m.model.DocumentSourceFromZip;
+import com.c2m.model.DocumentSourceVariant1;
+import com.c2m.model.DocumentSourceVariant2;
+import com.c2m.model.DocumentSourceWithUpload;
+import com.c2m.model.DocumentSourceWithUploadAndZip;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,6 +41,22 @@ public class DocumentSourceIdentifierTest {
     @Test
     public void testDocumentSourceIdentifier() {
         // TODO: test DocumentSourceIdentifier
+    }
+
+    /**
+     * Test the property 'documentId'
+     */
+    @Test
+    public void documentIdTest() {
+        // TODO: test documentId
+    }
+
+    /**
+     * Test the property 'externalUrl'
+     */
+    @Test
+    public void externalUrlTest() {
+        // TODO: test externalUrl
     }
 
     /**

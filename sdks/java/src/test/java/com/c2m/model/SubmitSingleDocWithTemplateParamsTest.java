@@ -70,19 +70,19 @@ public class SubmitSingleDocWithTemplateParamsTest {
     }
 
     /**
-     * Test the property 'recipientAddressSources'
-     */
-    @Test
-    public void recipientAddressSourcesTest() {
-        // TODO: test recipientAddressSources
-    }
-
-    /**
      * Test the property 'documentSourceIdentifier'
      */
     @Test
     public void documentSourceIdentifierTest() {
         // TODO: test documentSourceIdentifier
+    }
+
+    /**
+     * Test the property 'recipientAddressSources'
+     */
+    @Test
+    public void recipientAddressSourcesTest() {
+        // TODO: test recipientAddressSources
     }
 
 }

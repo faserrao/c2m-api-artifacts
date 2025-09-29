@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**document_id** | **int** |  |
+**external_url** | **string** |  |
 **upload_request_id** | **int** |  |
 **document_name** | **string** |  |
 **zip_id** | **int** |  |

@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **address2** | **String** |  | [optional] 
 **address3** | **String** |  | [optional] 
 **phoneNumber** | **String** |  | [optional] 
+**addressListId** | **Int** |  | 
+**addressId** | **Int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

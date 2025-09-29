@@ -63,6 +63,15 @@ namespace C2M.Api.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'RecipientAddressSource'
+        /// </summary>
+        [Fact]
+        public void RecipientAddressSourceTest()
+        {
+            // TODO unit test for the property 'RecipientAddressSource'
+        }
+
+        /// <summary>
         /// Test the property 'JobTemplate'
         /// </summary>
         [Fact]

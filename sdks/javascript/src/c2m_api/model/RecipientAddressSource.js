@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import RecipientAddress from './RecipientAddress';
+import RecipientAddressSourceOneOf from './RecipientAddressSourceOneOf';
+import RecipientAddressSourceOneOf1 from './RecipientAddressSourceOneOf1';
 
 /**
  * The RecipientAddressSource model module.
@@ -23,7 +25,7 @@ class RecipientAddressSource {
     /**
      * Constructs a new <code>RecipientAddressSource</code>.
      * @alias module:c2m_api/model/RecipientAddressSource
-     * @param {(module:c2m_api/model/Number|module:c2m_api/model/RecipientAddress)} instance The actual instance to initialize RecipientAddressSource.
+     * @param {(module:c2m_api/model/RecipientAddress|module:c2m_api/model/RecipientAddressSourceOneOf|module:c2m_api/model/RecipientAddressSourceOneOf1)} instance The actual instance to initialize RecipientAddressSource.
      */
     constructor(instance = null) {
         if (instance === null) {
@@ -49,34 +51,42 @@ class RecipientAddressSource {
         }
 
         try {
-            // validate integer
-            if (!(typeof instance === 'number' && instance % 1 === 0)) {
-                throw new Error("Invalid value. Must be integer. Input: " + JSON.stringify(instance));
+            if (typeof instance === "RecipientAddressSourceOneOf") {
+                this.actualInstance = instance;
+            } else {
+                // plain JS object
+                // validate the object
+                RecipientAddressSourceOneOf.validateJSON(instance); // throw an exception if no match
+                // create RecipientAddressSourceOneOf from JS object
+                this.actualInstance = RecipientAddressSourceOneOf.constructFromObject(instance);
             }
-            this.actualInstance = instance;
             match++;
         } catch(err) {
-            // json data failed to deserialize into Number
-            errorMessages.push("Failed to construct Number: " + err)
+            // json data failed to deserialize into RecipientAddressSourceOneOf
+            errorMessages.push("Failed to construct RecipientAddressSourceOneOf: " + err)
         }
 
         try {
-            // validate integer
-            if (!(typeof instance === 'number' && instance % 1 === 0)) {
-                throw new Error("Invalid value. Must be integer. Input: " + JSON.stringify(instance));
+            if (typeof instance === "RecipientAddressSourceOneOf1") {
+                this.actualInstance = instance;
+            } else {
+                // plain JS object
+                // validate the object
+                RecipientAddressSourceOneOf1.validateJSON(instance); // throw an exception if no match
+                // create RecipientAddressSourceOneOf1 from JS object
+                this.actualInstance = RecipientAddressSourceOneOf1.constructFromObject(instance);
             }
-            this.actualInstance = instance;
             match++;
         } catch(err) {
-            // json data failed to deserialize into Number
-            errorMessages.push("Failed to construct Number: " + err)
+            // json data failed to deserialize into RecipientAddressSourceOneOf1
+            errorMessages.push("Failed to construct RecipientAddressSourceOneOf1: " + err)
         }
 
         if (match > 1) {
-            throw new Error("Multiple matches found constructing `RecipientAddressSource` with oneOf schemas Number, RecipientAddress. Input: " + JSON.stringify(instance));
+            throw new Error("Multiple matches found constructing `RecipientAddressSource` with oneOf schemas RecipientAddress, RecipientAddressSourceOneOf, RecipientAddressSourceOneOf1. Input: " + JSON.stringify(instance));
         } else if (match === 0) {
             this.actualInstance = null; // clear the actual instance in case there are multiple matches
-            throw new Error("No match found constructing `RecipientAddressSource` with oneOf schemas Number, RecipientAddress. Details: " +
+            throw new Error("No match found constructing `RecipientAddressSource` with oneOf schemas RecipientAddress, RecipientAddressSourceOneOf, RecipientAddressSourceOneOf1. Details: " +
                             errorMessages.join(", "));
         } else { // only 1 match
             // the input is valid
@@ -95,16 +105,16 @@ class RecipientAddressSource {
     }
 
     /**
-     * Gets the actual instance, which can be <code>Number</code>, <code>RecipientAddress</code>.
-     * @return {(module:c2m_api/model/Number|module:c2m_api/model/RecipientAddress)} The actual instance.
+     * Gets the actual instance, which can be <code>RecipientAddress</code>, <code>RecipientAddressSourceOneOf</code>, <code>RecipientAddressSourceOneOf1</code>.
+     * @return {(module:c2m_api/model/RecipientAddress|module:c2m_api/model/RecipientAddressSourceOneOf|module:c2m_api/model/RecipientAddressSourceOneOf1)} The actual instance.
      */
     getActualInstance() {
         return this.actualInstance;
     }
 
     /**
-     * Sets the actual instance, which can be <code>Number</code>, <code>RecipientAddress</code>.
-     * @param {(module:c2m_api/model/Number|module:c2m_api/model/RecipientAddress)} obj The actual instance.
+     * Sets the actual instance, which can be <code>RecipientAddress</code>, <code>RecipientAddressSourceOneOf</code>, <code>RecipientAddressSourceOneOf1</code>.
+     * @param {(module:c2m_api/model/RecipientAddress|module:c2m_api/model/RecipientAddressSourceOneOf|module:c2m_api/model/RecipientAddressSourceOneOf1)} obj The actual instance.
      */
     setActualInstance(obj) {
        this.actualInstance = RecipientAddressSource.constructFromObject(obj).getActualInstance();
@@ -183,8 +193,18 @@ RecipientAddressSource.prototype['address3'] = undefined;
  */
 RecipientAddressSource.prototype['phoneNumber'] = undefined;
 
+/**
+ * @member {Number} addressListId
+ */
+RecipientAddressSource.prototype['addressListId'] = undefined;
 
-RecipientAddressSource.OneOf = ["Number", "RecipientAddress"];
+/**
+ * @member {Number} addressId
+ */
+RecipientAddressSource.prototype['addressId'] = undefined;
+
+
+RecipientAddressSource.OneOf = ["RecipientAddress", "RecipientAddressSourceOneOf", "RecipientAddressSourceOneOf1"];
 
 export default RecipientAddressSource;
 

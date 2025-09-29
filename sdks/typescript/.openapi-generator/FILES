@@ -20,10 +20,12 @@ docs/Currency.md
 docs/DefaultApi.md
 docs/DocumentClass.md
 docs/DocumentFormat.md
+docs/DocumentSourceFromZip.md
 docs/DocumentSourceIdentifier.md
-docs/DocumentSourceIdentifierOneOf.md
-docs/DocumentSourceIdentifierOneOf1.md
-docs/DocumentSourceIdentifierOneOf2.md
+docs/DocumentSourceVariant1.md
+docs/DocumentSourceVariant2.md
+docs/DocumentSourceWithUpload.md
+docs/DocumentSourceWithUploadAndZip.md
 docs/Envelope.md
 docs/ExpirationDate.md
 docs/ExtractionSpec.md
@@ -47,6 +49,8 @@ docs/PaymentDetails.md
 docs/PrintOption.md
 docs/RecipientAddress.md
 docs/RecipientAddressSource.md
+docs/RecipientAddressSourceOneOf.md
+docs/RecipientAddressSourceOneOf1.md
 docs/ShortTokenRequest.md
 docs/ShortTokenResponse.md
 docs/SingleDocJobParams.md

@@ -6,8 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **documents_to_merge** | [**List[DocumentSourceIdentifier]**](DocumentSourceIdentifier.md) |  | 
+**recipient_address_source** | [**RecipientAddressSource**](RecipientAddressSource.md) |  | 
 **job_template** | **str** |  | 
-**payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | 
+**payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 
 ## Example

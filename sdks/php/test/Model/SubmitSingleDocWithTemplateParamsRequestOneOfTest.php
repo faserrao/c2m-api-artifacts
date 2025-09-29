@@ -107,9 +107,9 @@ class SubmitSingleDocWithTemplateParamsRequestOneOfTest extends TestCase
     }
 
     /**
-     * Test attribute "recipient_address_sources"
+     * Test attribute "document_source_identifier"
      */
-    public function testPropertyRecipientAddressSources()
+    public function testPropertyDocumentSourceIdentifier()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

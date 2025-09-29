@@ -15,21 +15,21 @@ use serde::{Deserialize, Serialize};
 pub struct SubmitSingleDocWithTemplateParamsRequestOneOf {
     #[serde(rename = "jobTemplate")]
     pub job_template: String,
-    #[serde(rename = "paymentDetails")]
-    pub payment_details: Box<models::PaymentDetails>,
+    #[serde(rename = "paymentDetails", skip_serializing_if = "Option::is_none")]
+    pub payment_details: Option<Box<models::PaymentDetails>>,
     #[serde(rename = "tags", skip_serializing_if = "Option::is_none")]
     pub tags: Option<Vec<String>>,
-    #[serde(rename = "recipientAddressSources")]
-    pub recipient_address_sources: Vec<models::RecipientAddressSource>,
+    #[serde(rename = "documentSourceIdentifier")]
+    pub document_source_identifier: Box<models::DocumentSourceIdentifier>,
 }
 
 impl SubmitSingleDocWithTemplateParamsRequestOneOf {
-    pub fn new(job_template: String, payment_details: models::PaymentDetails, recipient_address_sources: Vec<models::RecipientAddressSource>) -> SubmitSingleDocWithTemplateParamsRequestOneOf {
+    pub fn new(job_template: String, document_source_identifier: models::DocumentSourceIdentifier) -> SubmitSingleDocWithTemplateParamsRequestOneOf {
         SubmitSingleDocWithTemplateParamsRequestOneOf {
             job_template,
-            payment_details: Box::new(payment_details),
+            payment_details: None,
             tags: None,
-            recipient_address_sources,
+            document_source_identifier: Box::new(document_source_identifier),
         }
     }
 }

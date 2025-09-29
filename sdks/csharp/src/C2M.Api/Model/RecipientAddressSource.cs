@@ -43,10 +43,20 @@ namespace C2M.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientAddressSource" /> class.
         /// </summary>
-        /// <param name="int"></param>
-        public RecipientAddressSource(int @int)
+        /// <param name="recipientAddressSourceOneOf"></param>
+        public RecipientAddressSource(RecipientAddressSourceOneOf recipientAddressSourceOneOf)
         {
-            Int = @int;
+            RecipientAddressSourceOneOf = recipientAddressSourceOneOf;
+            OnCreated();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecipientAddressSource" /> class.
+        /// </summary>
+        /// <param name="recipientAddressSourceOneOf1"></param>
+        public RecipientAddressSource(RecipientAddressSourceOneOf1 recipientAddressSourceOneOf1)
+        {
+            RecipientAddressSourceOneOf1 = recipientAddressSourceOneOf1;
             OnCreated();
         }
 
@@ -58,9 +68,14 @@ namespace C2M.Api.Model
         public RecipientAddress? RecipientAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets Int
+        /// Gets or Sets RecipientAddressSourceOneOf
         /// </summary>
-        public int? Int { get; set; }
+        public RecipientAddressSourceOneOf? RecipientAddressSourceOneOf { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RecipientAddressSourceOneOf1
+        /// </summary>
+        public RecipientAddressSourceOneOf1? RecipientAddressSourceOneOf1 { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -108,7 +123,30 @@ namespace C2M.Api.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             RecipientAddress? recipientAddress = default;
-            int? varInt = default;
+            RecipientAddressSourceOneOf? recipientAddressSourceOneOf = default;
+            RecipientAddressSourceOneOf1? recipientAddressSourceOneOf1 = default;
+
+            Utf8JsonReader utf8JsonReaderOneOf = utf8JsonReader;
+            while (utf8JsonReaderOneOf.Read())
+            {
+                if (startingTokenType == JsonTokenType.StartObject && utf8JsonReaderOneOf.TokenType == JsonTokenType.EndObject && currentDepth == utf8JsonReaderOneOf.CurrentDepth)
+                    break;
+
+                if (startingTokenType == JsonTokenType.StartArray && utf8JsonReaderOneOf.TokenType == JsonTokenType.EndArray && currentDepth == utf8JsonReaderOneOf.CurrentDepth)
+                    break;
+
+                if (utf8JsonReaderOneOf.TokenType == JsonTokenType.PropertyName && currentDepth == utf8JsonReaderOneOf.CurrentDepth - 1)
+                {
+                    Utf8JsonReader utf8JsonReaderRecipientAddress = utf8JsonReader;
+                    ClientUtils.TryDeserialize<RecipientAddress?>(ref utf8JsonReaderRecipientAddress, jsonSerializerOptions, out recipientAddress);
+
+                    Utf8JsonReader utf8JsonReaderRecipientAddressSourceOneOf = utf8JsonReader;
+                    ClientUtils.TryDeserialize<RecipientAddressSourceOneOf?>(ref utf8JsonReaderRecipientAddressSourceOneOf, jsonSerializerOptions, out recipientAddressSourceOneOf);
+
+                    Utf8JsonReader utf8JsonReaderRecipientAddressSourceOneOf1 = utf8JsonReader;
+                    ClientUtils.TryDeserialize<RecipientAddressSourceOneOf1?>(ref utf8JsonReaderRecipientAddressSourceOneOf1, jsonSerializerOptions, out recipientAddressSourceOneOf1);
+                }
+            }
 
             while (utf8JsonReader.Read())
             {
@@ -134,8 +172,11 @@ namespace C2M.Api.Model
             if (recipientAddress != null)
                 return new RecipientAddressSource(recipientAddress);
 
-            if (varInt != null)
-                return new RecipientAddressSource(varInt.Value);
+            if (recipientAddressSourceOneOf != null)
+                return new RecipientAddressSource(recipientAddressSourceOneOf);
+
+            if (recipientAddressSourceOneOf1 != null)
+                return new RecipientAddressSource(recipientAddressSourceOneOf1);
 
             throw new JsonException();
         }

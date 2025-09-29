@@ -19,8 +19,8 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.c2m.api.models.SubmitSingleDocWithTemplateParamsRequestOneOf
+import com.c2m.api.models.DocumentSourceIdentifier
 import com.c2m.api.models.PaymentDetails
-import com.c2m.api.models.RecipientAddressSource
 
 class SubmitSingleDocWithTemplateParamsRequestOneOfTest : ShouldSpec() {
     init {
@@ -33,16 +33,16 @@ class SubmitSingleDocWithTemplateParamsRequestOneOfTest : ShouldSpec() {
             //modelInstance.jobTemplate shouldBe ("TODO")
         }
 
+        // to test the property `documentSourceIdentifier`
+        should("test documentSourceIdentifier") {
+            // uncomment below to test the property
+            //modelInstance.documentSourceIdentifier shouldBe ("TODO")
+        }
+
         // to test the property `paymentDetails`
         should("test paymentDetails") {
             // uncomment below to test the property
             //modelInstance.paymentDetails shouldBe ("TODO")
-        }
-
-        // to test the property `recipientAddressSources`
-        should("test recipientAddressSources") {
-            // uncomment below to test the property
-            //modelInstance.recipientAddressSources shouldBe ("TODO")
         }
 
         // to test the property `tags`

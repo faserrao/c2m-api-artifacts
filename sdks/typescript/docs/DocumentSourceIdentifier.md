@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**documentId** | **number** |  | [default to undefined]
+**externalUrl** | **string** |  | [default to undefined]
 **uploadRequestId** | **number** |  | [default to undefined]
 **documentName** | **string** |  | [default to undefined]
 **zipId** | **number** |  | [default to undefined]
@@ -15,6 +17,8 @@ Name | Type | Description | Notes
 import { DocumentSourceIdentifier } from './api';
 
 const instance: DocumentSourceIdentifier = {
+    documentId,
+    externalUrl,
     uploadRequestId,
     documentName,
     zipId,

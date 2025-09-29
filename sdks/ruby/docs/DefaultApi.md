@@ -33,7 +33,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-merge_multi_doc_params_request = OpenapiClient::MergeMultiDocParamsRequest.new({documents_to_merge: [OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'})], recipient_address_source: nil, payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # MergeMultiDocParamsRequest | 
+merge_multi_doc_params_request = OpenapiClient::MergeMultiDocParamsRequest.new({documents_to_merge: [OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})], recipient_address_source: OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'}), payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # MergeMultiDocParamsRequest | 
 
 begin
   # Operation for /jobs/multi-doc-merge
@@ -100,7 +100,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-merge_multi_doc_with_template_params_request = OpenapiClient::MergeMultiDocWithTemplateParamsRequest.new({documents_to_merge: [OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'})], job_template: 'job_template_example', payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # MergeMultiDocWithTemplateParamsRequest | 
+merge_multi_doc_with_template_params_request = OpenapiClient::MergeMultiDocWithTemplateParamsRequest.new({documents_to_merge: [OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})], recipient_address_source: OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'}), job_template: 'job_template_example'}) # MergeMultiDocWithTemplateParamsRequest | 
 
 begin
   # Operation for /jobs/multi-doc-merge-job-template
@@ -167,7 +167,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-multi_pdf_with_capture_params_request = OpenapiClient::MultiPdfWithCaptureParamsRequest.new({address_capture_pdfs: [OpenapiClient::AddressListPdf.new({document_source_identifier: OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'}), address_list_region: 'address_list_region_example'})], payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # MultiPdfWithCaptureParamsRequest | 
+multi_pdf_with_capture_params_request = OpenapiClient::MultiPdfWithCaptureParamsRequest.new({address_capture_pdfs: [OpenapiClient::AddressListPdf.new({document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'}), address_list_region: 'address_list_region_example'})], payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # MultiPdfWithCaptureParamsRequest | 
 
 begin
   # Operation for /jobs/multi-pdf-address-capture
@@ -234,7 +234,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-single_doc_job_params_request = OpenapiClient::SingleDocJobParamsRequest.new({document_source_identifier: OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'}), recipient_address_sources: [nil], job_options: OpenapiClient::JobOptions.new({document_class: OpenapiClient::DocumentClass::BUSINESS_LETTER, layout: OpenapiClient::Layout::PORTRAIT, mailclass: OpenapiClient::Mailclass::FIRST_CLASS_MAIL, paper_type: OpenapiClient::PaperType::LETTER, print_option: OpenapiClient::PrintOption::NONE, envelope: OpenapiClient::Envelope::FLAT}), payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SingleDocJobParamsRequest | 
+single_doc_job_params_request = OpenapiClient::SingleDocJobParamsRequest.new({document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'}), recipient_address_sources: [OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'})], job_options: OpenapiClient::JobOptions.new({document_class: OpenapiClient::DocumentClass::BUSINESS_LETTER, layout: OpenapiClient::Layout::PORTRAIT, mailclass: OpenapiClient::Mailclass::FIRST_CLASS_MAIL, paper_type: OpenapiClient::PaperType::LETTER, print_option: OpenapiClient::PrintOption::NONE, envelope: OpenapiClient::Envelope::FLAT}), payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SingleDocJobParamsRequest | 
 
 begin
   # Operation for /jobs/single-doc
@@ -301,7 +301,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-split_pdf_params_request = OpenapiClient::SplitPdfParamsRequest.new({document_source_identifier: OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'}), items: [OpenapiClient::SplitPdfParamsRequestItemsInner.new({page_range: OpenapiClient::PageRange.new({start_page: 37, end_page: 37}), recipient_address_sources: [nil]})], payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SplitPdfParamsRequest | 
+split_pdf_params_request = OpenapiClient::SplitPdfParamsRequest.new({document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'}), items: [OpenapiClient::SplitPdfParamsRequestItemsInner.new({page_range: OpenapiClient::PageRange.new({start_page: 37, end_page: 37}), recipient_address_sources: [OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'})]})], payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SplitPdfParamsRequest | 
 
 begin
   # Operation for /jobs/single-pdf-split
@@ -368,7 +368,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-split_pdf_with_capture_params_request = OpenapiClient::SplitPdfWithCaptureParamsRequest.new({document_source_identifier: OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'}), embedded_extraction_specs: [OpenapiClient::ExtractionSpec.new({start_page: 37, end_page: 37, address_region: OpenapiClient::AddressRegion.new({x: 3.56, y: 3.56, width: 3.56, height: 3.56, page_offset: 37})})], payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SplitPdfWithCaptureParamsRequest | 
+split_pdf_with_capture_params_request = OpenapiClient::SplitPdfWithCaptureParamsRequest.new({document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'}), embedded_extraction_specs: [OpenapiClient::ExtractionSpec.new({start_page: 37, end_page: 37, address_region: OpenapiClient::AddressRegion.new({x: 3.56, y: 3.56, width: 3.56, height: 3.56, page_offset: 37})})], payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SplitPdfWithCaptureParamsRequest | 
 
 begin
   # Operation for /jobs/single-pdf-split-addressCapture
@@ -435,7 +435,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-submit_multi_doc_params_request = OpenapiClient::SubmitMultiDocParamsRequest.new({items: [OpenapiClient::SubmitMultiDocWithTemplateParamsRequestItemsInner.new({document_source_identifier: OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'}), recipient_address_source: nil})], job_options: OpenapiClient::JobOptions.new({document_class: OpenapiClient::DocumentClass::BUSINESS_LETTER, layout: OpenapiClient::Layout::PORTRAIT, mailclass: OpenapiClient::Mailclass::FIRST_CLASS_MAIL, paper_type: OpenapiClient::PaperType::LETTER, print_option: OpenapiClient::PrintOption::NONE, envelope: OpenapiClient::Envelope::FLAT}), payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SubmitMultiDocParamsRequest | 
+submit_multi_doc_params_request = OpenapiClient::SubmitMultiDocParamsRequest.new({items: [OpenapiClient::SubmitMultiDocWithTemplateParamsRequestItemsInner.new({document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'}), recipient_address_source: OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'})})], job_options: OpenapiClient::JobOptions.new({document_class: OpenapiClient::DocumentClass::BUSINESS_LETTER, layout: OpenapiClient::Layout::PORTRAIT, mailclass: OpenapiClient::Mailclass::FIRST_CLASS_MAIL, paper_type: OpenapiClient::PaperType::LETTER, print_option: OpenapiClient::PrintOption::NONE, envelope: OpenapiClient::Envelope::FLAT}), payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SubmitMultiDocParamsRequest | 
 
 begin
   # Operation for /jobs/multi-doc
@@ -502,7 +502,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-submit_multi_doc_with_template_params_request = OpenapiClient::SubmitMultiDocWithTemplateParamsRequest.new({items: [OpenapiClient::SubmitMultiDocWithTemplateParamsRequestItemsInner.new({document_source_identifier: OpenapiClient::DocumentSourceIdentifierOneOf.new({upload_request_id: 37, document_name: 'document_name_example'}), recipient_address_source: nil})], job_template: 'job_template_example', payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SubmitMultiDocWithTemplateParamsRequest | 
+submit_multi_doc_with_template_params_request = OpenapiClient::SubmitMultiDocWithTemplateParamsRequest.new({items: [OpenapiClient::SubmitMultiDocWithTemplateParamsRequestItemsInner.new({document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'}), recipient_address_source: OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'})})], job_template: 'job_template_example', payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # SubmitMultiDocWithTemplateParamsRequest | 
 
 begin
   # Operation for /jobs/multi-docs-job-template
@@ -569,7 +569,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-submit_single_doc_with_template_params_request = OpenapiClient::SubmitSingleDocWithTemplateParamsRequestOneOf.new({job_template: 'job_template_example', payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})}), recipient_address_sources: [nil]}) # SubmitSingleDocWithTemplateParamsRequest | 
+submit_single_doc_with_template_params_request = OpenapiClient::SubmitSingleDocWithTemplateParamsRequestOneOf.new({job_template: 'job_template_example', document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})}) # SubmitSingleDocWithTemplateParamsRequest | 
 
 begin
   # Operation for /jobs/single-doc-job-template

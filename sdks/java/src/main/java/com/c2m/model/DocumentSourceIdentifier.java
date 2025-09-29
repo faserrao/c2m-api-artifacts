@@ -14,9 +14,11 @@
 package com.c2m.model;
 
 import java.util.Objects;
-import com.c2m.model.DocumentSourceIdentifierOneOf;
-import com.c2m.model.DocumentSourceIdentifierOneOf1;
-import com.c2m.model.DocumentSourceIdentifierOneOf2;
+import com.c2m.model.DocumentSourceFromZip;
+import com.c2m.model.DocumentSourceVariant1;
+import com.c2m.model.DocumentSourceVariant2;
+import com.c2m.model.DocumentSourceWithUpload;
+import com.c2m.model.DocumentSourceWithUploadAndZip;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -61,7 +63,7 @@ import com.google.gson.JsonParseException;
 
 import com.c2m.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T23:30:59.692465979Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-29T19:40:45.964644121Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(DocumentSourceIdentifier.class.getName());
 
@@ -73,11 +75,11 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'DocumentSourceIdentifier' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<Integer> adapterInteger = gson.getDelegateAdapter(this, TypeToken.get(Integer.class));
-            final TypeAdapter<URI> adapterURI = gson.getDelegateAdapter(this, TypeToken.get(URI.class));
-            final TypeAdapter<DocumentSourceIdentifierOneOf> adapterDocumentSourceIdentifierOneOf = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceIdentifierOneOf.class));
-            final TypeAdapter<DocumentSourceIdentifierOneOf1> adapterDocumentSourceIdentifierOneOf1 = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceIdentifierOneOf1.class));
-            final TypeAdapter<DocumentSourceIdentifierOneOf2> adapterDocumentSourceIdentifierOneOf2 = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceIdentifierOneOf2.class));
+            final TypeAdapter<DocumentSourceVariant1> adapterDocumentSourceVariant1 = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceVariant1.class));
+            final TypeAdapter<DocumentSourceVariant2> adapterDocumentSourceVariant2 = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceVariant2.class));
+            final TypeAdapter<DocumentSourceWithUpload> adapterDocumentSourceWithUpload = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceWithUpload.class));
+            final TypeAdapter<DocumentSourceWithUploadAndZip> adapterDocumentSourceWithUploadAndZip = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceWithUploadAndZip.class));
+            final TypeAdapter<DocumentSourceFromZip> adapterDocumentSourceFromZip = gson.getDelegateAdapter(this, TypeToken.get(DocumentSourceFromZip.class));
 
             return (TypeAdapter<T>) new TypeAdapter<DocumentSourceIdentifier>() {
                 @Override
@@ -87,37 +89,37 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `Integer`
-                    if (value.getActualInstance() instanceof Integer) {
-                        JsonPrimitive primitive = adapterInteger.toJsonTree((Integer)value.getActualInstance()).getAsJsonPrimitive();
-                        elementAdapter.write(out, primitive);
-                        return;
-                    }
-                    // check if the actual instance is of the type `URI`
-                    if (value.getActualInstance() instanceof URI) {
-                        JsonElement element = adapterURI.toJsonTree((URI)value.getActualInstance());
+                    // check if the actual instance is of the type `DocumentSourceVariant1`
+                    if (value.getActualInstance() instanceof DocumentSourceVariant1) {
+                        JsonElement element = adapterDocumentSourceVariant1.toJsonTree((DocumentSourceVariant1)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DocumentSourceIdentifierOneOf`
-                    if (value.getActualInstance() instanceof DocumentSourceIdentifierOneOf) {
-                        JsonElement element = adapterDocumentSourceIdentifierOneOf.toJsonTree((DocumentSourceIdentifierOneOf)value.getActualInstance());
+                    // check if the actual instance is of the type `DocumentSourceVariant2`
+                    if (value.getActualInstance() instanceof DocumentSourceVariant2) {
+                        JsonElement element = adapterDocumentSourceVariant2.toJsonTree((DocumentSourceVariant2)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DocumentSourceIdentifierOneOf1`
-                    if (value.getActualInstance() instanceof DocumentSourceIdentifierOneOf1) {
-                        JsonElement element = adapterDocumentSourceIdentifierOneOf1.toJsonTree((DocumentSourceIdentifierOneOf1)value.getActualInstance());
+                    // check if the actual instance is of the type `DocumentSourceWithUpload`
+                    if (value.getActualInstance() instanceof DocumentSourceWithUpload) {
+                        JsonElement element = adapterDocumentSourceWithUpload.toJsonTree((DocumentSourceWithUpload)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DocumentSourceIdentifierOneOf2`
-                    if (value.getActualInstance() instanceof DocumentSourceIdentifierOneOf2) {
-                        JsonElement element = adapterDocumentSourceIdentifierOneOf2.toJsonTree((DocumentSourceIdentifierOneOf2)value.getActualInstance());
+                    // check if the actual instance is of the type `DocumentSourceWithUploadAndZip`
+                    if (value.getActualInstance() instanceof DocumentSourceWithUploadAndZip) {
+                        JsonElement element = adapterDocumentSourceWithUploadAndZip.toJsonTree((DocumentSourceWithUploadAndZip)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Integer, URI");
+                    // check if the actual instance is of the type `DocumentSourceFromZip`
+                    if (value.getActualInstance() instanceof DocumentSourceFromZip) {
+                        JsonElement element = adapterDocumentSourceFromZip.toJsonTree((DocumentSourceFromZip)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip");
                 }
 
                 @Override
@@ -129,67 +131,65 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize Integer
+                    // deserialize DocumentSourceVariant1
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-                        }
-                        actualAdapter = adapterInteger;
+                        DocumentSourceVariant1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentSourceVariant1;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'Integer'");
+                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceVariant1'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Integer failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Integer'", e);
+                        errorMessages.add(String.format("Deserialization for DocumentSourceVariant1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceVariant1'", e);
                     }
-                    // deserialize URI
+                    // deserialize DocumentSourceVariant2
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        URI.validateJsonElement(jsonElement);
-                        actualAdapter = adapterURI;
+                        DocumentSourceVariant2.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentSourceVariant2;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'URI'");
+                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceVariant2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for URI failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'URI'", e);
+                        errorMessages.add(String.format("Deserialization for DocumentSourceVariant2 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceVariant2'", e);
                     }
-                    // deserialize DocumentSourceIdentifierOneOf
+                    // deserialize DocumentSourceWithUpload
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DocumentSourceIdentifierOneOf.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDocumentSourceIdentifierOneOf;
+                        DocumentSourceWithUpload.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentSourceWithUpload;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceIdentifierOneOf'");
+                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceWithUpload'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentSourceIdentifierOneOf failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceIdentifierOneOf'", e);
+                        errorMessages.add(String.format("Deserialization for DocumentSourceWithUpload failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceWithUpload'", e);
                     }
-                    // deserialize DocumentSourceIdentifierOneOf1
+                    // deserialize DocumentSourceWithUploadAndZip
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DocumentSourceIdentifierOneOf1.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDocumentSourceIdentifierOneOf1;
+                        DocumentSourceWithUploadAndZip.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentSourceWithUploadAndZip;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceIdentifierOneOf1'");
+                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceWithUploadAndZip'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentSourceIdentifierOneOf1 failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceIdentifierOneOf1'", e);
+                        errorMessages.add(String.format("Deserialization for DocumentSourceWithUploadAndZip failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceWithUploadAndZip'", e);
                     }
-                    // deserialize DocumentSourceIdentifierOneOf2
+                    // deserialize DocumentSourceFromZip
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DocumentSourceIdentifierOneOf2.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDocumentSourceIdentifierOneOf2;
+                        DocumentSourceFromZip.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDocumentSourceFromZip;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceIdentifierOneOf2'");
+                        log.log(Level.FINER, "Input data matches schema 'DocumentSourceFromZip'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DocumentSourceIdentifierOneOf2 failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceIdentifierOneOf2'", e);
+                        errorMessages.add(String.format("Deserialization for DocumentSourceFromZip failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DocumentSourceFromZip'", e);
                     }
 
                     if (match == 1) {
@@ -217,11 +217,11 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
     }
 
     static {
-        schemas.put("Integer", Integer.class);
-        schemas.put("URI", URI.class);
-        schemas.put("DocumentSourceIdentifierOneOf", DocumentSourceIdentifierOneOf.class);
-        schemas.put("DocumentSourceIdentifierOneOf1", DocumentSourceIdentifierOneOf1.class);
-        schemas.put("DocumentSourceIdentifierOneOf2", DocumentSourceIdentifierOneOf2.class);
+        schemas.put("DocumentSourceVariant1", DocumentSourceVariant1.class);
+        schemas.put("DocumentSourceVariant2", DocumentSourceVariant2.class);
+        schemas.put("DocumentSourceWithUpload", DocumentSourceWithUpload.class);
+        schemas.put("DocumentSourceWithUploadAndZip", DocumentSourceWithUploadAndZip.class);
+        schemas.put("DocumentSourceFromZip", DocumentSourceFromZip.class);
     }
 
     @Override
@@ -232,45 +232,45 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Integer, URI
+     * DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof Integer) {
+        if (instance instanceof DocumentSourceVariant1) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof URI) {
+        if (instance instanceof DocumentSourceVariant2) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DocumentSourceIdentifierOneOf) {
+        if (instance instanceof DocumentSourceWithUpload) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DocumentSourceIdentifierOneOf1) {
+        if (instance instanceof DocumentSourceWithUploadAndZip) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DocumentSourceIdentifierOneOf2) {
+        if (instance instanceof DocumentSourceFromZip) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Integer, URI");
+        throw new RuntimeException("Invalid instance type. Must be DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Integer, URI
+     * DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip
      *
-     * @return The actual instance (DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Integer, URI)
+     * @return The actual instance (DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -279,58 +279,58 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `Integer`. If the actual instance is not `Integer`,
+     * Get the actual instance of `DocumentSourceVariant1`. If the actual instance is not `DocumentSourceVariant1`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Integer`
-     * @throws ClassCastException if the instance is not `Integer`
+     * @return The actual instance of `DocumentSourceVariant1`
+     * @throws ClassCastException if the instance is not `DocumentSourceVariant1`
      */
-    public Integer getInteger() throws ClassCastException {
-        return (Integer)super.getActualInstance();
+    public DocumentSourceVariant1 getDocumentSourceVariant1() throws ClassCastException {
+        return (DocumentSourceVariant1)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `URI`. If the actual instance is not `URI`,
+     * Get the actual instance of `DocumentSourceVariant2`. If the actual instance is not `DocumentSourceVariant2`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `URI`
-     * @throws ClassCastException if the instance is not `URI`
+     * @return The actual instance of `DocumentSourceVariant2`
+     * @throws ClassCastException if the instance is not `DocumentSourceVariant2`
      */
-    public URI getURI() throws ClassCastException {
-        return (URI)super.getActualInstance();
+    public DocumentSourceVariant2 getDocumentSourceVariant2() throws ClassCastException {
+        return (DocumentSourceVariant2)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DocumentSourceIdentifierOneOf`. If the actual instance is not `DocumentSourceIdentifierOneOf`,
+     * Get the actual instance of `DocumentSourceWithUpload`. If the actual instance is not `DocumentSourceWithUpload`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DocumentSourceIdentifierOneOf`
-     * @throws ClassCastException if the instance is not `DocumentSourceIdentifierOneOf`
+     * @return The actual instance of `DocumentSourceWithUpload`
+     * @throws ClassCastException if the instance is not `DocumentSourceWithUpload`
      */
-    public DocumentSourceIdentifierOneOf getDocumentSourceIdentifierOneOf() throws ClassCastException {
-        return (DocumentSourceIdentifierOneOf)super.getActualInstance();
+    public DocumentSourceWithUpload getDocumentSourceWithUpload() throws ClassCastException {
+        return (DocumentSourceWithUpload)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DocumentSourceIdentifierOneOf1`. If the actual instance is not `DocumentSourceIdentifierOneOf1`,
+     * Get the actual instance of `DocumentSourceWithUploadAndZip`. If the actual instance is not `DocumentSourceWithUploadAndZip`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DocumentSourceIdentifierOneOf1`
-     * @throws ClassCastException if the instance is not `DocumentSourceIdentifierOneOf1`
+     * @return The actual instance of `DocumentSourceWithUploadAndZip`
+     * @throws ClassCastException if the instance is not `DocumentSourceWithUploadAndZip`
      */
-    public DocumentSourceIdentifierOneOf1 getDocumentSourceIdentifierOneOf1() throws ClassCastException {
-        return (DocumentSourceIdentifierOneOf1)super.getActualInstance();
+    public DocumentSourceWithUploadAndZip getDocumentSourceWithUploadAndZip() throws ClassCastException {
+        return (DocumentSourceWithUploadAndZip)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DocumentSourceIdentifierOneOf2`. If the actual instance is not `DocumentSourceIdentifierOneOf2`,
+     * Get the actual instance of `DocumentSourceFromZip`. If the actual instance is not `DocumentSourceFromZip`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DocumentSourceIdentifierOneOf2`
-     * @throws ClassCastException if the instance is not `DocumentSourceIdentifierOneOf2`
+     * @return The actual instance of `DocumentSourceFromZip`
+     * @throws ClassCastException if the instance is not `DocumentSourceFromZip`
      */
-    public DocumentSourceIdentifierOneOf2 getDocumentSourceIdentifierOneOf2() throws ClassCastException {
-        return (DocumentSourceIdentifierOneOf2)super.getActualInstance();
+    public DocumentSourceFromZip getDocumentSourceFromZip() throws ClassCastException {
+        return (DocumentSourceFromZip)super.getActualInstance();
     }
 
     /**
@@ -343,50 +343,48 @@ public class DocumentSourceIdentifier extends AbstractOpenApiSchema {
         // validate oneOf schemas one by one
         int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with Integer
+        // validate the json string with DocumentSourceVariant1
         try {
-            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-            }
+            DocumentSourceVariant1.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Integer failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for DocumentSourceVariant1 failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with URI
+        // validate the json string with DocumentSourceVariant2
         try {
-            URI.validateJsonElement(jsonElement);
+            DocumentSourceVariant2.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for URI failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for DocumentSourceVariant2 failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DocumentSourceIdentifierOneOf
+        // validate the json string with DocumentSourceWithUpload
         try {
-            DocumentSourceIdentifierOneOf.validateJsonElement(jsonElement);
+            DocumentSourceWithUpload.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentSourceIdentifierOneOf failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for DocumentSourceWithUpload failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DocumentSourceIdentifierOneOf1
+        // validate the json string with DocumentSourceWithUploadAndZip
         try {
-            DocumentSourceIdentifierOneOf1.validateJsonElement(jsonElement);
+            DocumentSourceWithUploadAndZip.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentSourceIdentifierOneOf1 failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for DocumentSourceWithUploadAndZip failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DocumentSourceIdentifierOneOf2
+        // validate the json string with DocumentSourceFromZip
         try {
-            DocumentSourceIdentifierOneOf2.validateJsonElement(jsonElement);
+            DocumentSourceFromZip.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DocumentSourceIdentifierOneOf2 failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for DocumentSourceFromZip failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for DocumentSourceIdentifier with oneOf schemas: DocumentSourceIdentifierOneOf, DocumentSourceIdentifierOneOf1, DocumentSourceIdentifierOneOf2, Integer, URI. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for DocumentSourceIdentifier with oneOf schemas: DocumentSourceFromZip, DocumentSourceVariant1, DocumentSourceVariant2, DocumentSourceWithUpload, DocumentSourceWithUploadAndZip. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

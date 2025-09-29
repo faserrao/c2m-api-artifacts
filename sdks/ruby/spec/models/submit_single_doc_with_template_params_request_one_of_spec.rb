@@ -45,7 +45,7 @@ describe OpenapiClient::SubmitSingleDocWithTemplateParamsRequestOneOf do
     end
   end
 
-  describe 'test attribute "recipient_address_sources"' do
+  describe 'test attribute "document_source_identifier"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

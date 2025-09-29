@@ -17,6 +17,7 @@ package com.c2m.api.models
 
 import com.c2m.api.models.DocumentSourceIdentifier
 import com.c2m.api.models.PaymentDetails
+import com.c2m.api.models.RecipientAddressSource
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -25,6 +26,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param documentsToMerge 
+ * @param recipientAddressSource 
  * @param jobTemplate 
  * @param paymentDetails 
  * @param tags 
@@ -36,11 +38,14 @@ data class MergeMultiDocWithTemplateParamsRequest (
     @Json(name = "documentsToMerge")
     val documentsToMerge: kotlin.collections.List<DocumentSourceIdentifier>,
 
+    @Json(name = "recipientAddressSource")
+    val recipientAddressSource: RecipientAddressSource,
+
     @Json(name = "jobTemplate")
     val jobTemplate: kotlin.String,
 
     @Json(name = "paymentDetails")
-    val paymentDetails: PaymentDetails,
+    val paymentDetails: PaymentDetails? = null,
 
     @Json(name = "tags")
     val tags: kotlin.collections.List<kotlin.String>? = null

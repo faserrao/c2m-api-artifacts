@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DocumentId** | **int32** |  | 
+**ExternalUrl** | **string** |  | 
 **UploadRequestId** | **int32** |  | 
 **DocumentName** | **string** |  | 
 **ZipId** | **int32** |  | 
@@ -12,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewDocumentSourceIdentifier
 
-`func NewDocumentSourceIdentifier(uploadRequestId int32, documentName string, zipId int32, ) *DocumentSourceIdentifier`
+`func NewDocumentSourceIdentifier(documentId int32, externalUrl string, uploadRequestId int32, documentName string, zipId int32, ) *DocumentSourceIdentifier`
 
 NewDocumentSourceIdentifier instantiates a new DocumentSourceIdentifier object
 This constructor will assign default values to properties that have it defined,
@@ -26,6 +28,46 @@ will change when the set of required properties is changed
 NewDocumentSourceIdentifierWithDefaults instantiates a new DocumentSourceIdentifier object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDocumentId
+
+`func (o *DocumentSourceIdentifier) GetDocumentId() int32`
+
+GetDocumentId returns the DocumentId field if non-nil, zero value otherwise.
+
+### GetDocumentIdOk
+
+`func (o *DocumentSourceIdentifier) GetDocumentIdOk() (*int32, bool)`
+
+GetDocumentIdOk returns a tuple with the DocumentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentId
+
+`func (o *DocumentSourceIdentifier) SetDocumentId(v int32)`
+
+SetDocumentId sets DocumentId field to given value.
+
+
+### GetExternalUrl
+
+`func (o *DocumentSourceIdentifier) GetExternalUrl() string`
+
+GetExternalUrl returns the ExternalUrl field if non-nil, zero value otherwise.
+
+### GetExternalUrlOk
+
+`func (o *DocumentSourceIdentifier) GetExternalUrlOk() (*string, bool)`
+
+GetExternalUrlOk returns a tuple with the ExternalUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUrl
+
+`func (o *DocumentSourceIdentifier) SetExternalUrl(v string)`
+
+SetExternalUrl sets ExternalUrl field to given value.
+
 
 ### GetUploadRequestId
 

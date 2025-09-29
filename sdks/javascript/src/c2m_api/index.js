@@ -26,10 +26,12 @@ import CreditCardPayment from './model/CreditCardPayment';
 import Currency from './model/Currency';
 import DocumentClass from './model/DocumentClass';
 import DocumentFormat from './model/DocumentFormat';
+import DocumentSourceFromZip from './model/DocumentSourceFromZip';
 import DocumentSourceIdentifier from './model/DocumentSourceIdentifier';
-import DocumentSourceIdentifierOneOf from './model/DocumentSourceIdentifierOneOf';
-import DocumentSourceIdentifierOneOf1 from './model/DocumentSourceIdentifierOneOf1';
-import DocumentSourceIdentifierOneOf2 from './model/DocumentSourceIdentifierOneOf2';
+import DocumentSourceVariant1 from './model/DocumentSourceVariant1';
+import DocumentSourceVariant2 from './model/DocumentSourceVariant2';
+import DocumentSourceWithUpload from './model/DocumentSourceWithUpload';
+import DocumentSourceWithUploadAndZip from './model/DocumentSourceWithUploadAndZip';
 import Envelope from './model/Envelope';
 import ExpirationDate from './model/ExpirationDate';
 import ExtractionSpec from './model/ExtractionSpec';
@@ -53,6 +55,8 @@ import PaymentDetails from './model/PaymentDetails';
 import PrintOption from './model/PrintOption';
 import RecipientAddress from './model/RecipientAddress';
 import RecipientAddressSource from './model/RecipientAddressSource';
+import RecipientAddressSourceOneOf from './model/RecipientAddressSourceOneOf';
+import RecipientAddressSourceOneOf1 from './model/RecipientAddressSourceOneOf1';
 import ShortTokenRequest from './model/ShortTokenRequest';
 import ShortTokenResponse from './model/ShortTokenResponse';
 import SingleDocJobParams from './model/SingleDocJobParams';
@@ -195,28 +199,40 @@ export {
     DocumentFormat,
 
     /**
+     * The DocumentSourceFromZip model constructor.
+     * @property {module:c2m_api/model/DocumentSourceFromZip}
+     */
+    DocumentSourceFromZip,
+
+    /**
      * The DocumentSourceIdentifier model constructor.
      * @property {module:c2m_api/model/DocumentSourceIdentifier}
      */
     DocumentSourceIdentifier,
 
     /**
-     * The DocumentSourceIdentifierOneOf model constructor.
-     * @property {module:c2m_api/model/DocumentSourceIdentifierOneOf}
+     * The DocumentSourceVariant1 model constructor.
+     * @property {module:c2m_api/model/DocumentSourceVariant1}
      */
-    DocumentSourceIdentifierOneOf,
+    DocumentSourceVariant1,
 
     /**
-     * The DocumentSourceIdentifierOneOf1 model constructor.
-     * @property {module:c2m_api/model/DocumentSourceIdentifierOneOf1}
+     * The DocumentSourceVariant2 model constructor.
+     * @property {module:c2m_api/model/DocumentSourceVariant2}
      */
-    DocumentSourceIdentifierOneOf1,
+    DocumentSourceVariant2,
 
     /**
-     * The DocumentSourceIdentifierOneOf2 model constructor.
-     * @property {module:c2m_api/model/DocumentSourceIdentifierOneOf2}
+     * The DocumentSourceWithUpload model constructor.
+     * @property {module:c2m_api/model/DocumentSourceWithUpload}
      */
-    DocumentSourceIdentifierOneOf2,
+    DocumentSourceWithUpload,
+
+    /**
+     * The DocumentSourceWithUploadAndZip model constructor.
+     * @property {module:c2m_api/model/DocumentSourceWithUploadAndZip}
+     */
+    DocumentSourceWithUploadAndZip,
 
     /**
      * The Envelope model constructor.
@@ -355,6 +371,18 @@ export {
      * @property {module:c2m_api/model/RecipientAddressSource}
      */
     RecipientAddressSource,
+
+    /**
+     * The RecipientAddressSourceOneOf model constructor.
+     * @property {module:c2m_api/model/RecipientAddressSourceOneOf}
+     */
+    RecipientAddressSourceOneOf,
+
+    /**
+     * The RecipientAddressSourceOneOf1 model constructor.
+     * @property {module:c2m_api/model/RecipientAddressSourceOneOf1}
+     */
+    RecipientAddressSourceOneOf1,
 
     /**
      * The ShortTokenRequest model constructor.

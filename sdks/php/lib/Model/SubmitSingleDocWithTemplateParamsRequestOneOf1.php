@@ -60,7 +60,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         'job_template' => 'string',
         'payment_details' => '\C2MApi\Model\PaymentDetails',
         'tags' => 'string[]',
-        'document_source_identifier' => '\C2MApi\Model\DocumentSourceIdentifier'
+        'recipient_address_sources' => '\C2MApi\Model\RecipientAddressSource[]'
     ];
 
     /**
@@ -74,7 +74,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         'job_template' => null,
         'payment_details' => null,
         'tags' => null,
-        'document_source_identifier' => null
+        'recipient_address_sources' => null
     ];
 
     /**
@@ -86,7 +86,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         'job_template' => false,
         'payment_details' => false,
         'tags' => false,
-        'document_source_identifier' => false
+        'recipient_address_sources' => false
     ];
 
     /**
@@ -178,7 +178,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         'job_template' => 'jobTemplate',
         'payment_details' => 'paymentDetails',
         'tags' => 'tags',
-        'document_source_identifier' => 'documentSourceIdentifier'
+        'recipient_address_sources' => 'recipientAddressSources'
     ];
 
     /**
@@ -190,7 +190,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         'job_template' => 'setJobTemplate',
         'payment_details' => 'setPaymentDetails',
         'tags' => 'setTags',
-        'document_source_identifier' => 'setDocumentSourceIdentifier'
+        'recipient_address_sources' => 'setRecipientAddressSources'
     ];
 
     /**
@@ -202,7 +202,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         'job_template' => 'getJobTemplate',
         'payment_details' => 'getPaymentDetails',
         'tags' => 'getTags',
-        'document_source_identifier' => 'getDocumentSourceIdentifier'
+        'recipient_address_sources' => 'getRecipientAddressSources'
     ];
 
     /**
@@ -265,7 +265,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         $this->setIfExists('job_template', $data ?? [], null);
         $this->setIfExists('payment_details', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
-        $this->setIfExists('document_source_identifier', $data ?? [], null);
+        $this->setIfExists('recipient_address_sources', $data ?? [], null);
     }
 
     /**
@@ -298,11 +298,8 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
         if ($this->container['job_template'] === null) {
             $invalidProperties[] = "'job_template' can't be null";
         }
-        if ($this->container['payment_details'] === null) {
-            $invalidProperties[] = "'payment_details' can't be null";
-        }
-        if ($this->container['document_source_identifier'] === null) {
-            $invalidProperties[] = "'document_source_identifier' can't be null";
+        if ($this->container['recipient_address_sources'] === null) {
+            $invalidProperties[] = "'recipient_address_sources' can't be null";
         }
         return $invalidProperties;
     }
@@ -349,7 +346,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
     /**
      * Gets payment_details
      *
-     * @return \C2MApi\Model\PaymentDetails
+     * @return \C2MApi\Model\PaymentDetails|null
      */
     public function getPaymentDetails()
     {
@@ -359,7 +356,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
     /**
      * Sets payment_details
      *
-     * @param \C2MApi\Model\PaymentDetails $payment_details payment_details
+     * @param \C2MApi\Model\PaymentDetails|null $payment_details payment_details
      *
      * @return self
      */
@@ -401,28 +398,28 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf1 implements ModelInterface, 
     }
 
     /**
-     * Gets document_source_identifier
+     * Gets recipient_address_sources
      *
-     * @return \C2MApi\Model\DocumentSourceIdentifier
+     * @return \C2MApi\Model\RecipientAddressSource[]
      */
-    public function getDocumentSourceIdentifier()
+    public function getRecipientAddressSources()
     {
-        return $this->container['document_source_identifier'];
+        return $this->container['recipient_address_sources'];
     }
 
     /**
-     * Sets document_source_identifier
+     * Sets recipient_address_sources
      *
-     * @param \C2MApi\Model\DocumentSourceIdentifier $document_source_identifier document_source_identifier
+     * @param \C2MApi\Model\RecipientAddressSource[] $recipient_address_sources recipient_address_sources
      *
      * @return self
      */
-    public function setDocumentSourceIdentifier($document_source_identifier)
+    public function setRecipientAddressSources($recipient_address_sources)
     {
-        if (is_null($document_source_identifier)) {
-            throw new \InvalidArgumentException('non-nullable document_source_identifier cannot be null');
+        if (is_null($recipient_address_sources)) {
+            throw new \InvalidArgumentException('non-nullable recipient_address_sources cannot be null');
         }
-        $this->container['document_source_identifier'] = $document_source_identifier;
+        $this->container['recipient_address_sources'] = $recipient_address_sources;
 
         return $this;
     }

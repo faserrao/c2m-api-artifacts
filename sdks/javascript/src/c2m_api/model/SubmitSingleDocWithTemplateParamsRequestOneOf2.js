@@ -26,13 +26,12 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
      * Constructs a new <code>SubmitSingleDocWithTemplateParamsRequestOneOf2</code>.
      * @alias module:c2m_api/model/SubmitSingleDocWithTemplateParamsRequestOneOf2
      * @param jobTemplate {String} 
-     * @param paymentDetails {module:c2m_api/model/PaymentDetails} 
      * @param documentSourceIdentifier {module:c2m_api/model/DocumentSourceIdentifier} 
      * @param recipientAddressSources {Array.<module:c2m_api/model/RecipientAddressSource>} 
      */
-    constructor(jobTemplate, paymentDetails, documentSourceIdentifier, recipientAddressSources) { 
+    constructor(jobTemplate, documentSourceIdentifier, recipientAddressSources) { 
         
-        SubmitSingleDocWithTemplateParamsRequestOneOf2.initialize(this, jobTemplate, paymentDetails, documentSourceIdentifier, recipientAddressSources);
+        SubmitSingleDocWithTemplateParamsRequestOneOf2.initialize(this, jobTemplate, documentSourceIdentifier, recipientAddressSources);
     }
 
     /**
@@ -40,9 +39,8 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, jobTemplate, paymentDetails, documentSourceIdentifier, recipientAddressSources) { 
+    static initialize(obj, jobTemplate, documentSourceIdentifier, recipientAddressSources) { 
         obj['jobTemplate'] = jobTemplate;
-        obj['paymentDetails'] = paymentDetails;
         obj['documentSourceIdentifier'] = documentSourceIdentifier;
         obj['recipientAddressSources'] = recipientAddressSources;
     }
@@ -122,7 +120,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
 
 }
 
-SubmitSingleDocWithTemplateParamsRequestOneOf2.RequiredProperties = ["jobTemplate", "paymentDetails", "documentSourceIdentifier", "recipientAddressSources"];
+SubmitSingleDocWithTemplateParamsRequestOneOf2.RequiredProperties = ["jobTemplate", "documentSourceIdentifier", "recipientAddressSources"];
 
 /**
  * @member {String} jobTemplate

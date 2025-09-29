@@ -120,6 +120,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property addressListId (base name: "addressListId")', function() {
+      // uncomment below and update the code to test the property addressListId
+      //var instance = new C2MApiV2AuthOverlay.RecipientAddressSource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property addressId (base name: "addressId")', function() {
+      // uncomment below and update the code to test the property addressId
+      //var instance = new C2MApiV2AuthOverlay.RecipientAddressSource();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

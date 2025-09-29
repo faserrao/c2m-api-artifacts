@@ -14,8 +14,8 @@
 package com.c2m.model;
 
 import java.util.Objects;
+import com.c2m.model.DocumentSourceIdentifier;
 import com.c2m.model.PaymentDetails;
-import com.c2m.model.RecipientAddressSource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +52,7 @@ import com.c2m.JSON;
 /**
  * SubmitSingleDocWithTemplateParamsRequestOneOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-18T23:30:59.692465979Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-29T19:40:45.964644121Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class SubmitSingleDocWithTemplateParamsRequestOneOf {
   public static final String SERIALIZED_NAME_JOB_TEMPLATE = "jobTemplate";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE)
@@ -61,7 +61,7 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
 
   public static final String SERIALIZED_NAME_PAYMENT_DETAILS = "paymentDetails";
   @SerializedName(SERIALIZED_NAME_PAYMENT_DETAILS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private PaymentDetails paymentDetails;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
@@ -69,10 +69,10 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
   @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_RECIPIENT_ADDRESS_SOURCES = "recipientAddressSources";
-  @SerializedName(SERIALIZED_NAME_RECIPIENT_ADDRESS_SOURCES)
+  public static final String SERIALIZED_NAME_DOCUMENT_SOURCE_IDENTIFIER = "documentSourceIdentifier";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_SOURCE_IDENTIFIER)
   @javax.annotation.Nonnull
-  private List<RecipientAddressSource> recipientAddressSources = new ArrayList<>();
+  private DocumentSourceIdentifier documentSourceIdentifier;
 
   public SubmitSingleDocWithTemplateParamsRequestOneOf() {
   }
@@ -96,7 +96,7 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
   }
 
 
-  public SubmitSingleDocWithTemplateParamsRequestOneOf paymentDetails(@javax.annotation.Nonnull PaymentDetails paymentDetails) {
+  public SubmitSingleDocWithTemplateParamsRequestOneOf paymentDetails(@javax.annotation.Nullable PaymentDetails paymentDetails) {
     this.paymentDetails = paymentDetails;
     return this;
   }
@@ -105,12 +105,12 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
    * Get paymentDetails
    * @return paymentDetails
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public PaymentDetails getPaymentDetails() {
     return paymentDetails;
   }
 
-  public void setPaymentDetails(@javax.annotation.Nonnull PaymentDetails paymentDetails) {
+  public void setPaymentDetails(@javax.annotation.Nullable PaymentDetails paymentDetails) {
     this.paymentDetails = paymentDetails;
   }
 
@@ -142,30 +142,22 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
   }
 
 
-  public SubmitSingleDocWithTemplateParamsRequestOneOf recipientAddressSources(@javax.annotation.Nonnull List<RecipientAddressSource> recipientAddressSources) {
-    this.recipientAddressSources = recipientAddressSources;
-    return this;
-  }
-
-  public SubmitSingleDocWithTemplateParamsRequestOneOf addRecipientAddressSourcesItem(RecipientAddressSource recipientAddressSourcesItem) {
-    if (this.recipientAddressSources == null) {
-      this.recipientAddressSources = new ArrayList<>();
-    }
-    this.recipientAddressSources.add(recipientAddressSourcesItem);
+  public SubmitSingleDocWithTemplateParamsRequestOneOf documentSourceIdentifier(@javax.annotation.Nonnull DocumentSourceIdentifier documentSourceIdentifier) {
+    this.documentSourceIdentifier = documentSourceIdentifier;
     return this;
   }
 
   /**
-   * Get recipientAddressSources
-   * @return recipientAddressSources
+   * Get documentSourceIdentifier
+   * @return documentSourceIdentifier
    */
   @javax.annotation.Nonnull
-  public List<RecipientAddressSource> getRecipientAddressSources() {
-    return recipientAddressSources;
+  public DocumentSourceIdentifier getDocumentSourceIdentifier() {
+    return documentSourceIdentifier;
   }
 
-  public void setRecipientAddressSources(@javax.annotation.Nonnull List<RecipientAddressSource> recipientAddressSources) {
-    this.recipientAddressSources = recipientAddressSources;
+  public void setDocumentSourceIdentifier(@javax.annotation.Nonnull DocumentSourceIdentifier documentSourceIdentifier) {
+    this.documentSourceIdentifier = documentSourceIdentifier;
   }
 
 
@@ -182,12 +174,12 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
     return Objects.equals(this.jobTemplate, submitSingleDocWithTemplateParamsRequestOneOf.jobTemplate) &&
         Objects.equals(this.paymentDetails, submitSingleDocWithTemplateParamsRequestOneOf.paymentDetails) &&
         Objects.equals(this.tags, submitSingleDocWithTemplateParamsRequestOneOf.tags) &&
-        Objects.equals(this.recipientAddressSources, submitSingleDocWithTemplateParamsRequestOneOf.recipientAddressSources);
+        Objects.equals(this.documentSourceIdentifier, submitSingleDocWithTemplateParamsRequestOneOf.documentSourceIdentifier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jobTemplate, paymentDetails, tags, recipientAddressSources);
+    return Objects.hash(jobTemplate, paymentDetails, tags, documentSourceIdentifier);
   }
 
   @Override
@@ -197,7 +189,7 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
     sb.append("    jobTemplate: ").append(toIndentedString(jobTemplate)).append("\n");
     sb.append("    paymentDetails: ").append(toIndentedString(paymentDetails)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    recipientAddressSources: ").append(toIndentedString(recipientAddressSources)).append("\n");
+    sb.append("    documentSourceIdentifier: ").append(toIndentedString(documentSourceIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -219,10 +211,10 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("jobTemplate", "paymentDetails", "tags", "recipientAddressSources"));
+    openapiFields = new HashSet<String>(Arrays.asList("jobTemplate", "paymentDetails", "tags", "documentSourceIdentifier"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("jobTemplate", "paymentDetails", "recipientAddressSources"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("jobTemplate", "documentSourceIdentifier"));
   }
 
   /**
@@ -256,22 +248,16 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf {
       if (!jsonObj.get("jobTemplate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jobTemplate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jobTemplate").toString()));
       }
-      // validate the required field `paymentDetails`
-      PaymentDetails.validateJsonElement(jsonObj.get("paymentDetails"));
+      // validate the optional field `paymentDetails`
+      if (jsonObj.get("paymentDetails") != null && !jsonObj.get("paymentDetails").isJsonNull()) {
+        PaymentDetails.validateJsonElement(jsonObj.get("paymentDetails"));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("recipientAddressSources").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `recipientAddressSources` to be an array in the JSON string but got `%s`", jsonObj.get("recipientAddressSources").toString()));
-      }
-
-      JsonArray jsonArrayrecipientAddressSources = jsonObj.getAsJsonArray("recipientAddressSources");
-      // validate the required field `recipientAddressSources` (array)
-      for (int i = 0; i < jsonArrayrecipientAddressSources.size(); i++) {
-        RecipientAddressSource.validateJsonElement(jsonArrayrecipientAddressSources.get(i));
-      };
+      // validate the required field `documentSourceIdentifier`
+      DocumentSourceIdentifier.validateJsonElement(jsonObj.get("documentSourceIdentifier"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

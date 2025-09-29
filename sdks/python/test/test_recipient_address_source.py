@@ -45,7 +45,9 @@ class TestRecipientAddressSource(unittest.TestCase):
                 nick_name = '',
                 address2 = '',
                 address3 = '',
-                phone_number = ''
+                phone_number = '',
+                address_list_id = 56,
+                address_id = 56
             )
         else:
             return RecipientAddressSource(
@@ -56,6 +58,8 @@ class TestRecipientAddressSource(unittest.TestCase):
                 state = '',
                 zip = '',
                 country = '',
+                address_list_id = 56,
+                address_id = 56,
         )
         """
 

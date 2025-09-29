@@ -58,6 +58,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
       */
     protected static $openAPITypes = [
         'documents_to_merge' => '\C2MApi\Model\DocumentSourceIdentifier[]',
+        'recipient_address_source' => '\C2MApi\Model\RecipientAddressSource',
         'job_template' => 'string',
         'payment_details' => '\C2MApi\Model\PaymentDetails',
         'tags' => 'string[]'
@@ -72,6 +73,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
       */
     protected static $openAPIFormats = [
         'documents_to_merge' => null,
+        'recipient_address_source' => null,
         'job_template' => null,
         'payment_details' => null,
         'tags' => null
@@ -84,6 +86,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
       */
     protected static array $openAPINullables = [
         'documents_to_merge' => false,
+        'recipient_address_source' => false,
         'job_template' => false,
         'payment_details' => false,
         'tags' => false
@@ -176,6 +179,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
      */
     protected static $attributeMap = [
         'documents_to_merge' => 'documentsToMerge',
+        'recipient_address_source' => 'recipientAddressSource',
         'job_template' => 'jobTemplate',
         'payment_details' => 'paymentDetails',
         'tags' => 'tags'
@@ -188,6 +192,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
      */
     protected static $setters = [
         'documents_to_merge' => 'setDocumentsToMerge',
+        'recipient_address_source' => 'setRecipientAddressSource',
         'job_template' => 'setJobTemplate',
         'payment_details' => 'setPaymentDetails',
         'tags' => 'setTags'
@@ -200,6 +205,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
      */
     protected static $getters = [
         'documents_to_merge' => 'getDocumentsToMerge',
+        'recipient_address_source' => 'getRecipientAddressSource',
         'job_template' => 'getJobTemplate',
         'payment_details' => 'getPaymentDetails',
         'tags' => 'getTags'
@@ -263,6 +269,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
     public function __construct(?array $data = null)
     {
         $this->setIfExists('documents_to_merge', $data ?? [], null);
+        $this->setIfExists('recipient_address_source', $data ?? [], null);
         $this->setIfExists('job_template', $data ?? [], null);
         $this->setIfExists('payment_details', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
@@ -298,11 +305,11 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
         if ($this->container['documents_to_merge'] === null) {
             $invalidProperties[] = "'documents_to_merge' can't be null";
         }
+        if ($this->container['recipient_address_source'] === null) {
+            $invalidProperties[] = "'recipient_address_source' can't be null";
+        }
         if ($this->container['job_template'] === null) {
             $invalidProperties[] = "'job_template' can't be null";
-        }
-        if ($this->container['payment_details'] === null) {
-            $invalidProperties[] = "'payment_details' can't be null";
         }
         return $invalidProperties;
     }
@@ -347,6 +354,33 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets recipient_address_source
+     *
+     * @return \C2MApi\Model\RecipientAddressSource
+     */
+    public function getRecipientAddressSource()
+    {
+        return $this->container['recipient_address_source'];
+    }
+
+    /**
+     * Sets recipient_address_source
+     *
+     * @param \C2MApi\Model\RecipientAddressSource $recipient_address_source recipient_address_source
+     *
+     * @return self
+     */
+    public function setRecipientAddressSource($recipient_address_source)
+    {
+        if (is_null($recipient_address_source)) {
+            throw new \InvalidArgumentException('non-nullable recipient_address_source cannot be null');
+        }
+        $this->container['recipient_address_source'] = $recipient_address_source;
+
+        return $this;
+    }
+
+    /**
      * Gets job_template
      *
      * @return string
@@ -376,7 +410,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
     /**
      * Gets payment_details
      *
-     * @return \C2MApi\Model\PaymentDetails
+     * @return \C2MApi\Model\PaymentDetails|null
      */
     public function getPaymentDetails()
     {
@@ -386,7 +420,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
     /**
      * Sets payment_details
      *
-     * @param \C2MApi\Model\PaymentDetails $payment_details payment_details
+     * @param \C2MApi\Model\PaymentDetails|null $payment_details payment_details
      *
      * @return self
      */

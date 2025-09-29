@@ -89,6 +89,15 @@ class MergeMultiDocWithTemplateParamsTest extends TestCase
     }
 
     /**
+     * Test attribute "recipient_address_source"
+     */
+    public function testPropertyRecipientAddressSource()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "job_template"
      */
     public function testPropertyJobTemplate()

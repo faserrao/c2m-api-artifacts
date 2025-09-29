@@ -14,6 +14,8 @@
 package com.c2m.model;
 
 import com.c2m.model.RecipientAddress;
+import com.c2m.model.RecipientAddressSourceOneOf;
+import com.c2m.model.RecipientAddressSourceOneOf1;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -124,6 +126,22 @@ public class RecipientAddressSourceTest {
     @Test
     public void phoneNumberTest() {
         // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'addressListId'
+     */
+    @Test
+    public void addressListIdTest() {
+        // TODO: test addressListId
+    }
+
+    /**
+     * Test the property 'addressId'
+     */
+    @Test
+    public void addressIdTest() {
+        // TODO: test addressId
     }
 
 }

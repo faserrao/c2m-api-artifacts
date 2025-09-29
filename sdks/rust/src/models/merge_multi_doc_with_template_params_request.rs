@@ -15,20 +15,23 @@ use serde::{Deserialize, Serialize};
 pub struct MergeMultiDocWithTemplateParamsRequest {
     #[serde(rename = "documentsToMerge")]
     pub documents_to_merge: Vec<models::DocumentSourceIdentifier>,
+    #[serde(rename = "recipientAddressSource")]
+    pub recipient_address_source: Box<models::RecipientAddressSource>,
     #[serde(rename = "jobTemplate")]
     pub job_template: String,
-    #[serde(rename = "paymentDetails")]
-    pub payment_details: Box<models::PaymentDetails>,
+    #[serde(rename = "paymentDetails", skip_serializing_if = "Option::is_none")]
+    pub payment_details: Option<Box<models::PaymentDetails>>,
     #[serde(rename = "tags", skip_serializing_if = "Option::is_none")]
     pub tags: Option<Vec<String>>,
 }
 
 impl MergeMultiDocWithTemplateParamsRequest {
-    pub fn new(documents_to_merge: Vec<models::DocumentSourceIdentifier>, job_template: String, payment_details: models::PaymentDetails) -> MergeMultiDocWithTemplateParamsRequest {
+    pub fn new(documents_to_merge: Vec<models::DocumentSourceIdentifier>, recipient_address_source: models::RecipientAddressSource, job_template: String) -> MergeMultiDocWithTemplateParamsRequest {
         MergeMultiDocWithTemplateParamsRequest {
             documents_to_merge,
+            recipient_address_source: Box::new(recipient_address_source),
             job_template,
-            payment_details: Box::new(payment_details),
+            payment_details: None,
             tags: None,
         }
     }

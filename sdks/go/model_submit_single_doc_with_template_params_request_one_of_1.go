@@ -22,9 +22,9 @@ var _ MappedNullable = &SubmitSingleDocWithTemplateParamsRequestOneOf1{}
 // SubmitSingleDocWithTemplateParamsRequestOneOf1 struct for SubmitSingleDocWithTemplateParamsRequestOneOf1
 type SubmitSingleDocWithTemplateParamsRequestOneOf1 struct {
 	JobTemplate string `json:"jobTemplate"`
-	PaymentDetails PaymentDetails `json:"paymentDetails"`
+	PaymentDetails *PaymentDetails `json:"paymentDetails,omitempty"`
 	Tags []string `json:"tags,omitempty"`
-	DocumentSourceIdentifier DocumentSourceIdentifier `json:"documentSourceIdentifier"`
+	RecipientAddressSources []RecipientAddressSource `json:"recipientAddressSources"`
 }
 
 type _SubmitSingleDocWithTemplateParamsRequestOneOf1 SubmitSingleDocWithTemplateParamsRequestOneOf1
@@ -33,11 +33,10 @@ type _SubmitSingleDocWithTemplateParamsRequestOneOf1 SubmitSingleDocWithTemplate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubmitSingleDocWithTemplateParamsRequestOneOf1(jobTemplate string, paymentDetails PaymentDetails, documentSourceIdentifier DocumentSourceIdentifier) *SubmitSingleDocWithTemplateParamsRequestOneOf1 {
+func NewSubmitSingleDocWithTemplateParamsRequestOneOf1(jobTemplate string, recipientAddressSources []RecipientAddressSource) *SubmitSingleDocWithTemplateParamsRequestOneOf1 {
 	this := SubmitSingleDocWithTemplateParamsRequestOneOf1{}
 	this.JobTemplate = jobTemplate
-	this.PaymentDetails = paymentDetails
-	this.DocumentSourceIdentifier = documentSourceIdentifier
+	this.RecipientAddressSources = recipientAddressSources
 	return &this
 }
 
@@ -73,28 +72,36 @@ func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) SetJobTemplate(v string
 	o.JobTemplate = v
 }
 
-// GetPaymentDetails returns the PaymentDetails field value
+// GetPaymentDetails returns the PaymentDetails field value if set, zero value otherwise.
 func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) GetPaymentDetails() PaymentDetails {
-	if o == nil {
+	if o == nil || IsNil(o.PaymentDetails) {
 		var ret PaymentDetails
 		return ret
 	}
-
-	return o.PaymentDetails
+	return *o.PaymentDetails
 }
 
-// GetPaymentDetailsOk returns a tuple with the PaymentDetails field value
+// GetPaymentDetailsOk returns a tuple with the PaymentDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) GetPaymentDetailsOk() (*PaymentDetails, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PaymentDetails) {
 		return nil, false
 	}
-	return &o.PaymentDetails, true
+	return o.PaymentDetails, true
 }
 
-// SetPaymentDetails sets field value
+// HasPaymentDetails returns a boolean if a field has been set.
+func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) HasPaymentDetails() bool {
+	if o != nil && !IsNil(o.PaymentDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentDetails gets a reference to the given PaymentDetails and assigns it to the PaymentDetails field.
 func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) SetPaymentDetails(v PaymentDetails) {
-	o.PaymentDetails = v
+	o.PaymentDetails = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
@@ -129,28 +136,28 @@ func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) SetTags(v []string) {
 	o.Tags = v
 }
 
-// GetDocumentSourceIdentifier returns the DocumentSourceIdentifier field value
-func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) GetDocumentSourceIdentifier() DocumentSourceIdentifier {
+// GetRecipientAddressSources returns the RecipientAddressSources field value
+func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) GetRecipientAddressSources() []RecipientAddressSource {
 	if o == nil {
-		var ret DocumentSourceIdentifier
+		var ret []RecipientAddressSource
 		return ret
 	}
 
-	return o.DocumentSourceIdentifier
+	return o.RecipientAddressSources
 }
 
-// GetDocumentSourceIdentifierOk returns a tuple with the DocumentSourceIdentifier field value
+// GetRecipientAddressSourcesOk returns a tuple with the RecipientAddressSources field value
 // and a boolean to check if the value has been set.
-func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) GetDocumentSourceIdentifierOk() (*DocumentSourceIdentifier, bool) {
+func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) GetRecipientAddressSourcesOk() ([]RecipientAddressSource, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DocumentSourceIdentifier, true
+	return o.RecipientAddressSources, true
 }
 
-// SetDocumentSourceIdentifier sets field value
-func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) SetDocumentSourceIdentifier(v DocumentSourceIdentifier) {
-	o.DocumentSourceIdentifier = v
+// SetRecipientAddressSources sets field value
+func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) SetRecipientAddressSources(v []RecipientAddressSource) {
+	o.RecipientAddressSources = v
 }
 
 func (o SubmitSingleDocWithTemplateParamsRequestOneOf1) MarshalJSON() ([]byte, error) {
@@ -164,11 +171,13 @@ func (o SubmitSingleDocWithTemplateParamsRequestOneOf1) MarshalJSON() ([]byte, e
 func (o SubmitSingleDocWithTemplateParamsRequestOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["jobTemplate"] = o.JobTemplate
-	toSerialize["paymentDetails"] = o.PaymentDetails
+	if !IsNil(o.PaymentDetails) {
+		toSerialize["paymentDetails"] = o.PaymentDetails
+	}
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-	toSerialize["documentSourceIdentifier"] = o.DocumentSourceIdentifier
+	toSerialize["recipientAddressSources"] = o.RecipientAddressSources
 	return toSerialize, nil
 }
 
@@ -178,8 +187,7 @@ func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) UnmarshalJSON(data []by
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"jobTemplate",
-		"paymentDetails",
-		"documentSourceIdentifier",
+		"recipientAddressSources",
 	}
 
 	allProperties := make(map[string]interface{})

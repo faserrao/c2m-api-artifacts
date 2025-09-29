@@ -13,22 +13,22 @@ import AnyCodable
 public struct SubmitSingleDocWithTemplateParamsRequestOneOf: Codable, JSONEncodable, Hashable {
 
     public var jobTemplate: String
-    public var paymentDetails: PaymentDetails
+    public var paymentDetails: PaymentDetails?
     public var tags: [String]?
-    public var recipientAddressSources: [RecipientAddressSource]
+    public var documentSourceIdentifier: DocumentSourceIdentifier
 
-    public init(jobTemplate: String, paymentDetails: PaymentDetails, tags: [String]? = nil, recipientAddressSources: [RecipientAddressSource]) {
+    public init(jobTemplate: String, paymentDetails: PaymentDetails? = nil, tags: [String]? = nil, documentSourceIdentifier: DocumentSourceIdentifier) {
         self.jobTemplate = jobTemplate
         self.paymentDetails = paymentDetails
         self.tags = tags
-        self.recipientAddressSources = recipientAddressSources
+        self.documentSourceIdentifier = documentSourceIdentifier
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case jobTemplate
         case paymentDetails
         case tags
-        case recipientAddressSources
+        case documentSourceIdentifier
     }
 
     // Encodable protocol methods
@@ -36,9 +36,9 @@ public struct SubmitSingleDocWithTemplateParamsRequestOneOf: Codable, JSONEncoda
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(jobTemplate, forKey: .jobTemplate)
-        try container.encode(paymentDetails, forKey: .paymentDetails)
+        try container.encodeIfPresent(paymentDetails, forKey: .paymentDetails)
         try container.encodeIfPresent(tags, forKey: .tags)
-        try container.encode(recipientAddressSources, forKey: .recipientAddressSources)
+        try container.encode(documentSourceIdentifier, forKey: .documentSourceIdentifier)
     }
 }
 

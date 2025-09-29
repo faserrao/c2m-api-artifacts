@@ -35,12 +35,16 @@ class TestDocumentSourceIdentifier(unittest.TestCase):
         model = DocumentSourceIdentifier()
         if include_optional:
             return DocumentSourceIdentifier(
+                document_id = 56,
+                external_url = '',
                 upload_request_id = 56,
                 document_name = '',
                 zip_id = 56
             )
         else:
             return DocumentSourceIdentifier(
+                document_id = 56,
+                external_url = '',
                 upload_request_id = 56,
                 document_name = '',
                 zip_id = 56,

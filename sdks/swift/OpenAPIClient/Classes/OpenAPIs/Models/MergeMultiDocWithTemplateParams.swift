@@ -13,12 +13,14 @@ import AnyCodable
 public struct MergeMultiDocWithTemplateParams: Codable, JSONEncodable, Hashable {
 
     public var documentsToMerge: [DocumentSourceIdentifier]
+    public var recipientAddressSource: RecipientAddressSource
     public var jobTemplate: String
-    public var paymentDetails: PaymentDetails
+    public var paymentDetails: PaymentDetails?
     public var tags: [String]?
 
-    public init(documentsToMerge: [DocumentSourceIdentifier], jobTemplate: String, paymentDetails: PaymentDetails, tags: [String]? = nil) {
+    public init(documentsToMerge: [DocumentSourceIdentifier], recipientAddressSource: RecipientAddressSource, jobTemplate: String, paymentDetails: PaymentDetails? = nil, tags: [String]? = nil) {
         self.documentsToMerge = documentsToMerge
+        self.recipientAddressSource = recipientAddressSource
         self.jobTemplate = jobTemplate
         self.paymentDetails = paymentDetails
         self.tags = tags
@@ -26,6 +28,7 @@ public struct MergeMultiDocWithTemplateParams: Codable, JSONEncodable, Hashable 
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case documentsToMerge
+        case recipientAddressSource
         case jobTemplate
         case paymentDetails
         case tags
@@ -36,8 +39,9 @@ public struct MergeMultiDocWithTemplateParams: Codable, JSONEncodable, Hashable 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(documentsToMerge, forKey: .documentsToMerge)
+        try container.encode(recipientAddressSource, forKey: .recipientAddressSource)
         try container.encode(jobTemplate, forKey: .jobTemplate)
-        try container.encode(paymentDetails, forKey: .paymentDetails)
+        try container.encodeIfPresent(paymentDetails, forKey: .paymentDetails)
         try container.encodeIfPresent(tags, forKey: .tags)
     }
 }

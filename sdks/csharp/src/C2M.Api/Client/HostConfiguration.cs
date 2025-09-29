@@ -60,10 +60,12 @@ namespace C2M.Api.Client
             _jsonOptions.Converters.Add(new DocumentClassNullableJsonConverter());
             _jsonOptions.Converters.Add(new DocumentFormatJsonConverter());
             _jsonOptions.Converters.Add(new DocumentFormatNullableJsonConverter());
+            _jsonOptions.Converters.Add(new DocumentSourceFromZipJsonConverter());
             _jsonOptions.Converters.Add(new DocumentSourceIdentifierJsonConverter());
-            _jsonOptions.Converters.Add(new DocumentSourceIdentifierOneOfJsonConverter());
-            _jsonOptions.Converters.Add(new DocumentSourceIdentifierOneOf1JsonConverter());
-            _jsonOptions.Converters.Add(new DocumentSourceIdentifierOneOf2JsonConverter());
+            _jsonOptions.Converters.Add(new DocumentSourceVariant1JsonConverter());
+            _jsonOptions.Converters.Add(new DocumentSourceVariant2JsonConverter());
+            _jsonOptions.Converters.Add(new DocumentSourceWithUploadJsonConverter());
+            _jsonOptions.Converters.Add(new DocumentSourceWithUploadAndZipJsonConverter());
             _jsonOptions.Converters.Add(new EnvelopeJsonConverter());
             _jsonOptions.Converters.Add(new EnvelopeNullableJsonConverter());
             _jsonOptions.Converters.Add(new ExpirationDateJsonConverter());
@@ -92,6 +94,8 @@ namespace C2M.Api.Client
             _jsonOptions.Converters.Add(new PrintOptionNullableJsonConverter());
             _jsonOptions.Converters.Add(new RecipientAddressJsonConverter());
             _jsonOptions.Converters.Add(new RecipientAddressSourceJsonConverter());
+            _jsonOptions.Converters.Add(new RecipientAddressSourceOneOfJsonConverter());
+            _jsonOptions.Converters.Add(new RecipientAddressSourceOneOf1JsonConverter());
             _jsonOptions.Converters.Add(new ShortTokenRequestJsonConverter());
             _jsonOptions.Converters.Add(new ShortTokenResponseJsonConverter());
             _jsonOptions.Converters.Add(new SingleDocJobParamsJsonConverter());

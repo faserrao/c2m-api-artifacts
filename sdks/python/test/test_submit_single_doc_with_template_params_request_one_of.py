@@ -40,17 +40,12 @@ class TestSubmitSingleDocWithTemplateParamsRequestOneOf(unittest.TestCase):
                 tags = [
                     ''
                     ],
-                recipient_address_sources = [
-                    null
-                    ]
+                document_source_identifier = None
             )
         else:
             return SubmitSingleDocWithTemplateParamsRequestOneOf(
                 job_template = '',
-                payment_details = None,
-                recipient_address_sources = [
-                    null
-                    ],
+                document_source_identifier = None,
         )
         """
 

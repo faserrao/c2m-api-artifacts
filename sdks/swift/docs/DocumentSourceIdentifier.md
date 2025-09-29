@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**documentId** | **Int** |  | 
+**externalUrl** | **String** |  | 
 **uploadRequestId** | **Int** |  | 
 **documentName** | **String** |  | 
 **zipId** | **Int** |  | 

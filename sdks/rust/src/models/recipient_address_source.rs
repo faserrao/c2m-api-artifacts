@@ -14,14 +14,14 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RecipientAddressSource {
-    ExactlyOneNewAddress(Box<models::RecipientAddress>),
-    ExactlyOneListId(i32),
-    ExactlyOneId(i32),
+    RecipientAddress(Box<models::RecipientAddress>),
+    RecipientAddressSourceOneOf(Box<models::RecipientAddressSourceOneOf>),
+    RecipientAddressSourceOneOf1(Box<models::RecipientAddressSourceOneOf1>),
 }
 
 impl Default for RecipientAddressSource {
     fn default() -> Self {
-        Self::ExactlyOneNewAddress(Default::default())
+        Self::RecipientAddress(Default::default())
     }
 }
 

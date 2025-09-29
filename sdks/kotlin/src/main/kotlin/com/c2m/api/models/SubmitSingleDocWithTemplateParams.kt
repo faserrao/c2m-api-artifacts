@@ -29,9 +29,9 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param jobTemplate 
- * @param paymentDetails 
- * @param recipientAddressSources 
  * @param documentSourceIdentifier 
+ * @param recipientAddressSources 
+ * @param paymentDetails 
  * @param tags 
  */
 
@@ -41,14 +41,14 @@ data class SubmitSingleDocWithTemplateParams (
     @Json(name = "jobTemplate")
     val jobTemplate: kotlin.String,
 
-    @Json(name = "paymentDetails")
-    val paymentDetails: PaymentDetails,
+    @Json(name = "documentSourceIdentifier")
+    val documentSourceIdentifier: DocumentSourceIdentifier,
 
     @Json(name = "recipientAddressSources")
     val recipientAddressSources: kotlin.collections.List<RecipientAddressSource>,
 
-    @Json(name = "documentSourceIdentifier")
-    val documentSourceIdentifier: DocumentSourceIdentifier,
+    @Json(name = "paymentDetails")
+    val paymentDetails: PaymentDetails? = null,
 
     @Json(name = "tags")
     val tags: kotlin.collections.List<kotlin.String>? = null

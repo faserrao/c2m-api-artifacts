@@ -21,6 +21,7 @@ import io.kotlintest.specs.ShouldSpec
 import com.c2m.api.models.MergeMultiDocWithTemplateParamsRequest
 import com.c2m.api.models.DocumentSourceIdentifier
 import com.c2m.api.models.PaymentDetails
+import com.c2m.api.models.RecipientAddressSource
 
 class MergeMultiDocWithTemplateParamsRequestTest : ShouldSpec() {
     init {
@@ -31,6 +32,12 @@ class MergeMultiDocWithTemplateParamsRequestTest : ShouldSpec() {
         should("test documentsToMerge") {
             // uncomment below to test the property
             //modelInstance.documentsToMerge shouldBe ("TODO")
+        }
+
+        // to test the property `recipientAddressSource`
+        should("test recipientAddressSource") {
+            // uncomment below to test the property
+            //modelInstance.recipientAddressSource shouldBe ("TODO")
         }
 
         // to test the property `jobTemplate`

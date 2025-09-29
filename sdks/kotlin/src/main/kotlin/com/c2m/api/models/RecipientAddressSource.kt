@@ -16,6 +16,8 @@
 package com.c2m.api.models
 
 import com.c2m.api.models.RecipientAddress
+import com.c2m.api.models.RecipientAddressSourceOneOf
+import com.c2m.api.models.RecipientAddressSourceOneOf1
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -30,6 +32,8 @@ import com.squareup.moshi.JsonClass
  * @param state 
  * @param zip 
  * @param country 
+ * @param addressListId 
+ * @param addressId 
  * @param nickName 
  * @param address2 
  * @param address3 
@@ -59,6 +63,12 @@ data class RecipientAddressSource (
 
     @Json(name = "country")
     val country: kotlin.String,
+
+    @Json(name = "addressListId")
+    val addressListId: kotlin.Int,
+
+    @Json(name = "addressId")
+    val addressId: kotlin.Int,
 
     @Json(name = "nickName")
     val nickName: kotlin.String? = null,

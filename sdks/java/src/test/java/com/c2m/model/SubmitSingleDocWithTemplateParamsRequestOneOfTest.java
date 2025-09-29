@@ -13,8 +13,8 @@
 
 package com.c2m.model;
 
+import com.c2m.model.DocumentSourceIdentifier;
 import com.c2m.model.PaymentDetails;
-import com.c2m.model.RecipientAddressSource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -66,11 +66,11 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOfTest {
     }
 
     /**
-     * Test the property 'recipientAddressSources'
+     * Test the property 'documentSourceIdentifier'
      */
     @Test
-    public void recipientAddressSourcesTest() {
-        // TODO: test recipientAddressSources
+    public void documentSourceIdentifierTest() {
+        // TODO: test documentSourceIdentifier
     }
 
 }

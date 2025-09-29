@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-	mergeMultiDocParamsRequest := *openapiclient.NewMergeMultiDocParamsRequest([]openapiclient.DocumentSourceIdentifier{openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // MergeMultiDocParamsRequest | 
+	mergeMultiDocParamsRequest := *openapiclient.NewMergeMultiDocParamsRequest([]openapiclient.DocumentSourceIdentifier{openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // MergeMultiDocParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-	mergeMultiDocWithTemplateParamsRequest := *openapiclient.NewMergeMultiDocWithTemplateParamsRequest([]openapiclient.DocumentSourceIdentifier{openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}}, "JobTemplate_example", openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // MergeMultiDocWithTemplateParamsRequest | 
+	mergeMultiDocWithTemplateParamsRequest := *openapiclient.NewMergeMultiDocWithTemplateParamsRequest([]openapiclient.DocumentSourceIdentifier{openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}, "JobTemplate_example") // MergeMultiDocWithTemplateParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -163,7 +163,7 @@ import (
 )
 
 func main() {
-	multiPdfWithCaptureParamsRequest := *openapiclient.NewMultiPdfWithCaptureParamsRequest([]openapiclient.AddressListPdf{*openapiclient.NewAddressListPdf(openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}, "AddressListRegion_example")}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // MultiPdfWithCaptureParamsRequest | 
+	multiPdfWithCaptureParamsRequest := *openapiclient.NewMultiPdfWithCaptureParamsRequest([]openapiclient.AddressListPdf{*openapiclient.NewAddressListPdf(openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}, "AddressListRegion_example")}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // MultiPdfWithCaptureParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -227,7 +227,7 @@ import (
 )
 
 func main() {
-	singleDocJobParamsRequest := *openapiclient.NewSingleDocJobParamsRequest(openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}, []openapiclient.RecipientAddressSource{openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}}, *openapiclient.NewJobOptions(openapiclient.documentClass("businessLetter"), openapiclient.layout("portrait"), openapiclient.mailclass("firstClassMail"), openapiclient.paperType("letter"), openapiclient.printOption("none"), openapiclient.envelope("flat")), openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SingleDocJobParamsRequest | 
+	singleDocJobParamsRequest := *openapiclient.NewSingleDocJobParamsRequest(openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}, []openapiclient.RecipientAddressSource{openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}}, *openapiclient.NewJobOptions(openapiclient.documentClass("businessLetter"), openapiclient.layout("portrait"), openapiclient.mailclass("firstClassMail"), openapiclient.paperType("letter"), openapiclient.printOption("none"), openapiclient.envelope("flat")), openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SingleDocJobParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -291,7 +291,7 @@ import (
 )
 
 func main() {
-	splitPdfParamsRequest := *openapiclient.NewSplitPdfParamsRequest(openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}, []openapiclient.SplitPdfParamsRequestItemsInner{*openapiclient.NewSplitPdfParamsRequestItemsInner(*openapiclient.NewPageRange(int32(123), int32(123)), []openapiclient.RecipientAddressSource{openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}})}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SplitPdfParamsRequest | 
+	splitPdfParamsRequest := *openapiclient.NewSplitPdfParamsRequest(openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}, []openapiclient.SplitPdfParamsRequestItemsInner{*openapiclient.NewSplitPdfParamsRequestItemsInner(*openapiclient.NewPageRange(int32(123), int32(123)), []openapiclient.RecipientAddressSource{openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}})}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SplitPdfParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -355,7 +355,7 @@ import (
 )
 
 func main() {
-	splitPdfWithCaptureParamsRequest := *openapiclient.NewSplitPdfWithCaptureParamsRequest(openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}, []openapiclient.ExtractionSpec{*openapiclient.NewExtractionSpec(int32(123), int32(123), *openapiclient.NewAddressRegion(float32(123), float32(123), float32(123), float32(123), int32(123)))}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SplitPdfWithCaptureParamsRequest | 
+	splitPdfWithCaptureParamsRequest := *openapiclient.NewSplitPdfWithCaptureParamsRequest(openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}, []openapiclient.ExtractionSpec{*openapiclient.NewExtractionSpec(int32(123), int32(123), *openapiclient.NewAddressRegion(float32(123), float32(123), float32(123), float32(123), int32(123)))}, openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SplitPdfWithCaptureParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -419,7 +419,7 @@ import (
 )
 
 func main() {
-	submitMultiDocParamsRequest := *openapiclient.NewSubmitMultiDocParamsRequest([]openapiclient.SubmitMultiDocWithTemplateParamsRequestItemsInner{*openapiclient.NewSubmitMultiDocWithTemplateParamsRequestItemsInner(openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")})}, *openapiclient.NewJobOptions(openapiclient.documentClass("businessLetter"), openapiclient.layout("portrait"), openapiclient.mailclass("firstClassMail"), openapiclient.paperType("letter"), openapiclient.printOption("none"), openapiclient.envelope("flat")), openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SubmitMultiDocParamsRequest | 
+	submitMultiDocParamsRequest := *openapiclient.NewSubmitMultiDocParamsRequest([]openapiclient.SubmitMultiDocWithTemplateParamsRequestItemsInner{*openapiclient.NewSubmitMultiDocWithTemplateParamsRequestItemsInner(openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")})}, *openapiclient.NewJobOptions(openapiclient.documentClass("businessLetter"), openapiclient.layout("portrait"), openapiclient.mailclass("firstClassMail"), openapiclient.paperType("letter"), openapiclient.printOption("none"), openapiclient.envelope("flat")), openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SubmitMultiDocParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -483,7 +483,7 @@ import (
 )
 
 func main() {
-	submitMultiDocWithTemplateParamsRequest := *openapiclient.NewSubmitMultiDocWithTemplateParamsRequest([]openapiclient.SubmitMultiDocWithTemplateParamsRequestItemsInner{*openapiclient.NewSubmitMultiDocWithTemplateParamsRequestItemsInner(openapiclient.documentSourceIdentifier{DocumentSourceIdentifierOneOf: openapiclient.NewDocumentSourceIdentifierOneOf(int32(123), "DocumentName_example")}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")})}, "JobTemplate_example", openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SubmitMultiDocWithTemplateParamsRequest | 
+	submitMultiDocWithTemplateParamsRequest := *openapiclient.NewSubmitMultiDocWithTemplateParamsRequest([]openapiclient.SubmitMultiDocWithTemplateParamsRequestItemsInner{*openapiclient.NewSubmitMultiDocWithTemplateParamsRequestItemsInner(openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")})}, "JobTemplate_example", openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // SubmitMultiDocWithTemplateParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -547,7 +547,7 @@ import (
 )
 
 func main() {
-	submitSingleDocWithTemplateParamsRequest := openapiclient.submitSingleDocWithTemplateParams_request{SubmitSingleDocWithTemplateParamsRequestOneOf: openapiclient.NewSubmitSingleDocWithTemplateParamsRequestOneOf("JobTemplate_example", openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}, []openapiclient.RecipientAddressSource{openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}})} // SubmitSingleDocWithTemplateParamsRequest | 
+	submitSingleDocWithTemplateParamsRequest := openapiclient.submitSingleDocWithTemplateParams_request{SubmitSingleDocWithTemplateParamsRequestOneOf: openapiclient.NewSubmitSingleDocWithTemplateParamsRequestOneOf("JobTemplate_example", openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")})} // SubmitSingleDocWithTemplateParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
