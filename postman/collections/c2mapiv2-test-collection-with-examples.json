@@ -13,7 +13,7 @@
           "description": "",
           "item": [
             {
-              "id": "357a5744-ad99-46dd-87d8-35d7dbd33773",
+              "id": "983dc2c5-1ff7-45ca-a6ce-259853c0e074",
               "name": "Operation for /jobs/single-doc-job-template",
               "request": {
                 "name": "Operation for /jobs/single-doc-job-template",
@@ -42,7 +42,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"jobTemplate\": \"template_jrj7Oowl\",\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"jobTemplate\": \"template_lAikmB8H\",\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -54,7 +54,7 @@
               },
               "response": [
                 {
-                  "id": "25ea10c0-d816-4c1e-8388-2b3e34f64c4c",
+                  "id": "b517243c-7911-43ca-8cb0-72f4b11dccc7",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -89,7 +89,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"jobTemplate\": \"template_ZO4AUVZc\",\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"jobTemplate\": \"template_G4kfY1gG\",\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -106,12 +106,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"3ox2Zr4G5Z\"\n}",
+                  "body": "{\n  \"status\": \"active\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"BrfMzP8RCz\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "361cd90b-e4d6-4f02-910e-97ca6f8eb03c",
+                  "id": "d27bccda-5007-41d8-b554-986689f52c70",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -142,7 +142,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"jobTemplate\": \"template_rBVX9KQ9\",\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 100,\n    \"documentName\": \"invoice_2024_01.pdf\"\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"jobTemplate\": \"template_a2LLESuA\",\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 100,\n    \"documentName\": \"invoice_2024_01.pdf\"\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -158,7 +158,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "28fc4593-cc09-42b7-b3a6-ff5f75261460",
+                  "id": "4b689e94-860a-4d32-8e99-2e0aa0d4ecc6",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -189,7 +189,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"jobTemplate\": \"template_LDxSg8qa\",\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 200,\n    \"zipId\": 10,\n    \"documentName\": \"statement_jan.pdf\"\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"jobTemplate\": \"template_OoloCctr\",\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 200,\n    \"zipId\": 10,\n    \"documentName\": \"statement_jan.pdf\"\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -217,7 +217,7 @@
           "description": "",
           "item": [
             {
-              "id": "1c0ec9d6-de0f-4556-9b8d-a29a475568fb",
+              "id": "64251874-80e8-4fd9-a580-8f5777ea2da8",
               "name": "Operation for /jobs/multi-docs-job-template",
               "request": {
                 "name": "Operation for /jobs/multi-docs-job-template",
@@ -246,7 +246,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_kVRfNv13\",\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_xnfH5Hjr\",\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -258,7 +258,7 @@
               },
               "response": [
                 {
-                  "id": "a74de44f-43d6-45cd-a667-f222457b4496",
+                  "id": "b1a81e43-10da-4534-b744-2e70ccbd9606",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -293,7 +293,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_9euxcf0N\",\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_3hqcSjd2\",\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -310,12 +310,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Job created successfully\",\n  \"jobId\": \"pb3SoFS8NN\"\n}",
+                  "body": "{\n  \"status\": \"completed\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"1r2PFph0w4\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "36e9546f-4867-4884-83f4-67079a39d41a",
+                  "id": "9c78060e-31ea-4881-8007-fadb83732f1a",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -346,7 +346,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_PuNNKvWC\",\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_jlPmW7aA\",\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -362,7 +362,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "3e0d43ec-1b71-4a7a-9eb4-364919b40643",
+                  "id": "aa8af710-6cad-4cde-8f38-66406bc98f37",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -393,7 +393,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_g01Ahydh\",\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobTemplate\": \"template_nXFmrNls\",\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -421,7 +421,7 @@
           "description": "",
           "item": [
             {
-              "id": "dbb853e8-d1cb-4c3f-9cab-ed3a985b13b6",
+              "id": "d356ff24-ff64-4082-b425-2d0c83450d3e",
               "name": "Operation for /jobs/multi-doc-merge-job-template",
               "request": {
                 "name": "Operation for /jobs/multi-doc-merge-job-template",
@@ -450,7 +450,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"8RYN24IdQ8\"\n    },\n    {\n      \"documentId\": \"Dy44Y2k1sV\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"jobTemplate\": \"template_0AbtOyBk\",\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"j01vonrSZz\"\n    },\n    {\n      \"documentId\": \"kNsBCXE1TO\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"jobTemplate\": \"template_Q3dahlf2\",\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -462,7 +462,7 @@
               },
               "response": [
                 {
-                  "id": "874680df-7de7-4571-9337-e17be2abd543",
+                  "id": "3510789b-cbb5-4bbe-aa6c-948a9831abb2",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -497,7 +497,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"oVSCSLySos\"\n    },\n    {\n      \"documentId\": \"nV0UkLfl9Z\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressId\": 5000\n  },\n  \"jobTemplate\": \"template_FSemMafE\",\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"PZkQxYyAqu\"\n    },\n    {\n      \"documentId\": \"okVA8adGml\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressId\": 5000\n  },\n  \"jobTemplate\": \"template_drrGS3q4\",\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -514,12 +514,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"active\",\n  \"message\": \"Request processed\",\n  \"jobId\": \"fHTtu3YXSQ\"\n}",
+                  "body": "{\n  \"status\": \"processing\",\n  \"message\": \"Request processed\",\n  \"jobId\": \"1mrVKPf7Ma\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "e89e693a-0c52-4a91-96a0-c27aee7b3dd7",
+                  "id": "76b37ab6-cd31-4cdb-8fb7-f1696527fae5",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -550,7 +550,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"Bmix8K1M1J\"\n    },\n    {\n      \"documentId\": \"8TWggYbDUE\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressListId\": 100\n  },\n  \"jobTemplate\": \"template_2l0HaDyf\",\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"TYsur6hqJz\"\n    },\n    {\n      \"documentId\": \"bElDFF5SSN\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressListId\": 100\n  },\n  \"jobTemplate\": \"template_QwaAmyCk\",\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -566,7 +566,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "ea0a94ca-4489-4253-9d0b-089692635e45",
+                  "id": "4ed5f169-d46a-4a47-ab5e-44e3f045572a",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -597,7 +597,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"gog31auxBc\"\n    },\n    {\n      \"documentId\": \"1Udq7410zx\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"jobTemplate\": \"template_n9IOJbxy\",\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"jR1PA3heVD\"\n    },\n    {\n      \"documentId\": \"NWnqbxxfMI\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"jobTemplate\": \"template_ufn0fH0z\",\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -625,7 +625,7 @@
           "description": "",
           "item": [
             {
-              "id": "fa9cf7d8-8a3d-4f52-a667-43e98aa75d36",
+              "id": "1c8a9c23-49a2-40f2-95c7-2fce4b14d6e8",
               "name": "Operation for /jobs/single-doc",
               "request": {
                 "name": "Operation for /jobs/single-doc",
@@ -654,7 +654,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 100,\n    \"documentName\": \"invoice_2024_01.pdf\"\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Nash\",\n      \"lastName\": \"Senger\",\n      \"address1\": \"78723 Naomi Avenue\",\n      \"city\": \"West Carminestead\",\n      \"state\": \"Michigan\",\n      \"zip\": \"42580\",\n      \"country\": \"Faroe Islands\",\n      \"nickName\": \"Virginia Langosh\",\n      \"address2\": \"1681 W 4th Street\",\n      \"address3\": \"443 Kling Rue\",\n      \"phoneNumber\": \"901-362-1147\"\n    },\n    {\n      \"firstName\": \"Lemuel\",\n      \"lastName\": \"Frami\",\n      \"address1\": \"4925 Pagac Springs\",\n      \"city\": \"Jakubowskiton\",\n      \"state\": \"Wyoming\",\n      \"zip\": \"35459\",\n      \"country\": \"South Africa\",\n      \"nickName\": \"Matt Russel\",\n      \"address2\": \"895 Liberty Street\",\n      \"address3\": \"8880 College Street\",\n      \"phoneNumber\": \"512-940-5011 x087\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"landscape\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"legal\",\n    \"printOption\": \"none\",\n    \"envelope\": \"postcard\"\n  },\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 100,\n    \"documentName\": \"invoice_2024_01.pdf\"\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Tina\",\n      \"lastName\": \"Feeney\",\n      \"address1\": \"7348 N Main\",\n      \"city\": \"Scotfurt\",\n      \"state\": \"Montana\",\n      \"zip\": \"57091\",\n      \"country\": \"Bolivia\",\n      \"nickName\": \"Edna Haley\",\n      \"address2\": \"95093 Aaliyah Point\",\n      \"address3\": \"4372 Windler Island\",\n      \"phoneNumber\": \"1-761-323-7985 x6747\"\n    },\n    {\n      \"firstName\": \"Kelli\",\n      \"lastName\": \"Roberts\",\n      \"address1\": \"9029 W High Street\",\n      \"city\": \"North Eloisaberg\",\n      \"state\": \"Arizona\",\n      \"zip\": \"74099\",\n      \"country\": \"French Polynesia\",\n      \"nickName\": \"Dr. Leslie Green\",\n      \"address2\": \"19326 Tower Road\",\n      \"address3\": \"8286 Clyde Forks\",\n      \"phoneNumber\": \"(219) 805-7276 x10636\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"firstClassMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"letter\"\n  },\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -666,7 +666,7 @@
               },
               "response": [
                 {
-                  "id": "4582e8ea-e5d9-4878-8945-d3b68c745c0e",
+                  "id": "862ceb16-80ec-4e1c-965e-254fce9b8b6e",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -701,7 +701,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 200,\n    \"zipId\": 10,\n    \"documentName\": \"statement_jan.pdf\"\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Gussie\",\n      \"lastName\": \"Champlin\",\n      \"address1\": \"84579 The Limes\",\n      \"city\": \"Wunschchester\",\n      \"state\": \"Colorado\",\n      \"zip\": \"71887-5069\",\n      \"country\": \"French Southern Territories\",\n      \"nickName\": \"Ms. Regina Bauch\",\n      \"address2\": \"36145 McKenzie Shoal\",\n      \"address3\": \"3669 Ernser Brooks\",\n      \"phoneNumber\": \"(332) 748-9017 x668\"\n    },\n    {\n      \"firstName\": \"Blair\",\n      \"lastName\": \"Maggio\",\n      \"address1\": \"617 McDermott Squares\",\n      \"city\": \"West Idellashire\",\n      \"state\": \"Maine\",\n      \"zip\": \"30905\",\n      \"country\": \"Bosnia and Herzegovina\",\n      \"nickName\": \"Vickie Volkman\",\n      \"address2\": \"15841 Priory Road\",\n      \"address3\": \"7643 Albert Road\",\n      \"phoneNumber\": \"587-315-1760 x97681\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"landscape\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"legal\",\n    \"printOption\": \"none\",\n    \"envelope\": \"postcard\"\n  },\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 200,\n    \"zipId\": 10,\n    \"documentName\": \"statement_jan.pdf\"\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Keyon\",\n      \"lastName\": \"Wisozk\",\n      \"address1\": \"636 VonRueden Ridge\",\n      \"city\": \"Odessa\",\n      \"state\": \"Wisconsin\",\n      \"zip\": \"63627-7579\",\n      \"country\": \"Poland\",\n      \"nickName\": \"Percy Leuschke-Hammes\",\n      \"address2\": \"720 Stanley Street\",\n      \"address3\": \"99534 Concepcion Harbors\",\n      \"phoneNumber\": \"671.213.4095 x62550\"\n    },\n    {\n      \"firstName\": \"Hazle\",\n      \"lastName\": \"Hagenes\",\n      \"address1\": \"956 Jettie Circles\",\n      \"city\": \"East Gretchenhaven\",\n      \"state\": \"Rhode Island\",\n      \"zip\": \"58430\",\n      \"country\": \"Monaco\",\n      \"nickName\": \"Marion Bode\",\n      \"address2\": \"5219 Lincoln Avenue\",\n      \"address3\": \"36360 W Church Street\",\n      \"phoneNumber\": \"444-227-1524\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"firstClassMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"letter\"\n  },\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -718,12 +718,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Operation completed successfully\",\n  \"jobId\": \"6KBg1EGuSa\"\n}",
+                  "body": "{\n  \"status\": \"active\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"4mYBlEdWuC\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "a7050511-a43e-4f34-a2a8-5de17f9a0928",
+                  "id": "15b93a84-5fb7-4236-9fbf-ad9d4080b064",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -754,7 +754,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"zipId\": 20,\n    \"documentName\": \"report_q1_2024.pdf\"\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Jaiden\",\n      \"lastName\": \"Auer\",\n      \"address1\": \"9105 Mohamed Field\",\n      \"city\": \"Blandastad\",\n      \"state\": \"California\",\n      \"zip\": \"75137-7102\",\n      \"country\": \"Venezuela\",\n      \"nickName\": \"Nick Bernhard\",\n      \"address2\": \"323 Shaniya Junction\",\n      \"address3\": \"8712 Bell Lane\",\n      \"phoneNumber\": \"1-940-378-0760\"\n    },\n    {\n      \"firstName\": \"Jenifer\",\n      \"lastName\": \"Torphy\",\n      \"address1\": \"326 Marlborough Road\",\n      \"city\": \"Hillschester\",\n      \"state\": \"New York\",\n      \"zip\": \"24022\",\n      \"country\": \"Saudi Arabia\",\n      \"nickName\": \"Katherine O'Hara\",\n      \"address2\": \"684 Riverside Avenue\",\n      \"address3\": \"751 Church Path\",\n      \"phoneNumber\": \"(776) 888-9359 x7585\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"landscape\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"legal\",\n    \"printOption\": \"none\",\n    \"envelope\": \"postcard\"\n  },\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"zipId\": 20,\n    \"documentName\": \"report_q1_2024.pdf\"\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Salvador\",\n      \"lastName\": \"Hermiston\",\n      \"address1\": \"6312 Lee Street\",\n      \"city\": \"Palm Harbor\",\n      \"state\": \"Montana\",\n      \"zip\": \"84655-6734\",\n      \"country\": \"Macao\",\n      \"nickName\": \"Travis Lesch\",\n      \"address2\": \"828 Turner Club\",\n      \"address3\": \"35938 Bath Road\",\n      \"phoneNumber\": \"512.887.1192 x795\"\n    },\n    {\n      \"firstName\": \"Jedediah\",\n      \"lastName\": \"Lemke\",\n      \"address1\": \"341 Hadley Alley\",\n      \"city\": \"Nashville-Davidson\",\n      \"state\": \"California\",\n      \"zip\": \"79643-6821\",\n      \"country\": \"Cote d'Ivoire\",\n      \"nickName\": \"Mattie Emard-Schamberger\",\n      \"address2\": \"2863 Jarod Avenue\",\n      \"address3\": \"1823 Cristal Gardens\",\n      \"phoneNumber\": \"744.712.0895 x8594\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"firstClassMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"letter\"\n  },\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -770,7 +770,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "70c12b24-2ab1-4fe2-aa1b-d9b10ca522f3",
+                  "id": "1568aa6d-5a8e-47c1-b2c0-405511be5c5c",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -801,7 +801,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Geraldine\",\n      \"lastName\": \"Bogan\",\n      \"address1\": \"39254 Kirsten Crest\",\n      \"city\": \"Fort Cristobal\",\n      \"state\": \"Pennsylvania\",\n      \"zip\": \"03384-9566\",\n      \"country\": \"Sweden\",\n      \"nickName\": \"Cory Schinner\",\n      \"address2\": \"425 Blair Glens\",\n      \"address3\": \"82903 Keebler Terrace\",\n      \"phoneNumber\": \"(985) 522-3269\"\n    },\n    {\n      \"firstName\": \"Kennith\",\n      \"lastName\": \"Gutmann\",\n      \"address1\": \"4341 Javier Light\",\n      \"city\": \"Lake Kirkburgh\",\n      \"state\": \"Massachusetts\",\n      \"zip\": \"72736\",\n      \"country\": \"Iceland\",\n      \"nickName\": \"Lillian Considine\",\n      \"address2\": \"997 Hegmann Locks\",\n      \"address3\": \"150 W Maple Street\",\n      \"phoneNumber\": \"(897) 517-6201 x687\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"landscape\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"legal\",\n    \"printOption\": \"none\",\n    \"envelope\": \"postcard\"\n  },\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"recipientAddressSources\": [\n    {\n      \"firstName\": \"Cynthia\",\n      \"lastName\": \"Koss\",\n      \"address1\": \"732 Rowe Terrace\",\n      \"city\": \"Lloydview\",\n      \"state\": \"Illinois\",\n      \"zip\": \"56239\",\n      \"country\": \"Virgin Islands, U.S.\",\n      \"nickName\": \"Katrina Douglas\",\n      \"address2\": \"1174 N Water Street\",\n      \"address3\": \"49424 Oxford Street\",\n      \"phoneNumber\": \"1-489-840-5656\"\n    },\n    {\n      \"firstName\": \"Chloe\",\n      \"lastName\": \"Nienow\",\n      \"address1\": \"6876 Cecilia Village\",\n      \"city\": \"New Tracy\",\n      \"state\": \"South Dakota\",\n      \"zip\": \"89249-4624\",\n      \"country\": \"El Salvador\",\n      \"nickName\": \"Jack Bins\",\n      \"address2\": \"96075 Sherwood Heights\",\n      \"address3\": \"3373 Koss Spurs\",\n      \"phoneNumber\": \"288-423-3966 x102\"\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"firstClassMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"letter\"\n  },\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -829,7 +829,7 @@
           "description": "",
           "item": [
             {
-              "id": "9345cb2a-1848-4114-ba6f-351899722936",
+              "id": "8193b97f-2e18-4494-8e4a-81a3a1bd87d1",
               "name": "Operation for /jobs/multi-doc",
               "request": {
                 "name": "Operation for /jobs/multi-doc",
@@ -858,7 +858,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"flat\"\n  },\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"largeEnvelope\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"none\",\n    \"envelope\": \"windowedFlat\"\n  },\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -870,7 +870,7 @@
               },
               "response": [
                 {
-                  "id": "da921d33-e293-4ef9-8258-59ae564e51ce",
+                  "id": "63884063-94d8-4dcd-aa9c-2dbfbcf15eb5",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -905,7 +905,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"flat\"\n  },\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"largeEnvelope\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"none\",\n    \"envelope\": \"windowedFlat\"\n  },\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -922,12 +922,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"completed\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"Uq1ZiBKKIC\"\n}",
+                  "body": "{\n  \"status\": \"processing\",\n  \"message\": \"Operation completed successfully\",\n  \"jobId\": \"rvW1ma1DBa\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "dd89333e-19e6-4e43-81d5-26f45d8efce5",
+                  "id": "9aacbf75-2b9b-4175-bf4a-6b808a5f10dd",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -958,7 +958,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"flat\"\n  },\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"recipientAddressSource\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Smith\",\n        \"address1\": \"123 Main Street\",\n        \"address2\": \"Apt 4B\",\n        \"address3\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10001\",\n        \"country\": \"USA\",\n        \"nickName\": \"Johnny\",\n        \"phoneNumber\": \"+1-555-123-4567\"\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"largeEnvelope\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"none\",\n    \"envelope\": \"windowedFlat\"\n  },\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -974,7 +974,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "4a4a1f64-0984-4f65-ab3d-3b2ad7c944a1",
+                  "id": "b0249667-3d75-4a28-af32-16af5abc447a",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -1005,7 +1005,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"businessLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"priorityMail\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"color\",\n    \"envelope\": \"flat\"\n  },\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"items\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressId\": 5000\n      }\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"recipientAddressSource\": {\n        \"addressListId\": 100\n      }\n    }\n  ],\n  \"jobOptions\": {\n    \"documentClass\": \"personalLetter\",\n    \"layout\": \"portrait\",\n    \"mailclass\": \"largeEnvelope\",\n    \"paperType\": \"postcard\",\n    \"printOption\": \"none\",\n    \"envelope\": \"windowedFlat\"\n  },\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1033,7 +1033,7 @@
           "description": "",
           "item": [
             {
-              "id": "acc3b29d-d670-40ad-a2ba-afa50199a0a0",
+              "id": "bd0c44fe-f8e5-44e0-9a87-710bf74225f0",
               "name": "Operation for /jobs/multi-doc-merge",
               "request": {
                 "name": "Operation for /jobs/multi-doc-merge",
@@ -1062,7 +1062,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"I1cxAtneAZ\"\n    },\n    {\n      \"documentId\": \"t9iQGININj\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"UukqSJT0Oi\"\n    },\n    {\n      \"documentId\": \"SNWNYdr2m8\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -1074,7 +1074,7 @@
               },
               "response": [
                 {
-                  "id": "cf65f94e-8567-4ced-95ab-29e24003c44d",
+                  "id": "2cef003c-b266-4a49-a2d8-3e64a8710532",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -1109,7 +1109,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"WikGfGbP8g\"\n    },\n    {\n      \"documentId\": \"8A2WUwKsiH\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressId\": 5000\n  },\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"Ae0NuuwzOW\"\n    },\n    {\n      \"documentId\": \"MEdkt5VBi2\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressId\": 5000\n  },\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1126,12 +1126,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"processing\",\n  \"message\": \"Request processed\",\n  \"jobId\": \"ZUmHITgU9x\"\n}",
+                  "body": "{\n  \"status\": \"processing\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"4SWF5EF2ec\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "a0cad179-57e6-42c9-95af-2a97923be772",
+                  "id": "930e5eef-83e7-4f09-b34f-8df895b7b4b5",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -1162,7 +1162,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"mj4WJdkCg7\"\n    },\n    {\n      \"documentId\": \"OlqkUXxwDh\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressListId\": 100\n  },\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"GVz53Bbxwa\"\n    },\n    {\n      \"documentId\": \"N8MBtIYAIj\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"addressListId\": 100\n  },\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1178,7 +1178,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "9e2faf34-8a84-460b-a021-ad12c0e35626",
+                  "id": "f40bac92-5e52-452a-8596-7b573f4deab6",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -1209,7 +1209,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"OGGEcoDwM1\"\n    },\n    {\n      \"documentId\": \"T4RQDbiqlI\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentsToMerge\": [\n    {\n      \"documentId\": \"jjgSbxGJS8\"\n    },\n    {\n      \"documentId\": \"TtiiDSfk5H\"\n    }\n  ],\n  \"recipientAddressSource\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"address1\": \"123 Main Street\",\n    \"address2\": \"Apt 4B\",\n    \"address3\": \"\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zip\": \"10001\",\n    \"country\": \"USA\",\n    \"nickName\": \"Johnny\",\n    \"phoneNumber\": \"+1-555-123-4567\"\n  },\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1237,7 +1237,7 @@
           "description": "",
           "item": [
             {
-              "id": "f8f1d180-d9b4-46dd-b5ac-70b305a7dee8",
+              "id": "2f2dd1b2-556e-4c64-afaa-8c973c6a5405",
               "name": "Operation for /jobs/single-pdf-split",
               "request": {
                 "name": "Operation for /jobs/single-pdf-split",
@@ -1266,7 +1266,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"documentSourceIdentifier\": {\n    \"zipId\": 20,\n    \"documentName\": \"report_q1_2024.pdf\"\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"primary\",\n        \"endPage\": \"primary\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Kristopher\",\n          \"lastName\": \"Stroman\",\n          \"address1\": \"90010 Altenwerth Circle\",\n          \"city\": \"Port Moses\",\n          \"state\": \"Maine\",\n          \"zip\": \"56957\",\n          \"country\": \"Martinique\",\n          \"nickName\": \"Aaron Deckow IV\",\n          \"address2\": \"761 Lyla Highway\",\n          \"address3\": \"968 Kassulke Course\",\n          \"phoneNumber\": \"1-643-966-8551 x04265\"\n        },\n        {\n          \"firstName\": \"Bonita\",\n          \"lastName\": \"Denesik\",\n          \"address1\": \"99041 W Lake Street\",\n          \"city\": \"Reading\",\n          \"state\": \"Ohio\",\n          \"zip\": \"25184\",\n          \"country\": \"South Africa\",\n          \"nickName\": \"Sandra Wisozk DDS\",\n          \"address2\": \"9125 Pouros Land\",\n          \"address3\": \"46322 Peyton Skyway\",\n          \"phoneNumber\": \"903-809-5496 x2464\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"standard\",\n        \"endPage\": \"default\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Luciano\",\n          \"lastName\": \"Williamson\",\n          \"address1\": \"452 Roel View\",\n          \"city\": \"West Ashleigh\",\n          \"state\": \"Florida\",\n          \"zip\": \"80017-1392\",\n          \"country\": \"Armenia\",\n          \"nickName\": \"Ernesto Gibson\",\n          \"address2\": \"11969 Birch Grove\",\n          \"address3\": \"6038 Jayme Radial\",\n          \"phoneNumber\": \"(532) 350-1094 x06565\"\n        },\n        {\n          \"firstName\": \"Janick\",\n          \"lastName\": \"Franecki\",\n          \"address1\": \"8863 Medhurst Springs\",\n          \"city\": \"Metairie\",\n          \"state\": \"Connecticut\",\n          \"zip\": \"51335\",\n          \"country\": \"Kazakhstan\",\n          \"nickName\": \"Ernest Kassulke\",\n          \"address2\": \"9079 Alvis Circle\",\n          \"address3\": \"374 Division Street\",\n          \"phoneNumber\": \"1-765-296-7609 x790\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"documentSourceIdentifier\": {\n    \"zipId\": 20,\n    \"documentName\": \"report_q1_2024.pdf\"\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"default\",\n        \"endPage\": \"primary\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Aaliyah\",\n          \"lastName\": \"Krajcik\",\n          \"address1\": \"5521 Cherry Tree Close\",\n          \"city\": \"Minnieboro\",\n          \"state\": \"Alaska\",\n          \"zip\": \"71473-8878\",\n          \"country\": \"Turkey\",\n          \"nickName\": \"Victoria Stroman\",\n          \"address2\": \"2441 The Square\",\n          \"address3\": \"1296 Kameron Cape\",\n          \"phoneNumber\": \"(963) 948-8583 x121\"\n        },\n        {\n          \"firstName\": \"Irwin\",\n          \"lastName\": \"Kutch\",\n          \"address1\": \"85568 Elinore Creek\",\n          \"city\": \"New Louveniaburgh\",\n          \"state\": \"Wisconsin\",\n          \"zip\": \"85167-6896\",\n          \"country\": \"Azerbaijan\",\n          \"nickName\": \"Roland Schumm\",\n          \"address2\": \"51110 Ruecker Shores\",\n          \"address3\": \"7514 Vladimir Route\",\n          \"phoneNumber\": \"331.778.6466 x4664\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"primary\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Wendell\",\n          \"lastName\": \"Hickle\",\n          \"address1\": \"325 Weldon Crossroad\",\n          \"city\": \"Howeland\",\n          \"state\": \"Nevada\",\n          \"zip\": \"11634\",\n          \"country\": \"Greenland\",\n          \"nickName\": \"Claire Skiles Jr.\",\n          \"address2\": \"22290 Derwent Close\",\n          \"address3\": \"71966 Gayle Flats\",\n          \"phoneNumber\": \"203.313.3618 x350\"\n        },\n        {\n          \"firstName\": \"Jacques\",\n          \"lastName\": \"Schmidt\",\n          \"address1\": \"91315 Leon Port\",\n          \"city\": \"Gutkowskistead\",\n          \"state\": \"Indiana\",\n          \"zip\": \"78937-8293\",\n          \"country\": \"Sao Tome and Principe\",\n          \"nickName\": \"Miss Louise Schiller\",\n          \"address2\": \"81608 Bill Alley\",\n          \"address3\": \"56399 Third Avenue\",\n          \"phoneNumber\": \"1-670-496-5438\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -1278,7 +1278,7 @@
               },
               "response": [
                 {
-                  "id": "3a5d299b-7234-4c87-965a-d9695dcff68e",
+                  "id": "48692d31-56c6-46df-adcb-7346e983f483",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -1313,7 +1313,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"standard\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"August\",\n          \"lastName\": \"Corkery\",\n          \"address1\": \"517 Clarendon Road\",\n          \"city\": \"Port Violet\",\n          \"state\": \"Kansas\",\n          \"zip\": \"68032\",\n          \"country\": \"Grenada\",\n          \"nickName\": \"Jerome Grady\",\n          \"address2\": \"2242 Reynolds Meadow\",\n          \"address3\": \"80462 N Park Street\",\n          \"phoneNumber\": \"872.366.9657\"\n        },\n        {\n          \"firstName\": \"Brigitte\",\n          \"lastName\": \"Green\",\n          \"address1\": \"17961 Bernhard Tunnel\",\n          \"city\": \"Aylaside\",\n          \"state\": \"North Dakota\",\n          \"zip\": \"80499\",\n          \"country\": \"Gambia\",\n          \"nickName\": \"Al Schneider\",\n          \"address2\": \"21098 Ryan Forges\",\n          \"address3\": \"186 Henriette Pike\",\n          \"phoneNumber\": \"1-442-633-2755 x8770\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"default\",\n        \"endPage\": \"default\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Shaylee\",\n          \"lastName\": \"Carroll\",\n          \"address1\": \"4944 Howell Falls\",\n          \"city\": \"New Orleans\",\n          \"state\": \"Missouri\",\n          \"zip\": \"01111\",\n          \"country\": \"Cuba\",\n          \"nickName\": \"Myrtle Koch III\",\n          \"address2\": \"5607 Zoila Burg\",\n          \"address3\": \"5197 Harrison Street\",\n          \"phoneNumber\": \"458.490.5147 x169\"\n        },\n        {\n          \"firstName\": \"Arvid\",\n          \"lastName\": \"Hahn\",\n          \"address1\": \"47058 Dickinson Fork\",\n          \"city\": \"Rubyeburgh\",\n          \"state\": \"Florida\",\n          \"zip\": \"66438-8184\",\n          \"country\": \"Puerto Rico\",\n          \"nickName\": \"Laurie Wuckert\",\n          \"address2\": \"53413 Mill Lane\",\n          \"address3\": \"7063 Hillside Road\",\n          \"phoneNumber\": \"895-396-8650 x794\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"primary\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Albertha\",\n          \"lastName\": \"Oberbrunner\",\n          \"address1\": \"870 Elody Forges\",\n          \"city\": \"Fort Anika\",\n          \"state\": \"Florida\",\n          \"zip\": \"93446-6699\",\n          \"country\": \"Svalbard & Jan Mayen Islands\",\n          \"nickName\": \"Brett Lind\",\n          \"address2\": \"4703 Wren Close\",\n          \"address3\": \"29750 Franklin Road\",\n          \"phoneNumber\": \"(386) 211-3513\"\n        },\n        {\n          \"firstName\": \"Angelita\",\n          \"lastName\": \"Okuneva\",\n          \"address1\": \"343 N Union Street\",\n          \"city\": \"Mullerstad\",\n          \"state\": \"New Hampshire\",\n          \"zip\": \"90252-9492\",\n          \"country\": \"Saint Kitts and Nevis\",\n          \"nickName\": \"Colleen Cruickshank\",\n          \"address2\": \"522 Woodlands Avenue\",\n          \"address3\": \"68650 Edyth Fords\",\n          \"phoneNumber\": \"1-272-740-3946\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"standard\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Mohamed\",\n          \"lastName\": \"Kovacek\",\n          \"address1\": \"7616 S 5th Street\",\n          \"city\": \"Austenworth\",\n          \"state\": \"Washington\",\n          \"zip\": \"62591-7243\",\n          \"country\": \"Finland\",\n          \"nickName\": \"Rufus Keeling\",\n          \"address2\": \"85538 W Bridge Street\",\n          \"address3\": \"2523 Quarry Lane\",\n          \"phoneNumber\": \"(738) 547-8010 x37394\"\n        },\n        {\n          \"firstName\": \"Viola\",\n          \"lastName\": \"Langosh\",\n          \"address1\": \"49103 Stracke Village\",\n          \"city\": \"West Des Moines\",\n          \"state\": \"Missouri\",\n          \"zip\": \"49253-9457\",\n          \"country\": \"Tonga\",\n          \"nickName\": \"Minnie Purdy\",\n          \"address2\": \"69426 Blick Fork\",\n          \"address3\": \"823 Oliver Prairie\",\n          \"phoneNumber\": \"286-290-6479 x909\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1330,12 +1330,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Processing your request\",\n  \"jobId\": \"vce2vmrXgg\"\n}",
+                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Operation completed successfully\",\n  \"jobId\": \"L92Y2GAfXl\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "fdc81a70-9683-4a7b-b2b6-16fc8b762eca",
+                  "id": "b4db9560-b383-49f2-bec9-938b4de7bdaf",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -1366,7 +1366,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"basic\",\n        \"endPage\": \"primary\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Isabel\",\n          \"lastName\": \"Doyle\",\n          \"address1\": \"4036 Hawthorn Close\",\n          \"city\": \"Findlay\",\n          \"state\": \"Mississippi\",\n          \"zip\": \"06397\",\n          \"country\": \"Armenia\",\n          \"nickName\": \"Hattie Steuber\",\n          \"address2\": \"7514 Hahn Causeway\",\n          \"address3\": \"607 Kutch Ridges\",\n          \"phoneNumber\": \"1-365-722-5302 x1454\"\n        },\n        {\n          \"firstName\": \"Beaulah\",\n          \"lastName\": \"Murray\",\n          \"address1\": \"8732 Tiffany Lodge\",\n          \"city\": \"Zelmacester\",\n          \"state\": \"Connecticut\",\n          \"zip\": \"81610-0921\",\n          \"country\": \"Tuvalu\",\n          \"nickName\": \"Leo Klocko Jr.\",\n          \"address2\": \"869 Lauriane Viaduct\",\n          \"address3\": \"54436 Larson Place\",\n          \"phoneNumber\": \"1-516-561-0252 x153\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"primary\",\n        \"endPage\": \"basic\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Jennie\",\n          \"lastName\": \"Marquardt\",\n          \"address1\": \"739 Henry Street\",\n          \"city\": \"New Hassie\",\n          \"state\": \"Maine\",\n          \"zip\": \"30737\",\n          \"country\": \"Lao People's Democratic Republic\",\n          \"nickName\": \"Ms. Katrina Batz\",\n          \"address2\": \"490 Einar Plain\",\n          \"address3\": \"623 Bruen Freeway\",\n          \"phoneNumber\": \"365.573.5685 x803\"\n        },\n        {\n          \"firstName\": \"Kaley\",\n          \"lastName\": \"Bashirian\",\n          \"address1\": \"6426 E Franklin Street\",\n          \"city\": \"New Ona\",\n          \"state\": \"Virginia\",\n          \"zip\": \"06445-8159\",\n          \"country\": \"Mauritania\",\n          \"nickName\": \"Pete Mann\",\n          \"address2\": \"682 Destin Heights\",\n          \"address3\": \"22076 Corkery Inlet\",\n          \"phoneNumber\": \"(635) 964-2274 x56975\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"standard\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Eleonore\",\n          \"lastName\": \"Emard\",\n          \"address1\": \"573 Lafayette Street\",\n          \"city\": \"Bednarcester\",\n          \"state\": \"Alaska\",\n          \"zip\": \"10182\",\n          \"country\": \"Angola\",\n          \"nickName\": \"Tammy Kautzer\",\n          \"address2\": \"1466 Gibson Court\",\n          \"address3\": \"589 Ondricka Flats\",\n          \"phoneNumber\": \"581-901-5237 x84768\"\n        },\n        {\n          \"firstName\": \"Calista\",\n          \"lastName\": \"Klein\",\n          \"address1\": \"8173 Trantow Route\",\n          \"city\": \"Fort Dessietown\",\n          \"state\": \"Virginia\",\n          \"zip\": \"23205\",\n          \"country\": \"Martinique\",\n          \"nickName\": \"Lula Miller\",\n          \"address2\": \"844 Hoppe Rapid\",\n          \"address3\": \"429 Boehm Groves\",\n          \"phoneNumber\": \"973-658-6631\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"default\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Madilyn\",\n          \"lastName\": \"Kemmer\",\n          \"address1\": \"676 Gulgowski Place\",\n          \"city\": \"Ernestineworth\",\n          \"state\": \"Colorado\",\n          \"zip\": \"55711-4111\",\n          \"country\": \"Republic of Korea\",\n          \"nickName\": \"Doyle Hessel\",\n          \"address2\": \"81230 Marietta Fields\",\n          \"address3\": \"209 Batz Falls\",\n          \"phoneNumber\": \"911.946.6045 x194\"\n        },\n        {\n          \"firstName\": \"Whitney\",\n          \"lastName\": \"Harber-Haley\",\n          \"address1\": \"3618 Raoul Stravenue\",\n          \"city\": \"Valliefurt\",\n          \"state\": \"Georgia\",\n          \"zip\": \"05863\",\n          \"country\": \"Guatemala\",\n          \"nickName\": \"Juana Schiller\",\n          \"address2\": \"30949 Wolf Manor\",\n          \"address3\": \"45051 Billie Glen\",\n          \"phoneNumber\": \"721.204.7782 x4953\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1382,7 +1382,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "ac687d7e-d47d-4d21-a0c2-ae7cd5d7ee31",
+                  "id": "bf91f792-f313-4cc3-8666-a389ab32ab8c",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -1413,7 +1413,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 100,\n    \"documentName\": \"invoice_2024_01.pdf\"\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"default\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Zack\",\n          \"lastName\": \"Yost\",\n          \"address1\": \"143 Clara Square\",\n          \"city\": \"New Kevon\",\n          \"state\": \"Mississippi\",\n          \"zip\": \"26019-6984\",\n          \"country\": \"Burkina Faso\",\n          \"nickName\": \"Julio Reichel-Keeling\",\n          \"address2\": \"88391 Bogisich River\",\n          \"address3\": \"90879 Church Road\",\n          \"phoneNumber\": \"302-314-3909 x07098\"\n        },\n        {\n          \"firstName\": \"Rodrick\",\n          \"lastName\": \"Stracke-Kris\",\n          \"address1\": \"13237 Loraine Crest\",\n          \"city\": \"South Nicholauston\",\n          \"state\": \"Ohio\",\n          \"zip\": \"16031-6589\",\n          \"country\": \"Lithuania\",\n          \"nickName\": \"Elvira O'Conner\",\n          \"address2\": \"83313 14th Street\",\n          \"address3\": \"335 Irma Track\",\n          \"phoneNumber\": \"1-722-637-6561 x000\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"basic\",\n        \"endPage\": \"default\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Rocky\",\n          \"lastName\": \"Huels\",\n          \"address1\": \"6934 Madisen Ford\",\n          \"city\": \"Connellyton\",\n          \"state\": \"Arkansas\",\n          \"zip\": \"01296-2940\",\n          \"country\": \"Malawi\",\n          \"nickName\": \"Eunice Funk\",\n          \"address2\": \"16973 Kuphal Ramp\",\n          \"address3\": \"1443 Gleason Hollow\",\n          \"phoneNumber\": \"1-933-719-5350 x134\"\n        },\n        {\n          \"firstName\": \"Florencio\",\n          \"lastName\": \"Frami\",\n          \"address1\": \"6810 Clement Hill\",\n          \"city\": \"Port Elliotview\",\n          \"state\": \"Colorado\",\n          \"zip\": \"51772-0243\",\n          \"country\": \"Martinique\",\n          \"nickName\": \"Larry Heaney\",\n          \"address2\": \"519 Jazlyn Trail\",\n          \"address3\": \"3401 Wilton Gardens\",\n          \"phoneNumber\": \"(223) 774-3191 x3549\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 100,\n    \"documentName\": \"invoice_2024_01.pdf\"\n  },\n  \"items\": [\n    {\n      \"pageRange\": {\n        \"startPage\": \"basic\",\n        \"endPage\": \"standard\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"April\",\n          \"lastName\": \"Kuphal\",\n          \"address1\": \"360 Chapel Road\",\n          \"city\": \"Lake Elroy\",\n          \"state\": \"New Mexico\",\n          \"zip\": \"00494-5999\",\n          \"country\": \"Solomon Islands\",\n          \"nickName\": \"Tami Hahn\",\n          \"address2\": \"65040 Davon Circle\",\n          \"address3\": \"74926 Juniper Close\",\n          \"phoneNumber\": \"669.239.5885\"\n        },\n        {\n          \"firstName\": \"Kellen\",\n          \"lastName\": \"McKenzie\",\n          \"address1\": \"1837 Schultz Parkways\",\n          \"city\": \"Troy\",\n          \"state\": \"Washington\",\n          \"zip\": \"30076\",\n          \"country\": \"Israel\",\n          \"nickName\": \"Gretchen Mayer\",\n          \"address2\": \"201 Nash Stream\",\n          \"address3\": \"191 O'Reilly Mount\",\n          \"phoneNumber\": \"(472) 978-0201 x1449\"\n        }\n      ]\n    },\n    {\n      \"pageRange\": {\n        \"startPage\": \"primary\",\n        \"endPage\": \"primary\"\n      },\n      \"recipientAddressSources\": [\n        {\n          \"firstName\": \"Ari\",\n          \"lastName\": \"Lockman\",\n          \"address1\": \"582 Ambrose Meadows\",\n          \"city\": \"Long Beach\",\n          \"state\": \"New Jersey\",\n          \"zip\": \"04394\",\n          \"country\": \"Croatia\",\n          \"nickName\": \"Anna Nitzsche\",\n          \"address2\": \"763 Veterans Memorial Highway\",\n          \"address3\": \"8115 Sean Brooks\",\n          \"phoneNumber\": \"700-728-7632\"\n        },\n        {\n          \"firstName\": \"Harley\",\n          \"lastName\": \"Mraz\",\n          \"address1\": \"52886 Sasha Fall\",\n          \"city\": \"New Nikita\",\n          \"state\": \"Maine\",\n          \"zip\": \"51869-0176\",\n          \"country\": \"Brazil\",\n          \"nickName\": \"Deborah Walter\",\n          \"address2\": \"47006 Cedar Avenue\",\n          \"address3\": \"43725 Holden Ridge\",\n          \"phoneNumber\": \"(440) 563-4896\"\n        }\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1441,7 +1441,7 @@
           "description": "",
           "item": [
             {
-              "id": "0b794810-58d6-4a7c-8d0d-3946c506cd06",
+              "id": "7622041b-ec63-4c59-bc2a-0e31308b76d1",
               "name": "Operation for /jobs/single-pdf-split-addressCapture",
               "request": {
                 "name": "Operation for /jobs/single-pdf-split-addressCapture",
@@ -1470,7 +1470,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 200,\n    \"zipId\": 10,\n    \"documentName\": \"statement_jan.pdf\"\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"standard\",\n      \"endPage\": \"basic\",\n      \"addressRegion\": {\n        \"x\": \"primary\",\n        \"y\": \"default\",\n        \"width\": \"7kKjWNbd5S\",\n        \"height\": \"standard\",\n        \"pageOffset\": \"primary\"\n      }\n    },\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"basic\",\n      \"addressRegion\": {\n        \"x\": \"primary\",\n        \"y\": \"standard\",\n        \"width\": \"HPTITHqClT\",\n        \"height\": \"basic\",\n        \"pageOffset\": \"standard\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"documentSourceIdentifier\": {\n    \"uploadRequestId\": 200,\n    \"zipId\": 10,\n    \"documentName\": \"statement_jan.pdf\"\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"standard\",\n      \"endPage\": \"standard\",\n      \"addressRegion\": {\n        \"x\": \"basic\",\n        \"y\": \"standard\",\n        \"width\": \"rKn0jgspHx\",\n        \"height\": \"primary\",\n        \"pageOffset\": \"basic\"\n      }\n    },\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"basic\",\n      \"addressRegion\": {\n        \"x\": \"standard\",\n        \"y\": \"standard\",\n        \"width\": \"29eeNf27pm\",\n        \"height\": \"standard\",\n        \"pageOffset\": \"standard\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -1482,7 +1482,7 @@
               },
               "response": [
                 {
-                  "id": "6b4b96fa-8ec7-4639-982b-7e4f81dd1d42",
+                  "id": "56373bee-567c-4373-8c95-1d552e793090",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -1517,7 +1517,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"zipId\": 20,\n    \"documentName\": \"report_q1_2024.pdf\"\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"basic\",\n      \"addressRegion\": {\n        \"x\": \"default\",\n        \"y\": \"primary\",\n        \"width\": \"Cc0WjT41r7\",\n        \"height\": \"default\",\n        \"pageOffset\": \"primary\"\n      }\n    },\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"standard\",\n      \"addressRegion\": {\n        \"x\": \"default\",\n        \"y\": \"basic\",\n        \"width\": \"KsgSltXCwg\",\n        \"height\": \"basic\",\n        \"pageOffset\": \"standard\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"zipId\": 20,\n    \"documentName\": \"report_q1_2024.pdf\"\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"basic\",\n      \"endPage\": \"primary\",\n      \"addressRegion\": {\n        \"x\": \"standard\",\n        \"y\": \"primary\",\n        \"width\": \"2WsplJrgHo\",\n        \"height\": \"basic\",\n        \"pageOffset\": \"standard\"\n      }\n    },\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"primary\",\n      \"addressRegion\": {\n        \"x\": \"basic\",\n        \"y\": \"primary\",\n        \"width\": \"rcHOkCY6Tu\",\n        \"height\": \"primary\",\n        \"pageOffset\": \"default\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1534,12 +1534,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"active\",\n  \"message\": \"Operation completed successfully\",\n  \"jobId\": \"MKKGeQTbFH\"\n}",
+                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Request processed\",\n  \"jobId\": \"B538gcrqFb\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "3306f7f0-2094-48e2-a353-5328e0277a68",
+                  "id": "01e3217b-348e-49b4-ab2d-f72f84ce4dd7",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -1570,7 +1570,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"standard\",\n      \"addressRegion\": {\n        \"x\": \"default\",\n        \"y\": \"primary\",\n        \"width\": \"9CJCACn26Y\",\n        \"height\": \"default\",\n        \"pageOffset\": \"primary\"\n      }\n    },\n    {\n      \"startPage\": \"default\",\n      \"endPage\": \"default\",\n      \"addressRegion\": {\n        \"x\": \"primary\",\n        \"y\": \"basic\",\n        \"width\": \"L2fYfYNYiW\",\n        \"height\": \"standard\",\n        \"pageOffset\": \"basic\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"documentId\": 1234\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"default\",\n      \"endPage\": \"default\",\n      \"addressRegion\": {\n        \"x\": \"standard\",\n        \"y\": \"basic\",\n        \"width\": \"cnEExjrjJr\",\n        \"height\": \"basic\",\n        \"pageOffset\": \"basic\"\n      }\n    },\n    {\n      \"startPage\": \"standard\",\n      \"endPage\": \"standard\",\n      \"addressRegion\": {\n        \"x\": \"primary\",\n        \"y\": \"default\",\n        \"width\": \"BrdSVHofz8\",\n        \"height\": \"default\",\n        \"pageOffset\": \"standard\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"creditCardDetails\": {\n      \"cardType\": \"visa\",\n      \"cardNumber\": \"4111111111111111\",\n      \"expirationDate\": {\n        \"month\": 12,\n        \"year\": 2025\n      },\n      \"cvv\": 123\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1586,7 +1586,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "f2e3157e-2892-49f3-ad14-cad1895f1da3",
+                  "id": "cd1981d3-aae8-4285-8691-7edf0d83c77d",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -1617,7 +1617,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"primary\",\n      \"endPage\": \"default\",\n      \"addressRegion\": {\n        \"x\": \"primary\",\n        \"y\": \"basic\",\n        \"width\": \"vj1sGErva4\",\n        \"height\": \"basic\",\n        \"pageOffset\": \"primary\"\n      }\n    },\n    {\n      \"startPage\": \"basic\",\n      \"endPage\": \"standard\",\n      \"addressRegion\": {\n        \"x\": \"basic\",\n        \"y\": \"default\",\n        \"width\": \"mzPdx1VUin\",\n        \"height\": \"basic\",\n        \"pageOffset\": \"primary\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"documentSourceIdentifier\": {\n    \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n  },\n  \"embeddedExtractionSpecs\": [\n    {\n      \"startPage\": \"standard\",\n      \"endPage\": \"basic\",\n      \"addressRegion\": {\n        \"x\": \"default\",\n        \"y\": \"default\",\n        \"width\": \"dlE8C6KO7j\",\n        \"height\": \"standard\",\n        \"pageOffset\": \"primary\"\n      }\n    },\n    {\n      \"startPage\": \"standard\",\n      \"endPage\": \"standard\",\n      \"addressRegion\": {\n        \"x\": \"standard\",\n        \"y\": \"primary\",\n        \"width\": \"g0YwITLWJD\",\n        \"height\": \"standard\",\n        \"pageOffset\": \"default\"\n      }\n    }\n  ],\n  \"paymentDetails\": {\n    \"invoiceDetails\": {\n      \"invoiceNumber\": \"INV-2024-001\",\n      \"amountDue\": 150\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1645,7 +1645,7 @@
           "description": "",
           "item": [
             {
-              "id": "1261c1ed-816c-418d-bd9b-2849f95f50f3",
+              "id": "df720675-17bb-4ffa-bf73-3aa7e1f1ea95",
               "name": "Operation for /jobs/multi-pdf-address-capture",
               "request": {
                 "name": "Operation for /jobs/multi-pdf-address-capture",
@@ -1674,7 +1674,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"addressListRegion\": \"14033 Poplar Close\",\n      \"delimiter\": \"default\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"addressListRegion\": \"9200 E 2nd Street\",\n      \"delimiter\": \"primary\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"addressListRegion\": \"150 Bobby Dale\",\n      \"delimiter\": \"standard\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"addressListRegion\": \"34472 Chestnut Grove\",\n      \"delimiter\": \"default\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"achDetails\": {\n      \"routingNumber\": \"021000021\",\n      \"accountNumber\": \"1234567890\",\n      \"checkDigit\": 7\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -1686,7 +1686,7 @@
               },
               "response": [
                 {
-                  "id": "2dcf465e-d8f9-4217-8167-31bccf29f6b7",
+                  "id": "a524fa41-93e6-4866-b636-532ff53597bd",
                   "name": "Success",
                   "originalRequest": {
                     "url": {
@@ -1721,7 +1721,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"addressListRegion\": \"74454 S 10th Street\",\n      \"delimiter\": \"standard\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"addressListRegion\": \"468 Haley Manor\",\n      \"delimiter\": \"primary\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"addressListRegion\": \"88348 Nienow Bridge\",\n      \"delimiter\": \"default\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"documentId\": 1234\n      },\n      \"addressListRegion\": \"2306 Hazel Grove\",\n      \"delimiter\": \"default\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"userCreditDetails\": {\n      \"creditAmount\": 50\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1738,12 +1738,12 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Request processed\",\n  \"jobId\": \"GtiKBUOd64\"\n}",
+                  "body": "{\n  \"status\": \"success\",\n  \"message\": \"Request processed\",\n  \"jobId\": \"v7709LooKy\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 },
                 {
-                  "id": "9015b8a7-cca1-4bb6-9f4a-e84f7346639f",
+                  "id": "3f707c55-2e7f-41f9-b113-1031add056a7",
                   "name": "Invalid request",
                   "originalRequest": {
                     "url": {
@@ -1774,7 +1774,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"addressListRegion\": \"72084 Chestnut Grove\",\n      \"delimiter\": \"basic\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"addressListRegion\": \"16472 Sauer Unions\",\n      \"delimiter\": \"basic\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"externalUrl\": \"https://api.example.com/v1/documents/5678\"\n      },\n      \"addressListRegion\": \"928 Coronation Road\",\n      \"delimiter\": \"default\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 100,\n        \"documentName\": \"invoice_2024_01.pdf\"\n      },\n      \"addressListRegion\": \"2405 Carroll Lakes\",\n      \"delimiter\": \"basic\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"applePayDetails\": {\n      \"applePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1790,7 +1790,7 @@
                   "_postman_previewlanguage": "text"
                 },
                 {
-                  "id": "97465c3f-ae3b-4d77-a00c-e88de63d3566",
+                  "id": "8ed619ed-dd24-413a-b544-8cc2337b1c27",
                   "name": "Unauthorized",
                   "originalRequest": {
                     "url": {
@@ -1821,7 +1821,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"addressListRegion\": \"563 Colin Orchard\",\n      \"delimiter\": \"standard\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"addressListRegion\": \"213 Susanna Ports\",\n      \"delimiter\": \"default\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"addressCapturePdfs\": [\n    {\n      \"documentSourceIdentifier\": {\n        \"uploadRequestId\": 200,\n        \"zipId\": 10,\n        \"documentName\": \"statement_jan.pdf\"\n      },\n      \"addressListRegion\": \"690 Smitham Alley\",\n      \"delimiter\": \"standard\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"documentSourceIdentifier\": {\n        \"zipId\": 20,\n        \"documentName\": \"report_q1_2024.pdf\"\n      },\n      \"addressListRegion\": \"41911 Bartoletti Mountain\",\n      \"delimiter\": \"primary\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"paymentDetails\": {\n    \"googlePayDetails\": {\n      \"googlePaymentDetails\": {}\n    }\n  },\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1859,7 +1859,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "b76170cc-3f58-4acd-a8df-03c5f620f58e",
+                  "id": "f86b310d-b994-436f-99a8-dad727ac0df1",
                   "name": "Issue a short-term access token",
                   "request": {
                     "name": "Issue a short-term access token",
@@ -1892,7 +1892,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"long_token\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "raw": "{\n  \"long_token\": \"basic\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -1912,7 +1912,7 @@
                   },
                   "response": [
                     {
-                      "id": "14865a24-235e-420b-8595-4df4d5aa3816",
+                      "id": "56cc06ed-75e2-44cc-83bc-a7a4dfeb59c1",
                       "name": "Short-term token issued",
                       "originalRequest": {
                         "url": {
@@ -1965,12 +1965,12 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"token_type\": \"Bearer\",\n  \"access_token\": \"basic\",\n  \"expires_in\": \"standard\",\n  \"expires_at\": \"<dateTime>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"token_id\": \"L5pUzTZnJx\"\n}",
+                      "body": "{\n  \"token_type\": \"Bearer\",\n  \"access_token\": \"primary\",\n  \"expires_in\": \"standard\",\n  \"expires_at\": \"<dateTime>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"token_id\": \"qlaQjyg6ss\"\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     },
                     {
-                      "id": "5b961396-ae37-4be2-b2ba-71a6a6a13b73",
+                      "id": "e5c12e60-35b0-4cae-9a30-57d7e7cd8067",
                       "name": "Bad request",
                       "originalRequest": {
                         "url": {
@@ -2023,13 +2023,71 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"code\": \"default\",\n  \"message\": \"Operation completed successfully\",\n  \"details\": {}\n}",
+                      "body": "{\n  \"code\": \"primary\",\n  \"message\": \"Job created successfully\",\n  \"details\": {}\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     },
                     {
-                      "id": "949ea06b-8a03-49ce-8673-799eb7ead145",
+                      "id": "e40233f7-8c76-403f-8933-406c75d79bc8",
                       "name": "Unauthorized",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "auth",
+                            "tokens",
+                            "short"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": {
+                              "content": "Added as a part of security scheme: bearer",
+                              "type": "text/plain"
+                            },
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "method": "POST",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"long_token\": \"primary\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "body": "{\n  \"code\": \"default\",\n  \"message\": \"Request processed\",\n  \"details\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "json"
+                    },
+                    {
+                      "id": "5f489223-e155-4982-9df6-281cdda7bd20",
+                      "name": "Too Many Requests",
                       "originalRequest": {
                         "url": {
                           "path": [
@@ -2073,64 +2131,6 @@
                           }
                         }
                       },
-                      "status": "Unauthorized",
-                      "code": 401,
-                      "header": [
-                        {
-                          "key": "Content-Type",
-                          "value": "application/json"
-                        }
-                      ],
-                      "body": "{\n  \"code\": \"primary\",\n  \"message\": \"Job created successfully\",\n  \"details\": {}\n}",
-                      "cookie": [],
-                      "_postman_previewlanguage": "json"
-                    },
-                    {
-                      "id": "fbbc6ee5-524f-4272-88a6-92eeb7b5ab2e",
-                      "name": "Too Many Requests",
-                      "originalRequest": {
-                        "url": {
-                          "path": [
-                            "auth",
-                            "tokens",
-                            "short"
-                          ],
-                          "host": [
-                            "{{baseUrl}}"
-                          ],
-                          "query": [],
-                          "variable": []
-                        },
-                        "header": [
-                          {
-                            "key": "Content-Type",
-                            "value": "application/json"
-                          },
-                          {
-                            "key": "Accept",
-                            "value": "application/json"
-                          },
-                          {
-                            "description": {
-                              "content": "Added as a part of security scheme: bearer",
-                              "type": "text/plain"
-                            },
-                            "key": "Authorization",
-                            "value": "Bearer <token>"
-                          }
-                        ],
-                        "method": "POST",
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\n  \"long_token\": \"basic\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
-                          "options": {
-                            "raw": {
-                              "headerFamily": "json",
-                              "language": "json"
-                            }
-                          }
-                        }
-                      },
                       "status": "Too Many Requests",
                       "code": 429,
                       "header": [
@@ -2139,7 +2139,7 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"code\": \"default\",\n  \"message\": \"Job created successfully\",\n  \"details\": {}\n}",
+                      "body": "{\n  \"code\": \"basic\",\n  \"message\": \"Processing your request\",\n  \"details\": {}\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     }
@@ -2156,7 +2156,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "b5e5c9ff-f3be-4a8c-a44f-72cf56a3921e",
+                  "id": "c5e39ab3-4945-4c81-ac0b-8c93164e71c6",
                   "name": "Issue or rotate a long-term token",
                   "request": {
                     "name": "Issue or rotate a long-term token",
@@ -2189,7 +2189,7 @@
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"U9WaG7KkOC\",\n  \"client_secret\": \"standard\",\n  \"otp_code\": \"default\",\n  \"assertion_type\": \"basic\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"default\"\n}",
+                      "raw": "{\n  \"grant_type\": \"assertion\",\n  \"client_id\": \"8TYVNBcojg\",\n  \"client_secret\": \"standard\",\n  \"otp_code\": \"basic\",\n  \"assertion_type\": \"primary\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"basic\"\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -2209,7 +2209,7 @@
                   },
                   "response": [
                     {
-                      "id": "7c8f0e64-1c3e-4995-8bdc-4d4da457bf22",
+                      "id": "b7b7ca2d-0aa8-4d4e-bd5c-eb60d51fe361",
                       "name": "Long-term token issued",
                       "originalRequest": {
                         "url": {
@@ -2245,7 +2245,7 @@
                         "method": "POST",
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"NhstRg8CPs\",\n  \"client_secret\": \"basic\",\n  \"otp_code\": \"primary\",\n  \"assertion_type\": \"standard\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"basic\"\n}",
+                          "raw": "{\n  \"grant_type\": \"assertion\",\n  \"client_id\": \"RqpN6sKYCG\",\n  \"client_secret\": \"default\",\n  \"otp_code\": \"default\",\n  \"assertion_type\": \"primary\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"standard\"\n}",
                           "options": {
                             "raw": {
                               "headerFamily": "json",
@@ -2271,12 +2271,12 @@
                           "value": "<string>"
                         }
                       ],
-                      "body": "{\n  \"token_type\": \"Bearer\",\n  \"access_token\": \"primary\",\n  \"expires_in\": \"default\",\n  \"expires_at\": \"<dateTime>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"token_id\": \"04onRnufb9\"\n}",
+                      "body": "{\n  \"token_type\": \"Bearer\",\n  \"access_token\": \"default\",\n  \"expires_in\": \"default\",\n  \"expires_at\": \"<dateTime>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"token_id\": \"K55tLK0oIU\"\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     },
                     {
-                      "id": "745c1c00-f206-472f-ba06-c76adf5ec0c0",
+                      "id": "f674a4de-a4ad-4eb2-956b-aee24d832c10",
                       "name": "Bad request",
                       "originalRequest": {
                         "url": {
@@ -2312,7 +2312,7 @@
                         "method": "POST",
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"js8mx0SK07\",\n  \"client_secret\": \"primary\",\n  \"otp_code\": \"default\",\n  \"assertion_type\": \"standard\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"default\"\n}",
+                          "raw": "{\n  \"grant_type\": \"assertion\",\n  \"client_id\": \"nzzT4kP13Q\",\n  \"client_secret\": \"basic\",\n  \"otp_code\": \"basic\",\n  \"assertion_type\": \"standard\",\n  \"assertion\": \"standard\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"primary\"\n}",
                           "options": {
                             "raw": {
                               "headerFamily": "json",
@@ -2329,12 +2329,12 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"code\": \"basic\",\n  \"message\": \"Operation completed successfully\",\n  \"details\": {}\n}",
+                      "body": "{\n  \"code\": \"standard\",\n  \"message\": \"Request processed\",\n  \"details\": {}\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     },
                     {
-                      "id": "58ea286b-c4c7-4247-8a2b-faf01b08ea1d",
+                      "id": "212979ce-d417-4439-a1b0-a717cd4e54d6",
                       "name": "Unauthorized",
                       "originalRequest": {
                         "url": {
@@ -2370,7 +2370,7 @@
                         "method": "POST",
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"M0e63I0Y4i\",\n  \"client_secret\": \"primary\",\n  \"otp_code\": \"default\",\n  \"assertion_type\": \"primary\",\n  \"assertion\": \"basic\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"default\"\n}",
+                          "raw": "{\n  \"grant_type\": \"assertion\",\n  \"client_id\": \"k4vOORB6ga\",\n  \"client_secret\": \"standard\",\n  \"otp_code\": \"primary\",\n  \"assertion_type\": \"standard\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"primary\"\n}",
                           "options": {
                             "raw": {
                               "headerFamily": "json",
@@ -2387,12 +2387,12 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"code\": \"basic\",\n  \"message\": \"Request processed\",\n  \"details\": {}\n}",
+                      "body": "{\n  \"code\": \"primary\",\n  \"message\": \"Request processed\",\n  \"details\": {}\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     },
                     {
-                      "id": "0ad5f7a5-57b0-48aa-a0ac-9ad1f03897da",
+                      "id": "ceca47ab-c897-4c64-b753-7933b53bfb32",
                       "name": "Forbidden",
                       "originalRequest": {
                         "url": {
@@ -2428,7 +2428,7 @@
                         "method": "POST",
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"9gUKTIfTBX\",\n  \"client_secret\": \"basic\",\n  \"otp_code\": \"basic\",\n  \"assertion_type\": \"basic\",\n  \"assertion\": \"standard\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"standard\"\n}",
+                          "raw": "{\n  \"grant_type\": \"assertion\",\n  \"client_id\": \"dxXLSuW99L\",\n  \"client_secret\": \"default\",\n  \"otp_code\": \"standard\",\n  \"assertion_type\": \"basic\",\n  \"assertion\": \"default\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"basic\"\n}",
                           "options": {
                             "raw": {
                               "headerFamily": "json",
@@ -2445,12 +2445,12 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"code\": \"basic\",\n  \"message\": \"Job created successfully\",\n  \"details\": {}\n}",
+                      "body": "{\n  \"code\": \"primary\",\n  \"message\": \"Job created successfully\",\n  \"details\": {}\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     },
                     {
-                      "id": "0fe01631-6c7d-4545-b400-3248e577c656",
+                      "id": "8a3e7a51-8140-4a94-8f81-5d0970e70ba0",
                       "name": "Too Many Requests",
                       "originalRequest": {
                         "url": {
@@ -2486,7 +2486,7 @@
                         "method": "POST",
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"gXFruTfKga\",\n  \"client_secret\": \"basic\",\n  \"otp_code\": \"default\",\n  \"assertion_type\": \"default\",\n  \"assertion\": \"primary\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"primary\"\n}",
+                          "raw": "{\n  \"grant_type\": \"assertion\",\n  \"client_id\": \"OR59RMOYAL\",\n  \"client_secret\": \"basic\",\n  \"otp_code\": \"default\",\n  \"assertion_type\": \"primary\",\n  \"assertion\": \"basic\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ttl_seconds\": \"basic\"\n}",
                           "options": {
                             "raw": {
                               "headerFamily": "json",
@@ -2503,7 +2503,7 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "{\n  \"code\": \"standard\",\n  \"message\": \"Request processed\",\n  \"details\": {}\n}",
+                      "body": "{\n  \"code\": \"default\",\n  \"message\": \"Operation completed successfully\",\n  \"details\": {}\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     }
@@ -2524,7 +2524,7 @@
                   "description": "",
                   "item": [
                     {
-                      "id": "a660ffff-ee65-4307-b658-94c7ab9ef4b6",
+                      "id": "70169152-d85f-434e-be26-f2cc0c66b0c5",
                       "name": "Revoke a token",
                       "request": {
                         "name": "Revoke a token",
@@ -2576,7 +2576,7 @@
                       },
                       "response": [
                         {
-                          "id": "f8b4eeee-7782-4912-8ebe-91b23cbee118",
+                          "id": "46c51562-d10e-488c-8764-619fe829f42b",
                           "name": "Revoked (idempotent)",
                           "originalRequest": {
                             "url": {
@@ -2612,7 +2612,7 @@
                           "_postman_previewlanguage": "text"
                         },
                         {
-                          "id": "821496ba-4506-48bd-8a78-e91ff1ca1d7a",
+                          "id": "e9d894eb-dbbd-43ad-b44c-91af256ff27b",
                           "name": "Unauthorized",
                           "originalRequest": {
                             "url": {
@@ -2653,12 +2653,12 @@
                               "value": "application/json"
                             }
                           ],
-                          "body": "{\n  \"code\": \"basic\",\n  \"message\": \"Processing your request\",\n  \"details\": {}\n}",
+                          "body": "{\n  \"code\": \"standard\",\n  \"message\": \"Operation completed successfully\",\n  \"details\": {}\n}",
                           "cookie": [],
                           "_postman_previewlanguage": "json"
                         },
                         {
-                          "id": "7ebd9805-3d8e-43c4-a019-00371ab4847a",
+                          "id": "980a8056-657e-42d0-b5f4-e1fe914d29fd",
                           "name": "Not found",
                           "originalRequest": {
                             "url": {

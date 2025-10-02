@@ -49,7 +49,7 @@ import com.c2m.JSON;
 /**
  * OneOf variant for documentSourceIdentifier
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:56:58.373121373Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T22:17:37.852537932Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class DocumentSourceVariant2 {
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "externalUrl";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)

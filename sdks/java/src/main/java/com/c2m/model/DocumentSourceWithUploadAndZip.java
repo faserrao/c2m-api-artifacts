@@ -48,7 +48,7 @@ import com.c2m.JSON;
 /**
  * DocumentSourceWithUploadAndZip
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:56:58.373121373Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T22:17:37.852537932Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class DocumentSourceWithUploadAndZip {
   public static final String SERIALIZED_NAME_UPLOAD_REQUEST_ID = "uploadRequestId";
   @SerializedName(SERIALIZED_NAME_UPLOAD_REQUEST_ID)
