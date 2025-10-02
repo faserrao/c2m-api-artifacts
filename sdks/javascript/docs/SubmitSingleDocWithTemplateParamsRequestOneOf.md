@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **jobTemplate** | **String** |  | 
-**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
+**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
 **tags** | **[String]** |  | [optional] 
 **documentSourceIdentifier** | [**DocumentSourceIdentifier**](DocumentSourceIdentifier.md) |  | 
 

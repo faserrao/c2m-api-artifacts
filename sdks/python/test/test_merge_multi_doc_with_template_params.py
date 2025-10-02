@@ -52,6 +52,7 @@ class TestMergeMultiDocWithTemplateParams(unittest.TestCase):
                     ],
                 recipient_address_source = None,
                 job_template = '',
+                payment_details = None,
         )
         """
 

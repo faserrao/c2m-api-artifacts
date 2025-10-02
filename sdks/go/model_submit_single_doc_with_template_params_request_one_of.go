@@ -22,7 +22,7 @@ var _ MappedNullable = &SubmitSingleDocWithTemplateParamsRequestOneOf{}
 // SubmitSingleDocWithTemplateParamsRequestOneOf struct for SubmitSingleDocWithTemplateParamsRequestOneOf
 type SubmitSingleDocWithTemplateParamsRequestOneOf struct {
 	JobTemplate string `json:"jobTemplate"`
-	PaymentDetails *PaymentDetails `json:"paymentDetails,omitempty"`
+	PaymentDetails PaymentDetails `json:"paymentDetails"`
 	Tags []string `json:"tags,omitempty"`
 	DocumentSourceIdentifier DocumentSourceIdentifier `json:"documentSourceIdentifier"`
 }
@@ -33,9 +33,10 @@ type _SubmitSingleDocWithTemplateParamsRequestOneOf SubmitSingleDocWithTemplateP
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubmitSingleDocWithTemplateParamsRequestOneOf(jobTemplate string, documentSourceIdentifier DocumentSourceIdentifier) *SubmitSingleDocWithTemplateParamsRequestOneOf {
+func NewSubmitSingleDocWithTemplateParamsRequestOneOf(jobTemplate string, paymentDetails PaymentDetails, documentSourceIdentifier DocumentSourceIdentifier) *SubmitSingleDocWithTemplateParamsRequestOneOf {
 	this := SubmitSingleDocWithTemplateParamsRequestOneOf{}
 	this.JobTemplate = jobTemplate
+	this.PaymentDetails = paymentDetails
 	this.DocumentSourceIdentifier = documentSourceIdentifier
 	return &this
 }
@@ -72,36 +73,28 @@ func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) SetJobTemplate(v string)
 	o.JobTemplate = v
 }
 
-// GetPaymentDetails returns the PaymentDetails field value if set, zero value otherwise.
+// GetPaymentDetails returns the PaymentDetails field value
 func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) GetPaymentDetails() PaymentDetails {
-	if o == nil || IsNil(o.PaymentDetails) {
+	if o == nil {
 		var ret PaymentDetails
 		return ret
 	}
-	return *o.PaymentDetails
+
+	return o.PaymentDetails
 }
 
-// GetPaymentDetailsOk returns a tuple with the PaymentDetails field value if set, nil otherwise
+// GetPaymentDetailsOk returns a tuple with the PaymentDetails field value
 // and a boolean to check if the value has been set.
 func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) GetPaymentDetailsOk() (*PaymentDetails, bool) {
-	if o == nil || IsNil(o.PaymentDetails) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PaymentDetails, true
+	return &o.PaymentDetails, true
 }
 
-// HasPaymentDetails returns a boolean if a field has been set.
-func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) HasPaymentDetails() bool {
-	if o != nil && !IsNil(o.PaymentDetails) {
-		return true
-	}
-
-	return false
-}
-
-// SetPaymentDetails gets a reference to the given PaymentDetails and assigns it to the PaymentDetails field.
+// SetPaymentDetails sets field value
 func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) SetPaymentDetails(v PaymentDetails) {
-	o.PaymentDetails = &v
+	o.PaymentDetails = v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
@@ -171,9 +164,7 @@ func (o SubmitSingleDocWithTemplateParamsRequestOneOf) MarshalJSON() ([]byte, er
 func (o SubmitSingleDocWithTemplateParamsRequestOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["jobTemplate"] = o.JobTemplate
-	if !IsNil(o.PaymentDetails) {
-		toSerialize["paymentDetails"] = o.PaymentDetails
-	}
+	toSerialize["paymentDetails"] = o.PaymentDetails
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
@@ -187,6 +178,7 @@ func (o *SubmitSingleDocWithTemplateParamsRequestOneOf) UnmarshalJSON(data []byt
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"jobTemplate",
+		"paymentDetails",
 		"documentSourceIdentifier",
 	}
 

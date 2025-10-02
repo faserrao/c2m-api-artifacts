@@ -63,6 +63,15 @@ namespace C2M.Api.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'PaymentDetails'
+        /// </summary>
+        [Fact]
+        public void PaymentDetailsTest()
+        {
+            // TODO unit test for the property 'PaymentDetails'
+        }
+
+        /// <summary>
         /// Test the property 'DocumentSourceIdentifier'
         /// </summary>
         [Fact]
@@ -78,15 +87,6 @@ namespace C2M.Api.Test.Model
         public void RecipientAddressSourcesTest()
         {
             // TODO unit test for the property 'RecipientAddressSources'
-        }
-
-        /// <summary>
-        /// Test the property 'PaymentDetails'
-        /// </summary>
-        [Fact]
-        public void PaymentDetailsTest()
-        {
-            // TODO unit test for the property 'PaymentDetails'
         }
 
         /// <summary>

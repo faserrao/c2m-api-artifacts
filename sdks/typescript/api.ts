@@ -307,14 +307,14 @@ export interface MergeMultiDocWithTemplateParams {
     'documentsToMerge': Array<DocumentSourceIdentifier>;
     'recipientAddressSource': RecipientAddressSource;
     'jobTemplate': string;
-    'paymentDetails'?: PaymentDetails;
+    'paymentDetails': PaymentDetails;
     'tags'?: Array<string>;
 }
 export interface MergeMultiDocWithTemplateParamsRequest {
     'documentsToMerge': Array<DocumentSourceIdentifier>;
     'recipientAddressSource': RecipientAddressSource;
     'jobTemplate': string;
-    'paymentDetails'?: PaymentDetails;
+    'paymentDetails': PaymentDetails;
     'tags'?: Array<string>;
 }
 export interface MultiPdfWithCaptureParams {
@@ -507,19 +507,19 @@ export type SubmitSingleDocWithTemplateParamsRequest = SubmitSingleDocWithTempla
 
 export interface SubmitSingleDocWithTemplateParamsRequestOneOf {
     'jobTemplate': string;
-    'paymentDetails'?: PaymentDetails;
+    'paymentDetails': PaymentDetails;
     'tags'?: Array<string>;
     'documentSourceIdentifier': DocumentSourceIdentifier;
 }
 export interface SubmitSingleDocWithTemplateParamsRequestOneOf1 {
     'jobTemplate': string;
-    'paymentDetails'?: PaymentDetails;
+    'paymentDetails': PaymentDetails;
     'tags'?: Array<string>;
     'recipientAddressSources': Array<RecipientAddressSource>;
 }
 export interface SubmitSingleDocWithTemplateParamsRequestOneOf2 {
     'jobTemplate': string;
-    'paymentDetails'?: PaymentDetails;
+    'paymentDetails': PaymentDetails;
     'tags'?: Array<string>;
     'documentSourceIdentifier': DocumentSourceIdentifier;
     'recipientAddressSources': Array<RecipientAddressSource>;

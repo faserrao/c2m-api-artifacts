@@ -34,15 +34,15 @@ namespace C2M.Api.Model
         /// Initializes a new instance of the <see cref="SubmitSingleDocWithTemplateParamsRequestOneOf1" /> class.
         /// </summary>
         /// <param name="jobTemplate">jobTemplate</param>
-        /// <param name="recipientAddressSources">recipientAddressSources</param>
         /// <param name="paymentDetails">paymentDetails</param>
+        /// <param name="recipientAddressSources">recipientAddressSources</param>
         /// <param name="tags">tags</param>
         [JsonConstructor]
-        public SubmitSingleDocWithTemplateParamsRequestOneOf1(string jobTemplate, List<RecipientAddressSource> recipientAddressSources, Option<PaymentDetails?> paymentDetails = default, Option<List<string>?> tags = default)
+        public SubmitSingleDocWithTemplateParamsRequestOneOf1(string jobTemplate, PaymentDetails paymentDetails, List<RecipientAddressSource> recipientAddressSources, Option<List<string>?> tags = default)
         {
             JobTemplate = jobTemplate;
+            PaymentDetails = paymentDetails;
             RecipientAddressSources = recipientAddressSources;
-            PaymentDetailsOption = paymentDetails;
             TagsOption = tags;
             OnCreated();
         }
@@ -56,23 +56,16 @@ namespace C2M.Api.Model
         public string JobTemplate { get; set; }
 
         /// <summary>
+        /// Gets or Sets PaymentDetails
+        /// </summary>
+        [JsonPropertyName("paymentDetails")]
+        public PaymentDetails PaymentDetails { get; set; }
+
+        /// <summary>
         /// Gets or Sets RecipientAddressSources
         /// </summary>
         [JsonPropertyName("recipientAddressSources")]
         public List<RecipientAddressSource> RecipientAddressSources { get; set; }
-
-        /// <summary>
-        /// Used to track the state of PaymentDetails
-        /// </summary>
-        [JsonIgnore]
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<PaymentDetails?> PaymentDetailsOption { get; private set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentDetails
-        /// </summary>
-        [JsonPropertyName("paymentDetails")]
-        public PaymentDetails? PaymentDetails { get { return this.PaymentDetailsOption; } set { this.PaymentDetailsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Tags
@@ -96,8 +89,8 @@ namespace C2M.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class SubmitSingleDocWithTemplateParamsRequestOneOf1 {\n");
             sb.Append("  JobTemplate: ").Append(JobTemplate).Append("\n");
-            sb.Append("  RecipientAddressSources: ").Append(RecipientAddressSources).Append("\n");
             sb.Append("  PaymentDetails: ").Append(PaymentDetails).Append("\n");
+            sb.Append("  RecipientAddressSources: ").Append(RecipientAddressSources).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -137,8 +130,8 @@ namespace C2M.Api.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<string?> jobTemplate = default;
-            Option<List<RecipientAddressSource>?> recipientAddressSources = default;
             Option<PaymentDetails?> paymentDetails = default;
+            Option<List<RecipientAddressSource>?> recipientAddressSources = default;
             Option<List<string>?> tags = default;
 
             while (utf8JsonReader.Read())
@@ -159,11 +152,11 @@ namespace C2M.Api.Model
                         case "jobTemplate":
                             jobTemplate = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
-                        case "recipientAddressSources":
-                            recipientAddressSources = new Option<List<RecipientAddressSource>?>(JsonSerializer.Deserialize<List<RecipientAddressSource>>(ref utf8JsonReader, jsonSerializerOptions)!);
-                            break;
                         case "paymentDetails":
                             paymentDetails = new Option<PaymentDetails?>(JsonSerializer.Deserialize<PaymentDetails>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
+                        case "recipientAddressSources":
+                            recipientAddressSources = new Option<List<RecipientAddressSource>?>(JsonSerializer.Deserialize<List<RecipientAddressSource>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         case "tags":
                             tags = new Option<List<string>?>(JsonSerializer.Deserialize<List<string>>(ref utf8JsonReader, jsonSerializerOptions)!);
@@ -177,22 +170,25 @@ namespace C2M.Api.Model
             if (!jobTemplate.IsSet)
                 throw new ArgumentException("Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.", nameof(jobTemplate));
 
+            if (!paymentDetails.IsSet)
+                throw new ArgumentException("Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.", nameof(paymentDetails));
+
             if (!recipientAddressSources.IsSet)
                 throw new ArgumentException("Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.", nameof(recipientAddressSources));
 
             if (jobTemplate.IsSet && jobTemplate.Value == null)
                 throw new ArgumentNullException(nameof(jobTemplate), "Property is not nullable for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
 
-            if (recipientAddressSources.IsSet && recipientAddressSources.Value == null)
-                throw new ArgumentNullException(nameof(recipientAddressSources), "Property is not nullable for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
-
             if (paymentDetails.IsSet && paymentDetails.Value == null)
                 throw new ArgumentNullException(nameof(paymentDetails), "Property is not nullable for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
+
+            if (recipientAddressSources.IsSet && recipientAddressSources.Value == null)
+                throw new ArgumentNullException(nameof(recipientAddressSources), "Property is not nullable for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
 
             if (tags.IsSet && tags.Value == null)
                 throw new ArgumentNullException(nameof(tags), "Property is not nullable for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
 
-            return new SubmitSingleDocWithTemplateParamsRequestOneOf1(jobTemplate.Value!, recipientAddressSources.Value!, paymentDetails, tags);
+            return new SubmitSingleDocWithTemplateParamsRequestOneOf1(jobTemplate.Value!, paymentDetails.Value!, recipientAddressSources.Value!, tags);
         }
 
         /// <summary>
@@ -222,24 +218,21 @@ namespace C2M.Api.Model
             if (submitSingleDocWithTemplateParamsRequestOneOf1.JobTemplate == null)
                 throw new ArgumentNullException(nameof(submitSingleDocWithTemplateParamsRequestOneOf1.JobTemplate), "Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
 
+            if (submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetails == null)
+                throw new ArgumentNullException(nameof(submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetails), "Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
+
             if (submitSingleDocWithTemplateParamsRequestOneOf1.RecipientAddressSources == null)
                 throw new ArgumentNullException(nameof(submitSingleDocWithTemplateParamsRequestOneOf1.RecipientAddressSources), "Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
-
-            if (submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetailsOption.IsSet && submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetails == null)
-                throw new ArgumentNullException(nameof(submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetails), "Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
 
             if (submitSingleDocWithTemplateParamsRequestOneOf1.TagsOption.IsSet && submitSingleDocWithTemplateParamsRequestOneOf1.Tags == null)
                 throw new ArgumentNullException(nameof(submitSingleDocWithTemplateParamsRequestOneOf1.Tags), "Property is required for class SubmitSingleDocWithTemplateParamsRequestOneOf1.");
 
             writer.WriteString("jobTemplate", submitSingleDocWithTemplateParamsRequestOneOf1.JobTemplate);
 
+            writer.WritePropertyName("paymentDetails");
+            JsonSerializer.Serialize(writer, submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetails, jsonSerializerOptions);
             writer.WritePropertyName("recipientAddressSources");
             JsonSerializer.Serialize(writer, submitSingleDocWithTemplateParamsRequestOneOf1.RecipientAddressSources, jsonSerializerOptions);
-            if (submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetailsOption.IsSet)
-            {
-                writer.WritePropertyName("paymentDetails");
-                JsonSerializer.Serialize(writer, submitSingleDocWithTemplateParamsRequestOneOf1.PaymentDetails, jsonSerializerOptions);
-            }
             if (submitSingleDocWithTemplateParamsRequestOneOf1.TagsOption.IsSet)
             {
                 writer.WritePropertyName("tags");

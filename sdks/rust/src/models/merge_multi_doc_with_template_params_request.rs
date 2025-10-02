@@ -19,19 +19,19 @@ pub struct MergeMultiDocWithTemplateParamsRequest {
     pub recipient_address_source: Box<models::RecipientAddressSource>,
     #[serde(rename = "jobTemplate")]
     pub job_template: String,
-    #[serde(rename = "paymentDetails", skip_serializing_if = "Option::is_none")]
-    pub payment_details: Option<Box<models::PaymentDetails>>,
+    #[serde(rename = "paymentDetails")]
+    pub payment_details: Box<models::PaymentDetails>,
     #[serde(rename = "tags", skip_serializing_if = "Option::is_none")]
     pub tags: Option<Vec<String>>,
 }
 
 impl MergeMultiDocWithTemplateParamsRequest {
-    pub fn new(documents_to_merge: Vec<models::DocumentSourceIdentifier>, recipient_address_source: models::RecipientAddressSource, job_template: String) -> MergeMultiDocWithTemplateParamsRequest {
+    pub fn new(documents_to_merge: Vec<models::DocumentSourceIdentifier>, recipient_address_source: models::RecipientAddressSource, job_template: String, payment_details: models::PaymentDetails) -> MergeMultiDocWithTemplateParamsRequest {
         MergeMultiDocWithTemplateParamsRequest {
             documents_to_merge,
             recipient_address_source: Box::new(recipient_address_source),
             job_template,
-            payment_details: None,
+            payment_details: Box::new(payment_details),
             tags: None,
         }
     }

@@ -25,8 +25,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param jobTemplate 
- * @param recipientAddressSources 
  * @param paymentDetails 
+ * @param recipientAddressSources 
  * @param tags 
  */
 
@@ -36,11 +36,11 @@ data class SubmitSingleDocWithTemplateParamsRequestOneOf1 (
     @Json(name = "jobTemplate")
     val jobTemplate: kotlin.String,
 
+    @Json(name = "paymentDetails")
+    val paymentDetails: PaymentDetails,
+
     @Json(name = "recipientAddressSources")
     val recipientAddressSources: kotlin.collections.List<RecipientAddressSource>,
-
-    @Json(name = "paymentDetails")
-    val paymentDetails: PaymentDetails? = null,
 
     @Json(name = "tags")
     val tags: kotlin.collections.List<kotlin.String>? = null

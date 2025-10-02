@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **documents_to_merge** | [**List[DocumentSourceIdentifier]**](DocumentSourceIdentifier.md) |  | 
 **recipient_address_source** | [**RecipientAddressSource**](RecipientAddressSource.md) |  | 
 **job_template** | **str** |  | 
-**payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
+**payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | 
 **tags** | **List[str]** |  | [optional] 
 
 ## Example

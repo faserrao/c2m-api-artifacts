@@ -48,6 +48,7 @@ class TestSubmitSingleDocWithTemplateParams(unittest.TestCase):
         else:
             return SubmitSingleDocWithTemplateParams(
                 job_template = '',
+                payment_details = None,
                 document_source_identifier = None,
                 recipient_address_sources = [
                     null

@@ -45,7 +45,7 @@ data class MergeMultiDocWithTemplateParams (
     val jobTemplate: kotlin.String,
 
     @Json(name = "paymentDetails")
-    val paymentDetails: PaymentDetails? = null,
+    val paymentDetails: PaymentDetails,
 
     @Json(name = "tags")
     val tags: kotlin.collections.List<kotlin.String>? = null

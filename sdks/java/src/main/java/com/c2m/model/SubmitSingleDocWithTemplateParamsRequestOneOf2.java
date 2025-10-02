@@ -53,7 +53,7 @@ import com.c2m.JSON;
 /**
  * SubmitSingleDocWithTemplateParamsRequestOneOf2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-29T19:40:45.964644121Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-02T21:56:58.373121373Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
   public static final String SERIALIZED_NAME_JOB_TEMPLATE = "jobTemplate";
   @SerializedName(SERIALIZED_NAME_JOB_TEMPLATE)
@@ -62,7 +62,7 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
 
   public static final String SERIALIZED_NAME_PAYMENT_DETAILS = "paymentDetails";
   @SerializedName(SERIALIZED_NAME_PAYMENT_DETAILS)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private PaymentDetails paymentDetails;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
@@ -102,7 +102,7 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
   }
 
 
-  public SubmitSingleDocWithTemplateParamsRequestOneOf2 paymentDetails(@javax.annotation.Nullable PaymentDetails paymentDetails) {
+  public SubmitSingleDocWithTemplateParamsRequestOneOf2 paymentDetails(@javax.annotation.Nonnull PaymentDetails paymentDetails) {
     this.paymentDetails = paymentDetails;
     return this;
   }
@@ -111,12 +111,12 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
    * Get paymentDetails
    * @return paymentDetails
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public PaymentDetails getPaymentDetails() {
     return paymentDetails;
   }
 
-  public void setPaymentDetails(@javax.annotation.Nullable PaymentDetails paymentDetails) {
+  public void setPaymentDetails(@javax.annotation.Nonnull PaymentDetails paymentDetails) {
     this.paymentDetails = paymentDetails;
   }
 
@@ -249,7 +249,7 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
     openapiFields = new HashSet<String>(Arrays.asList("jobTemplate", "paymentDetails", "tags", "documentSourceIdentifier", "recipientAddressSources"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("jobTemplate", "documentSourceIdentifier", "recipientAddressSources"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("jobTemplate", "paymentDetails", "documentSourceIdentifier", "recipientAddressSources"));
   }
 
   /**
@@ -283,10 +283,8 @@ public class SubmitSingleDocWithTemplateParamsRequestOneOf2 {
       if (!jsonObj.get("jobTemplate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jobTemplate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jobTemplate").toString()));
       }
-      // validate the optional field `paymentDetails`
-      if (jsonObj.get("paymentDetails") != null && !jsonObj.get("paymentDetails").isJsonNull()) {
-        PaymentDetails.validateJsonElement(jsonObj.get("paymentDetails"));
-      }
+      // validate the required field `paymentDetails`
+      PaymentDetails.validateJsonElement(jsonObj.get("paymentDetails"));
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **job_template** | **String** |  |  |
-| **payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] |
+| **payment_details** | [**PaymentDetails**](PaymentDetails.md) |  |  |
 | **tags** | **Array&lt;String&gt;** |  | [optional] |
 | **recipient_address_sources** | [**Array&lt;RecipientAddressSource&gt;**](RecipientAddressSource.md) |  |  |
 

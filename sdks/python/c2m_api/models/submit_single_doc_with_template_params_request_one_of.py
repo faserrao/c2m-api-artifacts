@@ -29,7 +29,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf(BaseModel):
     SubmitSingleDocWithTemplateParamsRequestOneOf
     """ # noqa: E501
     job_template: StrictStr = Field(alias="jobTemplate")
-    payment_details: Optional[PaymentDetails] = Field(default=None, alias="paymentDetails")
+    payment_details: PaymentDetails = Field(alias="paymentDetails")
     tags: Optional[List[StrictStr]] = None
     document_source_identifier: DocumentSourceIdentifier = Field(alias="documentSourceIdentifier")
     __properties: ClassVar[List[str]] = ["jobTemplate", "paymentDetails", "tags", "documentSourceIdentifier"]

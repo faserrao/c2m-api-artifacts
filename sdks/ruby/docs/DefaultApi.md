@@ -100,7 +100,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-merge_multi_doc_with_template_params_request = OpenapiClient::MergeMultiDocWithTemplateParamsRequest.new({documents_to_merge: [OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})], recipient_address_source: OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'}), job_template: 'job_template_example'}) # MergeMultiDocWithTemplateParamsRequest | 
+merge_multi_doc_with_template_params_request = OpenapiClient::MergeMultiDocWithTemplateParamsRequest.new({documents_to_merge: [OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})], recipient_address_source: OpenapiClient::RecipientAddress.new({first_name: 'first_name_example', last_name: 'last_name_example', address1: 'address1_example', city: 'city_example', state: 'state_example', zip: 'zip_example', country: 'country_example'}), job_template: 'job_template_example', payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})})}) # MergeMultiDocWithTemplateParamsRequest | 
 
 begin
   # Operation for /jobs/multi-doc-merge-job-template
@@ -569,7 +569,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::DefaultApi.new
-submit_single_doc_with_template_params_request = OpenapiClient::SubmitSingleDocWithTemplateParamsRequestOneOf.new({job_template: 'job_template_example', document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})}) # SubmitSingleDocWithTemplateParamsRequest | 
+submit_single_doc_with_template_params_request = OpenapiClient::SubmitSingleDocWithTemplateParamsRequestOneOf.new({job_template: 'job_template_example', payment_details: OpenapiClient::AchPayment.new({ach_details: OpenapiClient::AchDetails.new({routing_number: 'routing_number_example', account_number: 'account_number_example', check_digit: 37})}), document_source_identifier: OpenapiClient::DocumentSourceFromZip.new({zip_id: 37, document_name: 'document_name_example'})}) # SubmitSingleDocWithTemplateParamsRequest | 
 
 begin
   # Operation for /jobs/single-doc-job-template

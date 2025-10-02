@@ -7,7 +7,7 @@
 | **documents_to_merge** | [**Array&lt;DocumentSourceIdentifier&gt;**](DocumentSourceIdentifier.md) |  |  |
 | **recipient_address_source** | [**RecipientAddressSource**](RecipientAddressSource.md) |  |  |
 | **job_template** | **String** |  |  |
-| **payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] |
+| **payment_details** | [**PaymentDetails**](PaymentDetails.md) |  |  |
 | **tags** | **Array&lt;String&gt;** |  | [optional] |
 
 ## Example

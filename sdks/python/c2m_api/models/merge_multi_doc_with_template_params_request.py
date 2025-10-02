@@ -32,7 +32,7 @@ class MergeMultiDocWithTemplateParamsRequest(BaseModel):
     documents_to_merge: List[DocumentSourceIdentifier] = Field(alias="documentsToMerge")
     recipient_address_source: RecipientAddressSource = Field(alias="recipientAddressSource")
     job_template: StrictStr = Field(alias="jobTemplate")
-    payment_details: Optional[PaymentDetails] = Field(default=None, alias="paymentDetails")
+    payment_details: PaymentDetails = Field(alias="paymentDetails")
     tags: Optional[List[StrictStr]] = None
     __properties: ClassVar[List[str]] = ["documentsToMerge", "recipientAddressSource", "jobTemplate", "paymentDetails", "tags"]
 

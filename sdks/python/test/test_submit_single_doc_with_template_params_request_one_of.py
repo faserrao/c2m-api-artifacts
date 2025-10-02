@@ -45,6 +45,7 @@ class TestSubmitSingleDocWithTemplateParamsRequestOneOf(unittest.TestCase):
         else:
             return SubmitSingleDocWithTemplateParamsRequestOneOf(
                 job_template = '',
+                payment_details = None,
                 document_source_identifier = None,
         )
         """

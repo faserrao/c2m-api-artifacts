@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **documentsToMerge** | [**[DocumentSourceIdentifier]**](DocumentSourceIdentifier.md) |  | 
 **recipientAddressSource** | [**RecipientAddressSource**](RecipientAddressSource.md) |  | 
 **jobTemplate** | **String** |  | 
-**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
+**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
 **tags** | **[String]** |  | [optional] 
 
 

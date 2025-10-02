@@ -28,10 +28,11 @@ class MergeMultiDocWithTemplateParamsRequest {
      * @param documentsToMerge {Array.<module:c2m_api/model/DocumentSourceIdentifier>} 
      * @param recipientAddressSource {module:c2m_api/model/RecipientAddressSource} 
      * @param jobTemplate {String} 
+     * @param paymentDetails {module:c2m_api/model/PaymentDetails} 
      */
-    constructor(documentsToMerge, recipientAddressSource, jobTemplate) { 
+    constructor(documentsToMerge, recipientAddressSource, jobTemplate, paymentDetails) { 
         
-        MergeMultiDocWithTemplateParamsRequest.initialize(this, documentsToMerge, recipientAddressSource, jobTemplate);
+        MergeMultiDocWithTemplateParamsRequest.initialize(this, documentsToMerge, recipientAddressSource, jobTemplate, paymentDetails);
     }
 
     /**
@@ -39,10 +40,11 @@ class MergeMultiDocWithTemplateParamsRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, documentsToMerge, recipientAddressSource, jobTemplate) { 
+    static initialize(obj, documentsToMerge, recipientAddressSource, jobTemplate, paymentDetails) { 
         obj['documentsToMerge'] = documentsToMerge;
         obj['recipientAddressSource'] = recipientAddressSource;
         obj['jobTemplate'] = jobTemplate;
+        obj['paymentDetails'] = paymentDetails;
     }
 
     /**
@@ -120,7 +122,7 @@ class MergeMultiDocWithTemplateParamsRequest {
 
 }
 
-MergeMultiDocWithTemplateParamsRequest.RequiredProperties = ["documentsToMerge", "recipientAddressSource", "jobTemplate"];
+MergeMultiDocWithTemplateParamsRequest.RequiredProperties = ["documentsToMerge", "recipientAddressSource", "jobTemplate", "paymentDetails"];
 
 /**
  * @member {Array.<module:c2m_api/model/DocumentSourceIdentifier>} documentsToMerge

@@ -63,21 +63,21 @@ namespace C2M.Api.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'DocumentSourceIdentifier'
-        /// </summary>
-        [Fact]
-        public void DocumentSourceIdentifierTest()
-        {
-            // TODO unit test for the property 'DocumentSourceIdentifier'
-        }
-
-        /// <summary>
         /// Test the property 'PaymentDetails'
         /// </summary>
         [Fact]
         public void PaymentDetailsTest()
         {
             // TODO unit test for the property 'PaymentDetails'
+        }
+
+        /// <summary>
+        /// Test the property 'DocumentSourceIdentifier'
+        /// </summary>
+        [Fact]
+        public void DocumentSourceIdentifierTest()
+        {
+            // TODO unit test for the property 'DocumentSourceIdentifier'
         }
 
         /// <summary>

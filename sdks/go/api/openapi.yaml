@@ -763,6 +763,7 @@ components:
       required:
       - documentsToMerge
       - jobTemplate
+      - paymentDetails
       - recipientAddressSource
       type: object
     singleDocJobParams:
@@ -1448,6 +1449,7 @@ components:
       required:
       - documentSourceIdentifier
       - jobTemplate
+      - paymentDetails
       type: object
     submitSingleDocWithTemplateParams_request_oneOf_1:
       properties:
@@ -1465,6 +1467,7 @@ components:
           type: array
       required:
       - jobTemplate
+      - paymentDetails
       - recipientAddressSources
       type: object
     submitSingleDocWithTemplateParams_request_oneOf_2:
@@ -1486,6 +1489,7 @@ components:
       required:
       - documentSourceIdentifier
       - jobTemplate
+      - paymentDetails
       - recipientAddressSources
       type: object
     submitSingleDocWithTemplateParams_request:
@@ -1541,6 +1545,7 @@ components:
       required:
       - documentsToMerge
       - jobTemplate
+      - paymentDetails
       - recipientAddressSource
       type: object
     singleDocJobParams_request:

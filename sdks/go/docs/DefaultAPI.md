@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-	mergeMultiDocWithTemplateParamsRequest := *openapiclient.NewMergeMultiDocWithTemplateParamsRequest([]openapiclient.DocumentSourceIdentifier{openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}, "JobTemplate_example") // MergeMultiDocWithTemplateParamsRequest | 
+	mergeMultiDocWithTemplateParamsRequest := *openapiclient.NewMergeMultiDocWithTemplateParamsRequest([]openapiclient.DocumentSourceIdentifier{openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")}}, openapiclient.recipientAddressSource{RecipientAddress: openapiclient.NewRecipientAddress("FirstName_example", "LastName_example", "Address1_example", "City_example", "State_example", "Zip_example", "Country_example")}, "JobTemplate_example", openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}) // MergeMultiDocWithTemplateParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -547,7 +547,7 @@ import (
 )
 
 func main() {
-	submitSingleDocWithTemplateParamsRequest := openapiclient.submitSingleDocWithTemplateParams_request{SubmitSingleDocWithTemplateParamsRequestOneOf: openapiclient.NewSubmitSingleDocWithTemplateParamsRequestOneOf("JobTemplate_example", openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")})} // SubmitSingleDocWithTemplateParamsRequest | 
+	submitSingleDocWithTemplateParamsRequest := openapiclient.submitSingleDocWithTemplateParams_request{SubmitSingleDocWithTemplateParamsRequestOneOf: openapiclient.NewSubmitSingleDocWithTemplateParamsRequestOneOf("JobTemplate_example", openapiclient.paymentDetails{AchPayment: openapiclient.NewAchPayment(*openapiclient.NewAchDetails("RoutingNumber_example", "AccountNumber_example", int32(123)))}, openapiclient.documentSourceIdentifier{DocumentSourceFromZip: openapiclient.NewDocumentSourceFromZip(int32(123), "DocumentName_example")})} // SubmitSingleDocWithTemplateParamsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2025-09-29T19:41:33.917Z",
-  "type": "OPENAPI:3.0",
-  "name": "C2mApiV2",
-  "updatedBy": 46321051,
-  "id": "afac47cb-89f1-4494-9c15-276a60523d06",
   "createdBy": 46321051,
-  "createdAt": "2025-09-29T19:41:33.917Z"
+  "type": "OPENAPI:3.0",
+  "updatedBy": 46321051,
+  "createdAt": "2025-10-02T21:57:40.624Z",
+  "updatedAt": "2025-10-02T21:57:40.624Z",
+  "id": "0e6824bd-54ef-4b27-aae0-0db19a4a18e3",
+  "name": "C2mApiV2"
 }

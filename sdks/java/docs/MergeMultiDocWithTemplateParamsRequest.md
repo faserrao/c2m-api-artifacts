@@ -10,7 +10,7 @@
 |**documentsToMerge** | [**List&lt;DocumentSourceIdentifier&gt;**](DocumentSourceIdentifier.md) |  |  |
 |**recipientAddressSource** | [**RecipientAddressSource**](RecipientAddressSource.md) |  |  |
 |**jobTemplate** | **String** |  |  |
-|**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  |  [optional] |
+|**paymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  |  |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 

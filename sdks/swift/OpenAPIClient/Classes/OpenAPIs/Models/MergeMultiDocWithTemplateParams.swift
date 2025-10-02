@@ -15,10 +15,10 @@ public struct MergeMultiDocWithTemplateParams: Codable, JSONEncodable, Hashable 
     public var documentsToMerge: [DocumentSourceIdentifier]
     public var recipientAddressSource: RecipientAddressSource
     public var jobTemplate: String
-    public var paymentDetails: PaymentDetails?
+    public var paymentDetails: PaymentDetails
     public var tags: [String]?
 
-    public init(documentsToMerge: [DocumentSourceIdentifier], recipientAddressSource: RecipientAddressSource, jobTemplate: String, paymentDetails: PaymentDetails? = nil, tags: [String]? = nil) {
+    public init(documentsToMerge: [DocumentSourceIdentifier], recipientAddressSource: RecipientAddressSource, jobTemplate: String, paymentDetails: PaymentDetails, tags: [String]? = nil) {
         self.documentsToMerge = documentsToMerge
         self.recipientAddressSource = recipientAddressSource
         self.jobTemplate = jobTemplate
@@ -41,7 +41,7 @@ public struct MergeMultiDocWithTemplateParams: Codable, JSONEncodable, Hashable 
         try container.encode(documentsToMerge, forKey: .documentsToMerge)
         try container.encode(recipientAddressSource, forKey: .recipientAddressSource)
         try container.encode(jobTemplate, forKey: .jobTemplate)
-        try container.encodeIfPresent(paymentDetails, forKey: .paymentDetails)
+        try container.encode(paymentDetails, forKey: .paymentDetails)
         try container.encodeIfPresent(tags, forKey: .tags)
     }
 }

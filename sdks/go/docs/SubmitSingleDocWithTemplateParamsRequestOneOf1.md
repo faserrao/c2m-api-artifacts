@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **JobTemplate** | **string** |  | 
-**PaymentDetails** | Pointer to [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
+**PaymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **RecipientAddressSources** | [**[]RecipientAddressSource**](RecipientAddressSource.md) |  | 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewSubmitSingleDocWithTemplateParamsRequestOneOf1
 
-`func NewSubmitSingleDocWithTemplateParamsRequestOneOf1(jobTemplate string, recipientAddressSources []RecipientAddressSource, ) *SubmitSingleDocWithTemplateParamsRequestOneOf1`
+`func NewSubmitSingleDocWithTemplateParamsRequestOneOf1(jobTemplate string, paymentDetails PaymentDetails, recipientAddressSources []RecipientAddressSource, ) *SubmitSingleDocWithTemplateParamsRequestOneOf1`
 
 NewSubmitSingleDocWithTemplateParamsRequestOneOf1 instantiates a new SubmitSingleDocWithTemplateParamsRequestOneOf1 object
 This constructor will assign default values to properties that have it defined,
@@ -67,11 +67,6 @@ and a boolean to check if the value has been set.
 
 SetPaymentDetails sets PaymentDetails field to given value.
 
-### HasPaymentDetails
-
-`func (o *SubmitSingleDocWithTemplateParamsRequestOneOf1) HasPaymentDetails() bool`
-
-HasPaymentDetails returns a boolean if a field has been set.
 
 ### GetTags
 

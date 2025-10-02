@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **job_template** | **string** |  |
-**payment_details** | [**\C2MApi\Model\PaymentDetails**](PaymentDetails.md) |  | [optional]
+**payment_details** | [**\C2MApi\Model\PaymentDetails**](PaymentDetails.md) |  |
 **tags** | **string[]** |  | [optional]
 **recipient_address_sources** | [**\C2MApi\Model\RecipientAddressSource[]**](RecipientAddressSource.md) |  |
 

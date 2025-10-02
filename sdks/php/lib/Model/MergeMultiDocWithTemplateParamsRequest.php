@@ -311,6 +311,9 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
         if ($this->container['job_template'] === null) {
             $invalidProperties[] = "'job_template' can't be null";
         }
+        if ($this->container['payment_details'] === null) {
+            $invalidProperties[] = "'payment_details' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -410,7 +413,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
     /**
      * Gets payment_details
      *
-     * @return \C2MApi\Model\PaymentDetails|null
+     * @return \C2MApi\Model\PaymentDetails
      */
     public function getPaymentDetails()
     {
@@ -420,7 +423,7 @@ class MergeMultiDocWithTemplateParamsRequest implements ModelInterface, ArrayAcc
     /**
      * Sets payment_details
      *
-     * @param \C2MApi\Model\PaymentDetails|null $payment_details payment_details
+     * @param \C2MApi\Model\PaymentDetails $payment_details payment_details
      *
      * @return self
      */

@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **DocumentsToMerge** | [**[]DocumentSourceIdentifier**](DocumentSourceIdentifier.md) |  | 
 **RecipientAddressSource** | [**RecipientAddressSource**](RecipientAddressSource.md) |  | 
 **JobTemplate** | **string** |  | 
-**PaymentDetails** | Pointer to [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
+**PaymentDetails** | [**PaymentDetails**](PaymentDetails.md) |  | 
 **Tags** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewMergeMultiDocWithTemplateParamsRequest
 
-`func NewMergeMultiDocWithTemplateParamsRequest(documentsToMerge []DocumentSourceIdentifier, recipientAddressSource RecipientAddressSource, jobTemplate string, ) *MergeMultiDocWithTemplateParamsRequest`
+`func NewMergeMultiDocWithTemplateParamsRequest(documentsToMerge []DocumentSourceIdentifier, recipientAddressSource RecipientAddressSource, jobTemplate string, paymentDetails PaymentDetails, ) *MergeMultiDocWithTemplateParamsRequest`
 
 NewMergeMultiDocWithTemplateParamsRequest instantiates a new MergeMultiDocWithTemplateParamsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -108,11 +108,6 @@ and a boolean to check if the value has been set.
 
 SetPaymentDetails sets PaymentDetails field to given value.
 
-### HasPaymentDetails
-
-`func (o *MergeMultiDocWithTemplateParamsRequest) HasPaymentDetails() bool`
-
-HasPaymentDetails returns a boolean if a field has been set.
 
 ### GetTags
 

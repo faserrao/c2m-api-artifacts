@@ -109,6 +109,7 @@ components:
             $ref: '#/components/schemas/documentSourceIdentifier'
         required:
         - jobTemplate
+        - paymentDetails
         - documentSourceIdentifier
       - type: object
         properties:
@@ -124,6 +125,7 @@ components:
               $ref: '#/components/schemas/recipientAddressSource'
         required:
         - jobTemplate
+        - paymentDetails
         - recipientAddressSources
       - type: object
         properties:
@@ -141,6 +143,7 @@ components:
               $ref: '#/components/schemas/recipientAddressSource'
         required:
         - jobTemplate
+        - paymentDetails
         - documentSourceIdentifier
         - recipientAddressSources
     submitMultiDocWithTemplateParams:
@@ -185,6 +188,7 @@ components:
       - documentsToMerge
       - recipientAddressSource
       - jobTemplate
+      - paymentDetails
     singleDocJobParams:
       type: object
       properties:
@@ -731,6 +735,7 @@ paths:
                     $ref: '#/components/schemas/documentSourceIdentifier'
                 required:
                 - jobTemplate
+                - paymentDetails
                 - documentSourceIdentifier
               - type: object
                 properties:
@@ -746,6 +751,7 @@ paths:
                       $ref: '#/components/schemas/recipientAddressSource'
                 required:
                 - jobTemplate
+                - paymentDetails
                 - recipientAddressSources
               - type: object
                 properties:
@@ -763,6 +769,7 @@ paths:
                       $ref: '#/components/schemas/recipientAddressSource'
                 required:
                 - jobTemplate
+                - paymentDetails
                 - documentSourceIdentifier
                 - recipientAddressSources
       responses:
@@ -845,6 +852,7 @@ paths:
               - documentsToMerge
               - recipientAddressSource
               - jobTemplate
+              - paymentDetails
       responses:
         '200':
           description: Success

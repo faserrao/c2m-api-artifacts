@@ -25,11 +25,12 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf {
      * Constructs a new <code>SubmitSingleDocWithTemplateParamsRequestOneOf</code>.
      * @alias module:c2m_api/model/SubmitSingleDocWithTemplateParamsRequestOneOf
      * @param jobTemplate {String} 
+     * @param paymentDetails {module:c2m_api/model/PaymentDetails} 
      * @param documentSourceIdentifier {module:c2m_api/model/DocumentSourceIdentifier} 
      */
-    constructor(jobTemplate, documentSourceIdentifier) { 
+    constructor(jobTemplate, paymentDetails, documentSourceIdentifier) { 
         
-        SubmitSingleDocWithTemplateParamsRequestOneOf.initialize(this, jobTemplate, documentSourceIdentifier);
+        SubmitSingleDocWithTemplateParamsRequestOneOf.initialize(this, jobTemplate, paymentDetails, documentSourceIdentifier);
     }
 
     /**
@@ -37,8 +38,9 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, jobTemplate, documentSourceIdentifier) { 
+    static initialize(obj, jobTemplate, paymentDetails, documentSourceIdentifier) { 
         obj['jobTemplate'] = jobTemplate;
+        obj['paymentDetails'] = paymentDetails;
         obj['documentSourceIdentifier'] = documentSourceIdentifier;
     }
 
@@ -104,7 +106,7 @@ class SubmitSingleDocWithTemplateParamsRequestOneOf {
 
 }
 
-SubmitSingleDocWithTemplateParamsRequestOneOf.RequiredProperties = ["jobTemplate", "documentSourceIdentifier"];
+SubmitSingleDocWithTemplateParamsRequestOneOf.RequiredProperties = ["jobTemplate", "paymentDetails", "documentSourceIdentifier"];
 
 /**
  * @member {String} jobTemplate

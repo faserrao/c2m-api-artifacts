@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **job_template** | **str** |  | 
-**payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | [optional] 
+**payment_details** | [**PaymentDetails**](PaymentDetails.md) |  | 
 **tags** | **List[str]** |  | [optional] 
 **recipient_address_sources** | [**List[RecipientAddressSource]**](RecipientAddressSource.md) |  | 
 

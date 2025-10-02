@@ -83,6 +83,8 @@ module OpenapiClient
 
       if attributes.key?(:'payment_details')
         self.payment_details = attributes[:'payment_details']
+      else
+        self.payment_details = nil
       end
 
       if attributes.key?(:'tags')
@@ -109,6 +111,10 @@ module OpenapiClient
         invalid_properties.push('invalid value for "job_template", job_template cannot be nil.')
       end
 
+      if @payment_details.nil?
+        invalid_properties.push('invalid value for "payment_details", payment_details cannot be nil.')
+      end
+
       if @recipient_address_sources.nil?
         invalid_properties.push('invalid value for "recipient_address_sources", recipient_address_sources cannot be nil.')
       end
@@ -121,6 +127,7 @@ module OpenapiClient
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @job_template.nil?
+      return false if @payment_details.nil?
       return false if @recipient_address_sources.nil?
       true
     end
@@ -133,6 +140,16 @@ module OpenapiClient
       end
 
       @job_template = job_template
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] payment_details Value to be assigned
+    def payment_details=(payment_details)
+      if payment_details.nil?
+        fail ArgumentError, 'payment_details cannot be nil'
+      end
+
+      @payment_details = payment_details
     end
 
     # Custom attribute writer method with validation

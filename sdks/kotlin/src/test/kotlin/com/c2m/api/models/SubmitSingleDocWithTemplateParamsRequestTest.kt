@@ -37,6 +37,12 @@ class SubmitSingleDocWithTemplateParamsRequestTest : ShouldSpec() {
             //modelInstance.jobTemplate shouldBe ("TODO")
         }
 
+        // to test the property `paymentDetails`
+        should("test paymentDetails") {
+            // uncomment below to test the property
+            //modelInstance.paymentDetails shouldBe ("TODO")
+        }
+
         // to test the property `documentSourceIdentifier`
         should("test documentSourceIdentifier") {
             // uncomment below to test the property
@@ -47,12 +53,6 @@ class SubmitSingleDocWithTemplateParamsRequestTest : ShouldSpec() {
         should("test recipientAddressSources") {
             // uncomment below to test the property
             //modelInstance.recipientAddressSources shouldBe ("TODO")
-        }
-
-        // to test the property `paymentDetails`
-        should("test paymentDetails") {
-            // uncomment below to test the property
-            //modelInstance.paymentDetails shouldBe ("TODO")
         }
 
         // to test the property `tags`
